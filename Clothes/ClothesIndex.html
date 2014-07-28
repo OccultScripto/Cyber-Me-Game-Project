@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+	<title>Page</title>
+	 
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' type='text/css' href='stylesheetClothes.css'/>
+    <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css'/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type='text/javascript' src="customClothes.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    
+</head>     
+<body onload="resetval();">
+	
+	<!--<div align='center' id='upbar'>
+		<br>
+		<ul  >
+			<li class='pull-left'><img id='logo'src='logo_20140718.png'/>Username</li>
+			<li class='pull-right'>Score<i id='fa' class="fa fa-trophy fa-3x"></i> </li>
+		</ul>
+	</div>-->
+	<!-- DIV for the upper menu. -->
+			<div class="topMenu" id="topMenuBorder">
+
+				<div id="caracterIcon">
+				 	<img src="Icons/logo_20140718.png">
+				</div>
+
+				<div id="userName">
+					<h2>Username</h2>
+					</div>
+
+				<div id="scoreWrapper">
+					<div id="score">
+						<h2><input type='text' id='score_val' /></h2>
+					</div>
+					<div id="scoreIcon">
+						<i class="fa fa-trophy fa-2x"></i> 
+					</div>
+				</div>
+			</div>
+	
+	<div align='center' >
+		<div class="container">
+	
+			<ul align='center' id='bar'class='tab-links' >
+		<li class='menut' class="activetab" ><a href='#'>Home</a></li>
+		<li class='menut'><a href='#'>Bills</a></li>
+		<li class='menut'  ><a href='#'>Food</a></li>
+		<li class='menut' ><a href='#'>Clothes</a></li>
+		<li class='menut'  ><a href='#'>Others</a></li>
+	</ul>
+</div>
+</div>
+
+
+	
+	<br>
+	<div class="main">
+	
+			<div class="img"> <img name='image' id="robot" src="http://wrbe.com/wp-content/uploads/2013/06/robots-clank.jpg"/></div>
+	
+		<div id="change" align='center'>
+				<p align="center" style="font-size:20px ">Choose the item you just bought:</p>
+					<form align="center">
+							<input id='radio1'type="radio" name="re" class="radiob" value="1" checked onchange="check_value(1)">
+							<label for='radio1'>Casual</label>
+					 		<input type="radio" id='radio2'name="re" value="2" class="radiob"  onchange="check_value(2);">
+					 		<label for='radio2'>Formal</label>	
+		    				<input type="radio" id='radio3' name="re" value="3"class="radiob" onchange="check_value(3);">
+		    				<label for='radio3'>Office</label>
+		    		</form>
+		 </div>	
+	</div>
+		 <div id="operation">
+			<div class="amount" >
+				<p style='font-size:20px font-style:strong '>How much did you spend?</p>
+				<input id="sum" type="text"  />
+				
+
+			</div>  
+			<br>
+			
+		</div>
+		
+		<div id='bottomp' class='row' align='center'>
+			<div class='col-md-4' id='totaldiv'>
+				<p id='ptotal' style="color:white " >Total:$</p>
+				<input style='color:white' type='text' id='total'>	  
+			</div>
+			<div class='col-md-4'>
+				  <p> 
+			<button  type='submit'  value="Submit" onclick="add();  operation(); sumtotal(); typesclothes(); total(); TotalScore();"> Submit</button>
+			</p>
+
+			</div>
+			
+		</div>
+		
+	
+
+	
+	
+</body>

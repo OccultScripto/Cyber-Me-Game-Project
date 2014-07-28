@@ -97,6 +97,13 @@ if((localStorage.getItem('heatbill')!=0)&&($('#dollar6').hasClass('actived'))&&(
 
 $(document).ready(function(){
 	//We display once a bill is paied
+$('li').click(function(){
+		
+		 $(this).addClass('activetab');
+		$(this).siblings().removeClass('activetab');
+		
+	});
+	
 	if ((30-(localStorage.getItem('day')))<10){
 		$('#alert_msg').show();
 	}
@@ -296,6 +303,12 @@ function date_today(){
  var day=d.getDate();
  var diffrence=30-day;
  localStorage.setItem('day',day);
+ var hour=d.getHours();
+ localStorage.setItem('resethour',hour);
+ var min=d.getMinutes();
+ localStorage.setItem('minutes',min);
+ 
+ 
 
    
 };
@@ -313,8 +326,13 @@ if(!string.match(/\S/)) {
 };
 
 function reset_end_month(){
+	
 	var current_date=localStorage.getItem('day');
-	if(current_date==28){
+	var hour=localStorage.getItem('resethour');
+	var min=localStorage.getItem('minutes');
+	
+
+	if((current_date==28)&&(hour==6)&&(min==30)){
 		localStorage.setItem('electricitypaid',0);
 		localStorage.setItem('rentpaid',0);
 		localStorage.setItem('waterpaid',0);
