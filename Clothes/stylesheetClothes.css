@@ -11,7 +11,6 @@ body{
  
 }
 
-
 .container{
 	width: 100%;
 	display:inline-block;
@@ -35,9 +34,9 @@ body{
            
             font-size:16px;
             font-weight:600;
+            color:white;
             
             transition:all linear 0.15s;
-            color:white;
         }
  
         .tab-links :hover {
@@ -45,30 +44,7 @@ body{
             text-decoration:none;
         }
  
-.menut {
-	background-color:#af543e;
-	margin:2px solid black;
-	height:2em;
-	/*width:100%;*/
-	display:inline;
-	padding-left:8em;
-	padding-right:8em;
-	padding-top:2em;
-	padding-bottom:2em;
-	
-	
 
-	
-}
-#bar{
-	margin:3px solid black;
-	width:100%;	
-}
-
-.activetab{
-	background-color:orange;
-	
-}
 
 .inputs{
 	margin:auto;
@@ -123,14 +99,14 @@ li a:hover{
 	
 }
 
-.actived{
-	color:green;
-	
+.active{
+	text-decoration:underline;
+	color:red;
 }
 
-.inactived{
-
-
+.inactive{
+	text-decoration: none;
+	color:#566D7E;
 }
 .dropdown{
 	margin-left:0px;
@@ -147,8 +123,8 @@ li a:hover{
 
 }
 #upbar{
-	height:0px;
-	width:400px;
+	height:90px;
+	width:1400px;
 	background-color:#1f262c;
 	alignment-adjust: 'central';
 	margin-left:200px;
@@ -171,13 +147,28 @@ ul
 	text:white;
 	
 }
+input[type=radio]{
+	display:none;
+	margin:10px;
+}
 
+input[type=radio] + label {
+    display:inline-block;
+    margin:-2px;
+    padding: 4px 12px;
+    background-color: #ffffff;
+    border-color: #ddd;
+}	
+input[type=radio]:checked + label { 
+   background-image: none;
+    background-color:#af543e;
+ 
+}
 
 #bottomp .col-md-4{
 	padding-top:0px;
 	margin-left:20em;
 	margin-right:10px;
-	margin-bottom:0em;
 }
 #change{
 	margin-bottom:0px;
@@ -214,12 +205,13 @@ button[type=submit]{
 }
 input[type=text]{
 	border:0px solid white;
+	background-color:#FFEBD6;
 	border-bottom:1px solid #1f262c;
 }
 #total{
 	background-color:#1f262c;
 }
-#btotal{
+#ptotal{
 	display: inline;
 }
 .topMenu {
@@ -293,53 +285,38 @@ input[type=text]{
 #scoreIcon i {
 	color: #FFFFFF;
 }
-.color{
-	background-color:#FFEBD6;
-}
-.white{
-	background-color:white;
-}
-.white input{
-	background-color:white;
-	border:none;
-	border-bottom:1px solid #1F262C;
-}
-.color input{
-	background-color: #FFEBD6;
-	border:none;
-	border-bottom:1px solid #1F262C;
-}
-table tr{
-	height:40px;
-	width:1400px;
-	
-}
-table td{
-	padding-right:85px;
-	padding-left:85px;
-}
-.dollar{
-	background-image:url('http://cdn2.bigcommerce.com/server700/70a5c/product_images/uploaded_images/dollar-sign.png');
-}
 
-#alert_msg{
-	background-color:#ea4b12;
-	height:15em;
-	width:40em;
-	margin-left:40em;
-	margin-bottom:35em;
-	/*margin-top:-8em;*/
-	padding:0em;
-}
-input[class=billspaid]{
-	border:none;
-	width:2em;
-}
 input[id=score_val]{
 	background-color:#1f262c;
 	color:white;
 	width:2em;
 	
 }
+.menut {
+	background-color:#af543e;
+	margin:2px solid black;
+	height:2em;
+	/*width:100%;*/
+	display:inline;
+	padding-left:8em;
+	padding-right:8em;
+	padding-top:2em;
+	padding-bottom:2em;
+	
+	
 
+	
+}
+#bar{
+	margin:3px solid black;
+	width:100%;	
+}
+
+.activetab{
+	background-color:orange;
+	
+}
+#bar a{
+	color:white;
+}
 
