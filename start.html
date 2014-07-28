@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	
+
+<head>
+	<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+	<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+  	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 
+  	<script type="text/javascript" src="javaS.js"></script>
+  	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> 
+  	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<title>
+   Cyber Me/Bills/Start
+  </title>
+</head>
+
+<body>
+	<div class="topMenu" id="topMenuBorder">
+			<div id="caracterIcon">
+				<img src="logo_20140718.png">
+			</div>
+
+			<div id="userName">
+				<h2>Username</h2>
+			</div>
+
+			<div id="scoreWrapper">
+				<div id="score">
+					<h2>0000</h2>
+					
+				</div>
+					<div id="scoreIcon">
+						<i class="fa fa-trophy fa-2x"></i>
+					</div>
+				</div>
+		</div>
+		
+	<div id="navbar">
+		<ul>
+			<li><a href="bills.html">Bills</a></li>
+			
+			<li><a href="food.html">Food</a></li>
+			
+			<li><a href="clothes.html">Clothes</a></li>
+			
+			<li><a href="others.html">Others</a></li>
+		</ul>
+	</div>
+	
+	 <div>
+		<img src="http://www.robotsltd.co.uk/uploads/images/Applications%20robot.jpg", class="image"/>
+	</div>
+	
+	<div id="data">
+		<div class="Income">
+	        <h1>Income:</h1>
+	        
+		</div>
+		
+          		<div><input type="text" name="server" id="incomeText">
+          			<i class="fa fa-usd"></i> <i class="fa fa-pencil"></i>
+          		</div> 
+          		
+        
+        <div class="date"> 
+            	<h1>Choose Pay-Day: </h1>
+            		<div>
+            			<input type="text" name="pay" id="incomeDate"> <i class="fa fa-calendar"></i>
+            		</div> 
+        </div>
+        
+        <div class="footer">
+        	<button type="button" value="Save" id="Save">SUBMIT</button> 
+        	
+        	<script>
+        	
+        		var save_button = document.getElementById('Save');
+				save_button.addEventListener("click", saveData, false);
+				
+				function saveData(){
+							
+  								var input =document.getElementById("incomeText");
+  								
+  								localStorage.setItem("server", input.value);
+  								var storedValue = localStorage.getItem("server");
+  								
+  								var payday= document.getElementById("incomeDate");
+  								localStorage.setItem("pay", payday.value);
+  								var storedValue2 = localStorage.getItem("pay");
+  								
+  								alert("The income sum is: " +input.value + ", and the selected Pay-Day is: " +payday.value +" !");
+  								document.getElementById("incomeText").value = "";
+  								
+  						};
+			</script>
+        </div>
+
+	</div>	
+</body>
+
+</html>
