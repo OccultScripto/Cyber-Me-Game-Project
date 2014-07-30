@@ -2,10 +2,11 @@
 <html>
 <head>
 	<title>Cyber Me/Bills/Others</title>
-	<link type="text/css" rel="stylesheet" href="Bills_others.css"/>
+	<link type="text/css" rel="stylesheet" href="others.css"/>
+	<link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
   	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 
-  	<script type="text/javascript" src="Bills_others.js"></script>
+  	<script type="text/javascript" src="others.js"></script>
   	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> 
   	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -21,10 +22,62 @@
 			</div>
 
 			<div id="scoreWrapper">
-				<div id="score">
-					<input type='text' id='pointss'/>
+					<span id='pointss'></span>
+
+						<div id="scoreIcon">
+							<i class="fa fa-trophy fa-2x"></i>
+						</div>
+				</div>
+		</div>
+		
+	<div id="navbar">
+		<ul>
+			<li><a href="others.html"><i class="fa fa-shopping-cart fa-2x"></i></a></li>
+			
+			<li><a href="bills.html"><i class="fa fa-money fa-2x"></i></a></li>
+			
+			<li><a href="food.html"><i class="fa fa-cutlery fa-2x"></i> </a></li>
+			
+			<li><a href="clothes.html"><i class="fa fa-male fa-2x"></i></a></li>
+			
+			<li><a href="start.html"><i class="fa fa-home fa-2x"></i></a></li>
+			
+		</ul>
+	</div>
+	
+	 <div>
+		<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRoLFcOHLX1PFluqEpC687oRk7Vqh0el-kphEYkZ5oRPpF1Zc9L", class="center"/>
+	</div>
+	
+	<div>
+		<div id="data">
+          		<div class="purchaseSum" >	
+          			<h3>Introduce the purchace sum:</h3> 
+          		</div>
+          				
+          		<div>
+          			<input type='text' name="server" id="InputSum"/> <i class="fa fa-usd"></i> <i class="fa fa-pencil"></i>
+	 				
+		 		</div>
+          				
+          		<div id="footer">	
+					<ul>
+						<li id="total">
+							<label>TOTAL</label>
+							<input type="text" name="tot" id="totalSum"/>
+							
+						</li>
+          				<li id="button">
+        					<button type="button" value="Save" id="Save">SUBMIT</button> 
+        					
 					
-					<script>
+        				</li>
+        			</ul>
+        		</div>
+    	</div>
+    </div>
+    
+    <script>
 						
 						function Points(value){
 						
@@ -71,56 +124,12 @@
 						localStorage.setItem('PointsScore',sum);
 						v=localStorage.getItem('PointsScore');
 						//confirm("scor total "+v+" ?");	
-						confirm("points "+localStorage.getItem('points')+" ?");
-						document.getElementById('pointss').value=v;
+						confirm("You receive "+localStorage.getItem('points')+" points !!!");
+						document.getElementById('pointss').textContent=v;
+						console.log(document.getElementById('pointss').textContent);
 					
 						};
-					</script>
-				</div>
-						<div id="scoreIcon">
-							<i class="fa fa-trophy fa-2x"></i>
-						</div>
-				</div>
-		</div>
-		
-	<div id="navbar">
-		<ul>
-			<li><a href="bills.html">Bills</a></li>
-			
-			<li><a href="food.html">Food</a></li>
-			
-			<li><a href="clothes.html">Clothes</a></li>
-			
-			<li><a href="others.html">Others</a></li>
-		</ul>
-	</div>
-	
-	 <div>
-		<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRoLFcOHLX1PFluqEpC687oRk7Vqh0el-kphEYkZ5oRPpF1Zc9L", class="center"/>
-	</div>
-	
-	<div>
-		<div id="data">
-          		<div class="purchaseSum" >	
-          			<h1>INTRODUCE THE PURCHASE SUM:</h1> 
-          		</div>
-          				
-          		<div>
-          			<input type='text' name="server" id="InputSum"/> <i class="fa fa-usd"></i> <i class="fa fa-pencil"></i>
-	 				
-		 		</div>
-          				
-          		<div id="footer">	
-					<ul>
-						<li id="total">
-							<label>TOTAL</label>
-							<input type="text" name="tot" id="totalSum"/>
-							
-						</li>
-          				<li id="button">
-        					<button type="button" value="Save" id="Save">SUBMIT</button> 
-        					
-					<script>
+						
 						localStorage.setItem("totalSum", 0);
 						
 						var save_button = document.getElementById('Save');
@@ -145,27 +154,7 @@
 
 							document.getElementById("InputSum").value = "";
 						}
-		
-						/*function saveData(){
-  								var input = document.getElementById("InputSum");
-  								localStorage.setItem("server", input.value);
-  								var storedValue = localStorage.getItem("server");
-  								alert("The purchase sum is: " +input.value + " . ");
-  						};
-  						  						
-  						function add2() {
-									var input= document.getElementById("totalSum");
-									localStorage.setItem("tot", input.value);
-									var storedValue = localStorage.getItem("tot");
-									
-									};*/
-						</script>	
-							
-        				</li>
-        			</ul>
-        		</div>
-    	</div>
-    </div>
+					</script>
    
 </body>	
 </html>
