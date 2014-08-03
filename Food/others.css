@@ -1,0 +1,168 @@
+html{
+	background-color:#FFF5EE;
+	
+}
+body{
+	font-size:10px;
+}
+.topMenu {
+		background-color: #999999;
+}
+
+#topMenuBorder {
+	width: 19rem;
+	height: 3.3rem;	
+	margin: 0;
+	padding: 0;
+	background-color: #1f262c;
+	display: inline-block;
+	vertical-align:middle;
+}
+
+#caracterIcon {
+	width: 2rem;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	vertical-align:middle;
+}
+
+#caracterIcon img {
+	max-width: 1.9rem;
+	max-height: 1.9rem;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	text-align: center;
+}
+
+#userName {
+	color: #ffffff;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	text-align: center;
+}
+
+#scoreWrapper{
+	border:none;
+	float: right;
+	display: inline-block;
+	margin-top: 1.3rem;
+	margin-right: 1rem;	
+}
+
+
+#scoreIcon {
+	width:auto;
+	margin: 0;
+	padding: 0;
+	display: inline-block;	
+}
+
+#scoreIcon img {
+	max-width: 1.9rem;
+	max-height: 1.9rem;
+	margin: 0;
+	color: #FFFFFF;
+}
+
+#scoreIcon i {
+	color: #FFFFFF;
+}
+
+#pointss{
+	border:none;
+	font-size:medium;
+	color:white;
+	display: inline-block;
+	
+}
+
+#navbar {
+	display:inline-block;
+	text-align: center;
+	width:19rem;
+	height: 1.6rem;
+	background: #F88158;
+	font: bold 2rem ,Verdana, sans-serif;
+}
+
+#navbar ul {
+	margin: 0;
+	padding: 0;
+	float: none;
+	list-style-type: none;
+}
+
+#navbar li {
+	padding: 0 2rem  0 0;
+	margin: 0 rem;
+	float: right;
+	border-right: 0.1rem solid white;
+	
+}
+#navbar ul li:first-child { 
+	border-right: none;
+	margin:none; }
+
+a:hover{background-color: #C04000;}
+
+#navbar ul li a:link, #navbar ul li a:active, #navbar ul li a:visited {
+	
+	padding: 0.3rem;
+	
+	line-height: 1.4rem;
+	color: white;
+	text-decoration: none;
+}
+#data{
+	margin-left:20%;
+	margin-top:13%;
+}
+
+.center{
+	margin-left: 7rem;
+	margin-top: 2rem;
+	width: 5rem;
+	height: 8rem;
+}
+.purchaseSum{
+	/*background-color:#F88158;*/
+	font: bold 7 rem ,Verdana, sans-serif;
+}
+#InputSum{
+	background-color:#41A317;
+	margin-left: -5%;
+}
+#footer{
+	clear: both;
+	position: relative;
+	bottom: 1%;
+	margin-top: 20%;
+	border-bottom-left-radius: 2%;
+	border-bottom-right-radius: 2%;
+	width: 90%;
+	background-color: #F88158;
+	display: inline-block;
+	
+}
+#footer ul{
+	list-style-type: none;
+	
+	
+}
+#footer ul li{
+	display:inline-block;
+	margin-right:2.4rem;
+	margin-left:-2rem;
+}
+#total{
+	display:inline-block;
+	height: 0.1rem;
+}
+#totalSum{
+	border:none;
+	width:3rem;
+
+}
