@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+<title>Work</title>
+
+<meta charset="UTF-8">
+<meta name="description" content="Add habbits page from the Cyber-Me project.">
+<meta name="keywords" content="HTML">
+<meta name="author" content="Ionut Indre">
+<link rel="stylesheet" href="stylesheet.css" type="text/css" media="screen"
+title="no title" charset="utf-8"/>
+<script type="text/javascript" src="comportament.js"></script>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- DIV for the first menu of the page. (Icon, Name and score) -->
+<div class="topMenu" id="topMenuBorder">
+<div id="caracterIcon">
+<img src="Icons/logo_20140718.png">
+</div>
+
+<div id="userName">
+<h1>Username</h1>
+</div>
+
+<div id="scoreWrapper">
+<div id="score">
+<h1>1234</h1>
+</div>
+<div id="scoreIcon">
+<i class="fa fa-trophy fa-2x"></i>
+</div>
+</div>
+</div>
+
+
+<!-- DIV for the second menu of the page. (Work and Social switch) -->
+<div id="middleMenuContainer">
+<div id="middleButtonLeft">
+<a href="workMain.html">
+<h2>Work</h2>
+</a>
+</div>
+
+<div id="middleButtonRight">
+<a href="socialMain.html">
+<h2>Social</h2>
+</a>
+</div>
+</div>
+
+<!-- DIV for the third menu of the page. (CRUD) -->
+<div id="crudMenu">
+<button id="bAdd" type="button" onclick="openAdd();" >
+
+<h1 class="redHeaders">+</h1>
+<h3>Add</h3>
+
+</button>
+
+<div id="bUpdate">
+<i class="fa fa-pencil fa-2x"></i>
+<h3>Update</h3>
+</div>
+
+<button type="button" id="bRemove" onclick="listAllItems();">
+<h1 class="redHeaders">-</h1>
+<h3>Remove</h3>
+</button>
+</div>
+
+<!-- DIV for the content table-->
+<div id="tableWrapper">
+<table id="tableBody" >
+<tbody  onload="slide('image1',arr);">
+
+<tr onclick='SelectRow(1)' id='cell_1,1'>
+<td id="tableItem" >Will run 10KM TODAY!!!</td>
+<td  id="tablePic"> </td></tr>
+
+
+
+
+	
+	
+
+
+
+
+
+
+</table>
+</div>
+
+
+<!-- DIV for the inputs forms of the page.(Input forms and submit button) -->
+<div id="inputWrapper">
+<form id="formAdd">
+<input class="inputform" id="formName" type="text" name="Name" value="Name" onfocus="clearContents(this);"> <br>
+<input class="inputform" id="formTime" type="text" name="Time Allocated" value = "Time" onfocus="clearContents(this);"> <br>
+<input class="inputform" id="formRepeat" type="text" name="Number of Repeats" value="Number of Repeats" onfocus="clearContents(this);"> <br>
+
+<button type="button" id="submitField" onclick="store();">
+<h3 id="submitfieldh3">Submit</h3>
+</button>
+</form>
+</div>
+</body>
