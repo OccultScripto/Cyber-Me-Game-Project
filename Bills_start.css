@@ -1,0 +1,158 @@
+html{
+	background-color:#FFF5EE;
+	
+}
+body{
+	font-size:10px;
+}
+.topMenu {
+		background-color: #999999;
+}
+
+#topMenuBorder {
+	width: 19rem;
+	height: 3.3rem;	
+	margin: 0;
+	padding: 0;
+	background-color: #1f262c;
+	display: inline-block;
+	vertical-align:middle;
+}
+
+#caracterIcon {
+	width: 2rem;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	vertical-align:middle;
+}
+
+#caracterIcon img {
+	max-width: 1.9rem;
+	max-height: 1.9rem;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	text-align: center;
+}
+
+#userName {
+	color: #ffffff;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	text-align: center;
+}
+
+#scoreWrapper{
+	border:none;
+	float: right;
+	display: inline-block;
+	margin-top: 1.3rem;
+	margin-right: 1rem;	
+}
+
+#scoreIcon {
+	width:auto;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+
+#scoreIcon i {
+	color: #FFFFFF;
+	max-width: 1.9rem;
+	max-height: 1.9rem;
+}
+
+#navbar {
+	display:inline-block;
+	text-align: center;
+	width:19rem;
+	height: 1.6rem;
+	background: #F88158;
+	font: bold 2rem ,Verdana, sans-serif;
+}
+
+#navbar ul {
+	margin: 0;
+	padding: 0;
+	float: none;
+	list-style-type: none;
+}
+
+#navbar li {
+	padding: 0 2rem  0 0;
+	margin: 0 rem;
+	float: right;
+	border-right: 0.1rem solid white;
+	
+}
+a:hover{background-color: #C04000;}
+
+#navbar ul li:first-child { 
+	border-right: none;
+	margin:none; }
+
+#navbar ul li a:link, #navbar ul li a:active, #navbar ul li a:visited {
+	
+	padding: 0.3rem;
+	line-height: 1.4rem;
+	color: white;
+	text-decoration: none;	
+}
+
+.image{
+	margin-left: 7rem;
+	margin-top: 2rem;
+	width: 5rem;
+	height: 8rem;
+}
+
+#data{
+	margin-left:3.5rem;
+	margin-top:1.9rem;s
+}
+.Income{
+	font: bold 7rem ,Verdana, sans-serif;
+	margin-left:3.5rem;
+}
+
+#incomeText{
+	background-color:#41A317;
+	margin-left: -1rem;
+}
+
+.date{
+	font: bold 7 rem ,Verdana, sans-serif;
+}
+
+#chooseDay{
+	margin-left:3rem;
+}
+#incomeDate{
+	background-color:#41A317;
+	margin-left: -1rem;
+	
+}
+#ui-datepicker-div{
+	width: 10rem;
+	height: 13rem;
+	margin-left: 5rem;
+}
+.footer{
+	
+	clear: both;
+	position: fixed;
+	bottom: auto;
+	margin-top: 2.7rem;
+	border-bottom-left-radius: 0rem;
+	border-bottom-right-radius: 0.2rem;
+	width: 14rem;
+	background-color: #F88158;
+	display: inline-block;
+}
+#Save{
+	margin-left:4rem;
+}
+
