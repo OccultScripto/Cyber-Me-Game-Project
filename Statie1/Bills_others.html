@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cyber Me/Bills/Others</title>
+	<link href="css/toolbars.css" rel="stylesheet" type="text/css">
+	<link href="css/icons/styles/action_icons.css" rel="stylesheet" type="text/css">
+	
+	<link type="text/css" rel="stylesheet" href="css/Bills_others.css"/>
+	<link type="text/css" rel="stylesheet" href="css/Bills_othersAction_menu.css"/>
+	<link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> 
+  	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+  	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 	
+  	<script type="text/javascript" src="js/Bills_othersIndexDB.js"></script>
+  	<script type="text/javascript" src="js/Bills_othersFunctions.js"></script>
+  	<script type="text/javascript" src="js/Bills_others.js"></script>
+  	
+
+  	
+</head>
+
+<body>
+		<div class="topMenu" id="topMenuBorder">
+			<div id="caracterIcon">
+				<img src="logo_20140718.png">
+			</div>
+
+			<div id="userName">
+				<h2>Username</h2>
+			</div>
+
+			<div id="scoreWrapper">
+					<span id='pointss'></span>
+
+						<div id="scoreIcon">
+							<i class="fa fa-trophy fa-2x"></i>
+						</div>
+				</div>
+		</div>
+		
+	<div id="navbar">
+		<ul>
+			<li><a href="others.html"><i class="fa fa-shopping-cart fa-2x"></i></a></li>
+			
+			<li><a href="bills.html"><i class="fa fa-money fa-2x"></i></a></li>
+			
+			<li><a href="food.html"><i class="fa fa-cutlery fa-2x"></i> </a></li>
+			
+			<li><a href="clothes.html"><i class="fa fa-male fa-2x"></i></a></li>
+			
+			<li><a href="start.html"><i class="fa fa-home fa-2x"></i></a></li>
+			
+		</ul>
+	</div>
+	
+	<div id="secondbar">
+		<ol>
+			<li id="button"> 
+				<button type="button" id="start"><i class="fa fa-plus fa-1x"></i> </button>
+			</li>
+			<li>Day</li>
+			<li>Week</li>
+			<li>Month</li>
+			<li>Quater</li>
+			<li>Year</li>
+			<li id="total"> 
+				<input type="text" name="tot" id="totalSum"/> 
+			</li>		
+		</ol>
+	</div>
+
+	<section id="action-menu" data-position="back" class="fullscreen" style="display: none">
+		<form role="dialog" data-type="action" onsubmit="return false;"> 
+			<header>Add Product</header> 
+			<!-- this header is optional -->
+ 				<menu type="toolbar"> 
+					<form> 
+						<input type="text" class="mod" id="Name" placeholder="Name">
+						<input type='text' class="mod" name="server" id="InputSum" placeholder="InputSum"> <i class="fa fa-usd"></i>
+						<input type="text" class="mod" id="incomeDate" placeholder="incomeDate"> <i class="fa fa-calendar"></i>
+						
+			
+						
+						<button class="modal" id="Save"> Add </button>
+ 						<button class="modal" id="close"> Cancel </button> 
+ 			
+ 					</form>
+ 				</menu>
+			</form> 
+
+	</section>
+
+</body>	
+</html>
