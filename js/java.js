@@ -6,11 +6,17 @@ $(window).load(function(){
 	for(var i=0; i<objects.length; i++){
     		var item = objects[i];
     		console.log(item.value.type);
-    		rows+="<li id='listRow'>"+
-	  			" 	<li id='databaseList1'>"+item.value.type+" "+item.value.price+"</li>" +
-	  			/*
-				"	<li id='databaseList2'>"+item.value.price+"</li>"  + */
-				"</li>";
+    		rows+="<li id='databaseList1'>"+item.value.type+" "+item.value.price+"</li>";
+    			console.log(item.value.rate);
+    			
+    			this.className=i;
+    			console.log(this.className);
+				
+				if (item.value.rate==2){					
+						alert("Uhuu");
+   						document.getElementsByClassName(i).style.backgroundColor = "#AA0000";
+ 						//document.getElementById('DatabaseList').style.backgroundColor = "#AA0000";
+					}
 				
 				document.getElementById("DatabaseList").innerHTML ="<ul>"+rows +"</ul>";
 				
