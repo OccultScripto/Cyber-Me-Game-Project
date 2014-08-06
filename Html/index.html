@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+     <link rel="stylesheet" type="text/css" href="../Css/design.css" />
+     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script type='text/javascript' src='../JavaScript/js2.js'>
+
+     </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+			<link rel="stylesheet" href="../font-awesome-4.1.0/css/font-awesome.min.css">
+
+
+        <title>Range</title>
+        
+    </head>
+    <body>
+    
+	<div id="topMenuBar">
+		<div id="logoWrapper">
+			<div id="caracterIcon">
+				<img src="../Icons/Logo.png">
+			</div>
+
+		<div id="userName">
+			<h1>Username</h1>
+		</div>	
+		</div>
+
+	<div id="pageSelect">
+<!--Life-->
+		<div id="life">
+				<a href ="life.html">
+					<i class="fa fa-heart fa-3x"></i>
+				</a>
+		</div>
+<!--Health-->
+		<div id="health" >
+				<a href ="health.html">
+					<i class="fa fa-leaf fa-3x"></i>
+				</a>
+		</div>
+<!--Range-->
+		<div id="range" >
+					<a href ="range.html">
+						<i class="fa fa-arrows fa-3x"></i>
+					</a>
+			</div>
+<!--Bills-->
+		<div id="bills" >
+				<a href ="bills.html">
+					<i class="fa fa-money fa-3x"></i>
+				</a>
+		</div>
+		</div>
+
+<div id="scoreWrapper">
+	<div id="score">
+<h1 id="scoreDisplay">
+1234</h1>
+</div>
+
+<div id="scoreIcon">
+<i class="fa fa-trophy fa-2x"></i>
+</div>
+</div>
+</div>
+ 
+    <div class="Apeareance" >
+     <div class="Options">
+		<div class="item toggle active" data-type="Walk">Walk</div>
+		<div class="item toggle" data-type="Run">Run</div>
+		<div class="item toggle" data-type="Drive">Drive</div>
+		<div class="item button" id="onBtn">On</div>
+     </div>
+     <br><br>
+     <form id="frm">
+     <div class="info" id="info">
+			<input type="text" name="Speed" readonly="" id="Speed" value = "Speed: km/h"><br>
+			<input type="text" name="AverageSpeed" readonly="" id="AverageSpeed" value = "AverageSpeed: km"><br>
+			<hr width="80%">
+			<input type="text" name="Distance" readonly="" id="Distance" value = "Distance: "><br>
+			<input type="text" name="Score" readonly="" id="Score" value = "Score: ">
+			<hr width="80%">
+			<input type="text" name="DistanceOnAction" readonly="" id="DistanceOnAction" value = "DistanceOnAction: ">
+     </div>
+    </form>
+     </div>
+		<div >
+			<div class="item button" id="Reset" onclick="resetFunction()">Reset</div>
+		</div>
+    </body>
+    
+</html>
+
+   
