@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+	<head>
+		<title>Work</title>
+		
+		<meta charset="UTF-8">
+		<meta name="description" content="Work section-CRUD habbits page from the Cyber-Me project.">
+		<meta name="keywords" content="HTML">
+		<meta name="author" content="Ionut Indre">
+			
+		<link rel="stylesheet" type="text/css" href="css/workStylesheet.css">
+		<script type="text/javascript" src="js/work.js"></script>
+		
+		<link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
+		<link href="Building-Blocks-gh-pages/icons/styles/action_icons.css" 
+		rel="stylesheet" type="text/css">
+		
+		<link href="Building-Blocks-gh-pages/style/action_menu.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="Building-Blocks-gh-pages/style/value_selector.css" type="text/css">
+
+		<link rel="stylesheet" href="css/action_menu.css">
+		<link rel="stylesheet" href="Building-Blocks-gh-pages/styles/action_icons.css">
+		
+		<link href="Building-Blocks-gh-pages/style/confirm.css" rel="stylesheet" type="text/css">
+	</head>
+	
+	<body id="body" onload="List();">
+		
+		<!-- DIV for the first menu of the page. (Icon, Name and score) -->
+		<div id="topMenuBar">
+			<div id="logoWrapper">
+				<div id="caracterIcon">
+				 	<img src="Icons/Logo.png">
+				</div>
+				
+				<div id="userName">
+					<h1>Username</h1>
+				</div>	
+			</div>
+		
+			<div id="pageSelect">
+				<!--Life-->
+				<div id="life">
+					<a href ="life.html">
+						<i class="fa fa-heart fa-3x"></i>
+					</a>
+				</div>
+			 	<!--Health-->
+				<div id="health" > 
+					<a href ="health.html">
+						<i class="fa fa-leaf fa-3x"></i>
+					</a>
+				</div>
+			 	<!--Range-->
+				<div id="range" > 
+					<a href ="range.html">
+						<i class="fa fa-arrows fa-3x"></i>
+					</a>
+				</div>
+			 	<!--Bills-->
+				<div id="bills" > 
+					<a href ="bills.html">
+						<i class="fa fa-money fa-3x"></i>
+					</a>
+				</div>
+			</div>
+			
+			<div id="scoreWrapper">
+				<div id="score">
+					<h1 id="scoreDisplay">
+					</h1>
+				</div>
+					
+				<div id="scoreIcon">
+					<i class="fa fa-trophy fa-2x"></i> 
+				</div>
+			</div>
+		</div>
+		
+		<!-- DIV for the second menu of the page. (Work and Social switch) --> 
+		<div id="secondMenuContainer">
+			<div id="secondButtonLeft">
+				<a href="workMain.html">
+					<h2>Work</h2>
+				</a>
+			</div>
+				
+			<div id="secondButtonRight">
+				<a href="socialMain.html">
+					<h2>Social</h2>
+				</a>
+			</div>
+		</div>
+		
+		<!-- DIV for the inputs forms of the page.(Input forms and submit  button) -->
+		<div id="changeWrapper">
+			<form id="formInputs">
+				<input id="formName" type="text" name="Name" value="Name"
+				 onclick="clearContent(this);" > <br>
+				
+				<input id="formTime" type="text" name="Time Allocated" value = "Time" 
+				onclick="clearContent(this);"> <br>
+				
+				<input id="formRepeat" type="text" name="Number of Repeats" value="Number of Repeats"
+				 onclick="clearContent(this);"> <br>
+								
+				<button id="selectType" type="button" onclick="showSelectType();">Select Type</button>
+			</form>		
+					
+				<button id="submitField" type="button" onclick="sendInfo();">Submit</button>	
+		</div>
+		
+		<div id="listWrapper">
+			<ul id="habbitList">		
+			</ul>
+		</div>
+			
+		<div id="habbitTypeModal">
+			<form role="dialog" data-type="value-selector">
+    			<section class="scrollable">
+      			<h1>Type of Habbits</h1>
+      			<ol role="listbox">
+        			<li role="option"><label role="presentation"> <span>Arts</span></label></li>
+        			<li role="option"><label role="presentation"> <span>Bills</span></label></li>
+        			<li role="option"><label role="presentation"> <span>Fitness</span></label></li>
+        			<li role="option"><label role="presentation"> <span>Games</span></label></li>
+        			<li role="option"><label role="presentation"> <span>Health</span></label></li>
+        			<li role="option"><label role="presentation"> <span>Movies</span></label></li>
+        			<li role="option"><label role="presentation"> <span>Range</span></label></li>
+        			<li role="option"><label role="presentation"> <span>Run</span></label></li>
+        			<li role="option"><label role="presentation"> <span>Social</span></label></li>
+        			<li role="option"><label role="presentation"> <span>Speed</span></label></li>
+        			<li role="option"><label role="presentation"> <span>Others</span></label></li>
+      			</ol>
+    			</section>
+    			<menu>
+      				<button class="affirmative full">OK</button>
+    			</menu>
+  			</form>
+		
+ 		</div>
+ 		
+ 		<div id="modalDeleteConfirm">
+ 			<form role="dialog" data-type="confirm">
+  				<section>
+   					<h1>Confirmation</h1><!-- this heading is optional -->
+    				<p>Are you sure you want to delete this contact?</p>
+ 				</section>
+  				<menu>
+    				<button id="cancelDelete">Cancel</button>
+    				<button  id="confirmDelete" class="danger">Delete</button>
+  				</menu>
+			</form>
+ 		</div>
+ 		
+ 		<div id="addButton" onclick="newHabbit();">
+ 			<i class="fa fa-plus-circle fa-5x"></i>
+ 		</div>
+	</body>
