@@ -42,6 +42,9 @@
   margin: 0;
   display: block;
   position: relative;
+  color:#AF543E;
+  font-style:italic;
+  
 }
 
 [data-type="list"] li:last-child {

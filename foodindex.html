@@ -50,19 +50,19 @@
 			<p> </p>
 			<p>
 				<i class="fa fa-star" id='star'> <input type="text" id="maxfood" ></i> 
-				<input name="Submit" type="submit" value="Go to:"><select name="Month" size="1">
-				<option selected="" value="January">January
-				</option><option value="February">February
-				</option><option value="March">March
-				</option><option value="April">April
-				</option><option value="May">May
-				</option><option value="June">June
-				</option><option value="July">July
-				</option><option value="August">August
-				</option><option value="September">September
-				</option><option value="October">October
-				</option><option value="November">November
-				</option><option value="December">December
+				<input name="Submit" id='submit' type="submit" value="Go to:"><select name="Month" size="1">
+				<option selected="" id='l1' value=1>January
+				</option><option id='l2' value=2>February
+				</option><option id='l3' value=3>March
+				</option><option id='l4' value=4>April
+				</option><option id='l5' value=5>May
+				</option><option id='l6' value=6>June
+				</option><option id='l7' value=7>July
+				</option><option id='l8' value=8>August
+				</option><option id='l9' value=9>September
+				</option><option id='l10' value=10>October
+				</option><option id='l11' value=11>November
+				</option><option id='l12' value=12>December
 			</option></select> <select name="Day" size="1"> 
 				<option selected="" value="01">01
 				</option><option value="02">02
@@ -115,9 +115,7 @@
     
        
          </table>
-        <div id='Fields' align="center">
-        	<input type="button" align='center' value='Remove last item'onclick="remove_fields();"/>
-        </div>
+        <p></p>
         <section data-type="list" class="pack-end">
         <ul id='DatabaseList'>
         	

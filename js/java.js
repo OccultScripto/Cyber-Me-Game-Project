@@ -3,25 +3,41 @@ $(window).load(function(){
 	/*document.getElementById('form').style.display='none';
 	document.getElementById('form').style.visibility='hidden';*/
 	var rows="";
+	var ul = document.getElementById('DatabaseList');
+
+		
+	//if (document.getElementById('l8').clicked==true){
 	for(var i=0; i<objects.length; i++){
     		var item = objects[i];
+    		
     		console.log(item.value.type);
-    		rows+="<li id='databaseList1'>"+item.value.type+" "+item.value.price+"</li>";
-    			console.log(item.value.rate);
-    			
-    			this.className=i;
-    			console.log(this.className);
+    		
+    		var row = document.createElement('li');
+    		row.setAttribute("id","databaseList1");
+    		row.innerHTML = item.value.type +" "+ item.value.price;
+    		row.setAttribute("rate", i);
+    		
+    		
+				if (item.value.rate==1){
+					row.style.backgroundColor='grey';
+				} else if(item.value.rate==2){
+					row.style.backgroundColor='yellow';					
+				} else if (item.value.rate==3){
+					row.style.backgroundColor='lightblue';
+				} else if (item.value.rate==4){
+					row.style.backgroundColor='green';
+				} else if(item.value.rate==5){					
+   						row.style.backgroundColor = "#AA0000";
+					}				
 				
-				if (item.value.rate==2){					
-						alert("Uhuu");
-   						document.getElementsByClassName(i).style.backgroundColor = "#AA0000";
- 						//document.getElementById('DatabaseList').style.backgroundColor = "#AA0000";
-					}
-				
-				document.getElementById("DatabaseList").innerHTML ="<ul>"+rows +"</ul>";
+				ul.appendChild(row);
 				
     	}
-    }		
+    
+  
+
+    }	
+    
     		database.getAllItems(callback);
 	});
 
@@ -29,6 +45,8 @@ $(window).load(function(){
 function addtodatabase (){	
 	var object={};
 	var type=document.getElementById('typefood').value;
+	type=type.toUpperCase(type[0]);
+
 	var price=document.getElementById('food').value;
 	if (document.getElementById('1').checked) {
   		var rate= document.getElementById('1').value;
