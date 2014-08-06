@@ -1,3 +1,24 @@
+#DatabaseList{
+	
+	background-color:grey;
+}
+
+#maxfood{
+	display:inline-block;
+	width:2rem;
+	border:none;
+	color:white;
+	background-color:#999999;
+	padding-right:3rem;
+	padding-left:-2rem;
+	text-align:left;
+	
+}
+
+#star{
+	margin-right:-3rem;
+}
+
 ul .bar{
 	width:19rem;
 	height:3rem;
@@ -177,7 +198,7 @@ li {
 }
 
 #topMenuBorder {
-    width: 23rem;
+    width: 21rem;
     height: 4rem;
     margin-top: -1rem;
     margin-right: 8rem;
@@ -237,7 +258,7 @@ li {
 	max-width: 100%;
 	max-height: 100%;
 	margin: 0;
-	padding: 0;
+	padding-right:1rem;
 	display: inline-block;
 	color: #FFFFFF;
 }
@@ -246,42 +267,10 @@ li {
 	color: #FFFFFF;
 }
 
-/*input='radio'.nice{
-							display:none;
-						}
-
-input='radio'.nice+ label.nice{
-							padding-left:26px;
-							height:20px; 
-							display:inline-block;
-							line-height:20px;
-							background-repeat:no-repeat;
-							background-position: 0 0;
-							font-size:20px;
-							vertical-align:middle;
-							cursor:pointer;
-
-						}
-
-						input='radio':checked.nice +label.nice {
-							background-position: 0 -20px;
-						}
-						label.nice{
-				background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_2cb8a4b3f2a02aaeb417e68d893b29d3.png);
-				-webkit-touch-callout: none;
-				-webkit-user-select: none;
-				-khtml-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
-			
-*/
 input[id=scoreval]{
 	background-color:#1F262C;
 	color:white;
 	width:2rem;
-	padding-right:2px;
 	border:none;
 	font-size:1rem;
 	

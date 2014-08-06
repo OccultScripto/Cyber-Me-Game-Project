@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <title>Food</title>
-<head>
-     
+<head>     
      	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	 <script type="text/javascript" src='js/java.js'></script>
+	 <script type="text/javascript" src='js/indexedDB.js'></script>
+	 	<link rel='stylesheet' type='text/css' href='css/lists.css'/>  
+     <link rel='stylesheet' type='text/css' href='css/foodstylesheet.css'/>    
+	<link rel="stylesheet" href="icons/font-awesome-4.1.0/css/font-awesome.min.css">
 
-	 <script type="text/javascript" src='java.js'></script>
-     <link rel='stylesheet' type='text/css' href='foodstylesheet.css'/>
-    
-	<link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
-    
+	
 </head>     
 <body>
 <!-- DIV for the upper menu. -->
 			<div class="topMenu" id="topMenuBorder">
 
 				<div id="caracterIcon">
-				 	<img src="Resources/logo1.png">
+				 	<img src="icons/logo1.png">
 				</div>
 
 				<div id="userName">
@@ -38,7 +38,7 @@
 			<ul  id='bar'class='tab-links' >
 		<li class='menut' class='activetab' ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_start.html'><i class="fa fa-home fa-2x"></i></a></li>
 		<li class='menut' class='activetab'><a href='http://127.0.0.1:8020/NewProj/MergeUs/indexBills.html'><i class="fa fa-money fa-2x"></i></a></li>
-		<li class='menut' class='activetab' ><a href='http://127.0.0.1:8020/NewProj/MergeUs/FoodIndex.html'><i class="fa fa-cutlery fa-2x"></i> </a></li>
+		<li class='menut' class='activetab' ><a href='foodindex.html'><i class="fa fa-cutlery fa-2x"></i> </a></li>
 		<li class='menut' class='activetab'><a href='http://127.0.0.1:8020/NewProj/MergeUs/ClothesIndex.html'><i class="fa fa-male fa-2x"></i></a></li>
 		<li class='menut' class='activetab' ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_others.html'><i class="fa fa-shopping-cart fa-2x"></i></a></li>
 	</ul>
@@ -48,7 +48,9 @@
 	<form>
 			<input name="Search" type="hidden" value="power">
 			<p> </p>
-			<p><a href="addfood.html"><i class="fa fa-plus"> </i></a> <select name="Month" size="1">
+			<p>
+				<i class="fa fa-star" id='star'> <input type="text" id="maxfood" ></i> 
+				<input name="Submit" type="submit" value="Go to:"><select name="Month" size="1">
 				<option selected="" value="January">January
 				</option><option value="February">February
 				</option><option value="March">March
@@ -61,7 +63,7 @@
 				</option><option value="October">October
 				</option><option value="November">November
 				</option><option value="December">December
-			</option></select> <select name="Day" size="1">
+			</option></select> <select name="Day" size="1"> 
 				<option selected="" value="01">01
 				</option><option value="02">02
 				</option><option value="03">03
@@ -93,9 +95,36 @@
 				</option><option value="29">29
 				</option><option value="30">30
 				</option><option value="31">31
-			</option></select> <input name="Submit" type="submit" value="Go to:">
-			</p></form>
+			</option></select> <a href="addfood.html"><i class="fa fa-plus"> </i></a> </p></form>
 			
+			
+<legend class="action">Food</legend>
+    <section id='change_area'>
+      <table id='field'>
+      	<tr id='allFields'>
+      		<td >
+      			<input id='field1' type="text" placeholder="Type"  />	
+      		</td>
+      		
+      		<td >
+      			 <input type="text" placeholder="Price"  required="">	
+      		</td>
+       		
+       		
+      	</tr>
+    
+       
+         </table>
+        <div id='Fields' align="center">
+        	<input type="button" align='center' value='Remove last item'onclick="remove_fields();"/>
+        </div>
+        <section data-type="list" class="pack-end">
+        <ul id='DatabaseList'>
+        	
+        </ul>
+        </section>
+    </section>
+
 
 
 
