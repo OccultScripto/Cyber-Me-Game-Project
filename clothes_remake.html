@@ -6,19 +6,19 @@
 	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	<link href="(your styles folder)/icons/styles/action_icons.css" rel="stylesheet" type="text/css">
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link rel='stylesheet' type='text/css' href='css/clothes_remake_stylesheet.css'/>
       
 <link rel="stylesheet" type="text/css" href="css/headers.css"/>
-<!--<link rel="stylesheet" type="text/css" href="lists.css" />-->
+<link rel="stylesheet" type="text/css" href="css/lists.css" />
+<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+
     <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css'/>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome-4.1.0/font-awesome-4.1.0/css/font-awesome.min.css">
          <script type='text/javascript' src="js/indexedDB.js"></script>
+	<script src="js/Chart.js"></script>
 
     <script type='text/javascript' src="js/clothes_remake_script.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     
 </head>
 <body id='body'>
@@ -63,8 +63,8 @@
 
 <div id="scoreWrapper">
 		<div id="score">
-		<h1 id="scoreDisplay">
-			123
+		<h1 >
+			<input type='text' style="color:white" id='scoreDisplay' />
 		</h1>
 </div>
 
@@ -135,15 +135,19 @@
     
        
          </ul>
-        <div id='Fields'>
+        <div id='Fields' align='center'>
+       <!--<button class='recommend' id='submit' value='Submit' onclick="TotalScore();add();">Submit</button>
+                <button class='danger' id='remove'>Remove</button>-->
+
         	<input id='remove' type="button" value='Remove'onclick="remove_fields();"/>
-        	<input id='submit' type='button' value='Submit'  />
+        	<input id='submit' type='button' value='Submit' onclick="TotalScore();add();"  />
         </div>
     </section>
   
 </form>
 
 </div>
+	<canvas id='myChart' width='400' height='90'></canvas>
 </body>
 
 

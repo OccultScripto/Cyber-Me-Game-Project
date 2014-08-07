@@ -484,3 +484,35 @@ margin-right: 3rem;
 height: 3rem;
 width: 3rem;
 }
+
+#DatabaseList{
+	
+	background-color:#F97C17; 
+}
+#nameD{
+	width:50%;
+	text-align:center;
+}
+#priceD{
+	width:50%;
+	text-align: center;
+}
+#myChart{
+	margin-top:0rem;
+}
+input[id=scoreDisplay]{
+	background-color:#1f262c;
+	color:white;
+	width:2em;
+	
+}
+#submit{
+	border-radius:50%;
+	background-color:#00ADAD;
+	padding:1rem;
+}
+#remove{
+	border-radius:50%;
+	background-color:#EA4B12;
+	padding:1rem;
+}

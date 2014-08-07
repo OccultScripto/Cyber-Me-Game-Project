@@ -21,6 +21,80 @@ function init(){
 	
 };
 
+function add()
+{
+
+var newtotal=document.getElementById('price').value;
+localStorage.setItem('today',newtotal);
+var retrievedObject = localStorage.getItem('today');
+//alert('price'+retrievedObject);
+Points(retrievedObject);
+};
+
+function sumtotal(){
+	var s=localStorage.getItem('today');
+	alert('whaat??'+s);
+	st=0;
+	st=+st + +s;
+	var thisweadd=localStorage.getItem('clothestotal');
+	sum=+thisweadd + +st;
+    localStorage.setItem('clothestotal',sum);
+	//document.getElementById('total').value=localStorage.getItem('clothestotal');
+	Points(s);
+	
+
+}
+
+function Points(value){
+
+x=value;
+//alert('value???'+x);
+if (x<=50){	
+	localStorage.setItem('pointsc',1);
+	value=localStorage.getItem('pointsc');
+		//confirm("OK? "+value);
+
+}
+else if (x>50 && x<=100){
+	localStorage.setItem('pointsc',2);
+	value=localStorage.getItem('pointsc');
+	
+	//confirm("OK? "+value);
+
+}
+else if (x>100 && x<=200){
+	localStorage.setItem('pointsc',3);
+	value=localStorage.getItem('pointsc');
+	
+	//confirm("OK? "+ value);
+	//document.getElementById('score_val').value=value;
+} else if (x>200 && x<=500){
+	localStorage.setItem('pointsc',4);
+	value=localStorage.getItem('pointsc');
+	
+	//confirm("OK? "+ value);
+	//document.getElementById('score_val').value=value;
+} else {
+	localStorage.setItem('pointsc',5);
+	value=localStorage.getItem('pointsc');
+	
+	//confirm("OK? "+ value);
+	//document.getElementById('score_val').value=value;
+}
+
+};
+
+function TotalScore(){
+	//localStorage.setItem('score',0);
+	sum= +localStorage.getItem('scorec') + +localStorage.getItem('pointsc');
+	localStorage.setItem('scorec',sum);
+	v=localStorage.getItem('scorec');
+	//confirm("Ok: "+v+" ?");	
+	document.getElementById('scoreDisplay').value=v;
+	
+};
+
+
 
 function more_fields(){
 	 
@@ -49,6 +123,7 @@ function more_fields(){
 function remove_fields(){
 	var el=document.getElementById('field');//.deleteRow(localStorage.getItem('rows')-1);
 	var x=localStorage.getItem('rows')-1;
+	alert(localStorage.getItem('rows'));
 	//el.remove(el.x);
 	el.removeChild(el.childNodes[x]);
 	var rows=localStorage.getItem('rows');
@@ -68,6 +143,51 @@ function remove_fields(){
 	
 }
 
+function nrTtypes(){
+  	
+function call(objects){
+/*document.getElementById('form').style.display='none';
+document.getElementById('form').style.visibility='hidden';*/
+	var rows="";
+var formal=0;
+var casual=0;
+var office=0;
+    	for(var i=0; i<objects.length; i++){
+    		var item = objects[i];
+           if(item.value.type=='Formal')
+           {
+    			formal=+formal +1;
+    			
+           }
+			else if(item.value.type=='Office'){
+				office=+office+1;
+			}	
+		 else if(item.value.type=='Casual'){
+		 		casual=+casual+1;
+		 }
+        
+        }
+ localStorage.setItem('Formalt',formal);
+ localStorage.setItem('Officet',office);
+ localStorage.setItem('Casualt',casual);
+ 
+          	
+
+
+
+};
+database.getAllItems(call);
+
+}
+function reset(){
+	localStorage.setItem('Formalt',0);
+	localStorage.setItem('Officet',0);
+	localStorage.setItem('Casualt',0);
+	localStorage.setItem('scorec',0);
+	localStorage.setItem('clothestotal',0);
+
+}
+
 
 function tableCreate(val){
 document.getElementById('form').style.visibility='hidden';
@@ -83,45 +203,45 @@ document.getElementById('form').style.visibility='hidden';*/
     
     			if (item.value.type==val){
     			    	rows+="<li id='listRow'>"+	
-	  			"<div  class='databaseList1'>"+item.value.name+"</div>"+ 
-	  			" "+
-	  			"<div id='databasePrice' class='databaseList1'>"+item.value.price+"</div>"+
+	  			"<div  id='nameD' class='databaseList1'>"+item.value.name+"</div>"+
+	  			"<div  id='priceD' class='databaseList1'>"+item.value.price+"</div>"+
+
 	  			//"<div class='col-md-2 col-xs-3' id='databaseList1'>"+item.value.price+"</div>" +
 	  			/*
 				"	<li id='databaseList2'>"+item.value.price+"</li>"  + */
 				"</li>";
 				
 				document.getElementById("column1").innerHTML ="<div>"+rows +"</div>";	
-			switch(item.value.type){
-				case'Formal':
-				 var formal=localStorage.getItem('Formalt');
-				var t=0;
-	        	t=+formal + +1;
-    			localStorage.setItem('Formalt',t);
-    			break;
-    		 case 'Office':
-    		  var office=localStorage.getItem('Officet');
-				var t=0;
-	        	t=+office + +1;
-    			localStorage.setItem('Officet',t);
-    			break;
-    			case 'Casual':
-    		  var casual=localStorage.getItem('Casualt');
-				var t=0;
-	        	t=+casual + +1;
-    			localStorage.setItem('Casualt',t);
-    			break;
-    		 
-				   
-			}
 		
     			};
-  
-    			
-    			
-						
-    		}
-    		
+  			
+  	}
+ var f=localStorage.getItem('Formalt');
+  var o=localStorage.getItem('Officet');
+ var c=localStorage.getItem('Casualt');
+
+  data={
+  	labels:["Formal", "Office"," Casual"],
+  	datasets:[
+  	{
+  		 label: "My First dataset",
+            fillColor: "rgba(140, 72, 159,1)",
+            strokeColor: "rgba(140, 72, 159,1)",
+            highlightFill: "rgba(140, 72, 159,1)",
+            highlightStroke: "rgba(140, 72, 159,1)",
+            data: [f, o, c]
+  	}
+  	]
+  };
+  	var ctx = document.getElementById("myChart").getContext("2d");
+var myNewChart = new Chart(ctx).PolarArea(data);   
+new Chart(ctx).PolarArea(data, data.labels);
+var myBarChart = new Chart(ctx).Bar(data, data.datasets);
+ /* 
+  var chart="";
+   chart+="<canvas id='myChart' width='400' height='400'></canvas>";
+   document.getElementById("column2").innerHTML ="<div>"+chart +"</div>";	
+		*/
     };
 
 
@@ -132,10 +252,29 @@ document.getElementById('form').style.visibility='hidden';*/
 database.getAllItems(callback);
 
 }
-function changeBg(newBg)
+
+function compare(x,y,z){
+	if ((x>=y)&&(x>=z)){
+		return x;
+	}
+	else if((y>x)&&(y>=z)){
+		return y;
+	}
+	else if((z>x)&&(z>y)){
+		return z;
+	}
+}
+
+function popUp()
 {
-    var imgdiv = document.getElementById("divwithbackground");
-    imgdiv.style.backgroundImage = "url(" + newBg + ")";
+   var popImg=document.createElement('div'); 
+   popImg.setAttribute('id',popImg);
+   var f=localStorage.getItem('Formalt');
+  var o=localStorage.getItem('Officet');
+ var c=localStorage.getItem('Casualt');
+if(compare(f,c,o)==f){
+	popImg.setAttribute('innerHTML',"<img src='http://cf.chucklesnetwork.com/items/5/2/6/3/original/not-sure-if-everything-is-expensive-or-im-just-poor.jpg'/>");
+}
 }
 
 function replace(){
@@ -149,12 +288,15 @@ function replace(){
    //document.getElementById('DatabaseList').style.display='none';
 document.getElementById('DatabaseList').style.visibility='hidden';
   change.style.visibility='visible';
+  document.getElementById('column1').innerHTML="";
+  document.getElementById('column2').innerHTML="";
+  document.getElementById('DatabaseList').innerHMTL="";
   init();
 
 };
 
 $(document).ready(function(){
-	
+//reset();
 	   window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
     var dbVersion=1.0;
     window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
@@ -166,6 +308,7 @@ $(document).ready(function(){
  document.getElementById('scoreFormal').value=localStorage.getItem('Formalt');
   document.getElementById('scoreOffice').value=localStorage.getItem('Officet');
    document.getElementById('scoreCasual').value=localStorage.getItem('Casualt');
+   document.getElementById('scoreDisplay').value=localStorage.getItem('scorec');
 var add=document.getElementById('submit');
 $(add).click(function(){
 
@@ -180,6 +323,7 @@ object.price=price;
 
 
 database.insertItem(object);
+nrTtypes();
 
 	
 });
@@ -201,7 +345,6 @@ if (val<10){
 var rem=document.getElementById('remove');
 $(rem).click(function(){
 	remove_fields();
-
 
 });
 
@@ -267,6 +410,7 @@ $(rem).click(function(){
    		$('#plus1').removeClass('green');
    		$('#plus3').removeClass('green');
    				document.getElementById('field3').value="Office";
+   	
    	}
    });
     $('#plus3').click(function(){
@@ -276,6 +420,10 @@ $(rem).click(function(){
    				document.getElementById('field3').value="Casual";
    	}
    });
+ 
+
+
+
 });
 
 
