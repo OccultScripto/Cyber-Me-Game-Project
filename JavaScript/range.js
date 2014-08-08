@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //navigator.geolocation.getCurrentPosition(GetLocation);
 
-var score = 0;
 var limit = 0;
 var active = false;
 var refreshTime = 1;
+var p1;
 
 //initializarea aplicatiei
 function init(){
@@ -57,9 +57,11 @@ function init(){
 		}
 	);
 	//document.getElementById('Walk').addEventListener('click', function() { setSelected(this); });
+	
+	//p1 = findMyCurrentLocation();
 };
 
-//obiectul punct care salveaza coorondatele
+//obiectul punct care salveaza coordonatele
 function punct(x,y){
 	console.log("am intrat in punct");
 	
@@ -91,6 +93,7 @@ var details = {
 	totalWalk : 0,
 	totalRun : 0,
 	totalDrive : 0,
+	score : 0,
 	
 	reset : function (){
 		console.log("am intrat in details.Reset");
@@ -98,25 +101,10 @@ var details = {
 		this.totalWalk = 0;
 		this.totalRun = 0;
 		this.totalDrive = 0;
+		this.score = 0;
 	},	
 };
 
-//GetLocation returneaza coorodnatele dispozitivului
-function GetLocation() {
-	console.log("am intrat in GetLocation");
-		
-	return new punct(location.coords.latitude,location.coords.longitude);
-};
-
-//distance2Points distanta dintre 2 puncte
-function distance2Points(p1,p2){
-	console.log("am intrat in distance2Points");
-		
-	var x3 = (p1.x - p2.x) * (p1.x - p2.x);
-	var y3 = (p2.y - p2.y) * (p1.y - p2.y);
-	
-	return Math.pow((x3 + y3), 1/2);
-};
 
 function addDistance(){
 	console.log("am intrat in addDistance");
@@ -131,21 +119,21 @@ function adaugaScore(distance){
 	if (options.getSelected() == "Walk"){
 		if (distance / 1000 > limit){
 			this.limit ++;
-			this.Score = Score + 2;
+			details.score += 2;
 		}
 	}
 	
 	if (options.getSelected() == "Run"){
 		if (distance / 1000 > limit){
 			this.limit ++;
-			this.Score = Score + 3;
+			details.score += 3;
 		}
 	}
 	
 	if (options.getSelected() == "Drive"){
 		if (distance / 5000 > limit){
 			this.limit ++;
-			this.Score = Score + 1;
+			details.score += 1;
 		}
 	}
 };
@@ -153,32 +141,51 @@ function adaugaScore(distance){
 
 //actiunea butonului ON;
 function onFunction(){
-	console.log("s-a apasat butonul on" + this.active);
 		
 	if (this.active == false){
-		console.log("active=" + active);
 		document.getElementById('info').style.visibility='visible';
 		document.getElementById('Reset').style.visibility='visible';
 		
 		this.active = true;
 		this.limit = 1;
 		
-		//Start gps and aplication 
+		//read data from local storage
+		
+		if (isNaN(localStorage.getItem('Walk'))) details.totalWalk = 0;
+		else details.totalWalk =parseFloat(localStorage.getItem('Walk'));
+		if (isNaN(localStorage.getItem('Run'))) details.totalRun = 0;
+		else details.totalRun =parseFloat(localStorage.getItem('Run'));
+		if (isNaN(localStorage.getItem('Drive'))) details.totalDrive = 0;
+		else details.totalDrive =parseFloat(localStorage.getItem('Drive'));
+		if (isNaN(localStorage.getItem('Score'))) details.score = 0;
+		else details.score =parseInt(localStorage.getItem('Score'));
+		
+		if (details.totalWalk == NaN) details.totalWalk = 0;
+		if (details.totalRun == NaN) details.totalRun = 0;
+		if (details.totalDrive == NaN) details.totalDrive = 0;
+		if (details.score == NaN) details.score = 0;
+		
+		window.timer = 0; 
 		startTime(0,0,options.getSelected());
 	} else {
-		console.log("active=" + active);
 		this.limit = 1;
 		this.active = false;
 		
 		//hide details
-		
   	 	document.getElementById("info").style.visibility='hidden';
   	 	document.getElementById("Reset").style.visibility='hidden';
-		}
+
+  	 	//save in localstorage
+  	 	localStorage.setItem("Walk", Math.round(details.totalWalk*100)/100);
+  		localStorage.setItem("Run", Math.round(details.totalRun*100)/100);
+  	 	localStorage.setItem("Drive", Math.round(details.totalDrive*100)/100);
+		localStorage.setItem("Score", details.score);
+	}
 };
       
    
 function startTime(distanceIn,timeIn,optionIn){
+	window.timer++;
 	setTimeout(function () {
 		
 		// se initializeaza varibaliele 
@@ -190,17 +197,20 @@ function startTime(distanceIn,timeIn,optionIn){
 		
 		//verifica daca s-a modificat pozitia pe gps de la untimul refresh
 		if (false){
-			var p2 = GetLocation();		
-			console.log(p.x + " " + p.y);
-			distance = distance + distanta2Pc(p,p2);
-			this.p = p2;
+			this.p1 = p2;
+			var p2 = findMyCurrentLocation();	
+			d2 = distanta2Pc(p,p2);
+			Math.round(d2*100)/100 ;
 		}
 	
 		//se genereaza o distanta random pentru testare
-		var d2 = addDistance();
 		
-		//se actualizeaza datele 
-		distance = distance + d2; 
+		if (true){
+			var d2 = addDistance();
+			Math.round(d2*100)/100 ;			 
+		}
+		
+		distance = distance + d2;
 		aspeed = distance / time; 
 		speed = d2/refreshTime;
 		
@@ -208,25 +218,27 @@ function startTime(distanceIn,timeIn,optionIn){
 		adaugaScore(distance);  
 		
 		//actualizez datele in interfata
-		document.getElementById('Speed').value=("Speed: " + speed.toFixed(2) + " m/s"); 
-		document.getElementById('AverageSpeed').value=("AverageSpeed: " + aspeed.toFixed(2) + " m/s"); 
-		document.getElementById('Distance').value=("Distance: " + distance.toFixed(2)+ " m");    
-		document.getElementById('Score').value=("Score: " + this.score);                          
+		document.getElementById('Speed').value=("Speed: " + Math.round(speed*100)/100 + " m/s"); 
+		document.getElementById('AverageSpeed').value=("AverageSpeed: " + Math.round(aspeed*100)/100 + " m/s"); 
+		document.getElementById('Distance').value=("Distance: " +  Math.round(distance*100)/100 + " m");    
+		document.getElementById('Score').value=("Score: " + details.score);                          
     	
     	//daca butonul de on este inca activ si optiunea selecetata este tot aceeasi.
     	//modific distanta totala pentru actiunea selectata
     	if (active == true && opt == options.getSelected()) {
-    		console.log("active true, option true" + active + " " + opt);
     		if (opt == "Walk"){
     			details.totalWalk = details.totalWalk + d2;
-    			document.getElementById("DistanceOnAction").value = ("Walk distance today: " + details.totalWalk.toFixed(2));
+    			Math.round(details.totalWalk*100)/100;
+    			document.getElementById("DistanceOnAction").value = "Walk distance today: " + Math.round(details.totalWalk*100)/100;
     		} else if (opt == "Run") {
     			details.totalRun = details.totalRun + d2;
-    			document.getElementById("DistanceOnAction").value = ("Run distance today: " + details.totalRun.toFixed(2));
+    			Math.round(details.totalRun*100)/100;
+    			document.getElementById("DistanceOnAction").value = "Run distance today: " + Math.round(details.totalRun*100)/100;
     		}   else {
     			details.totalDrive = details.totalDrive + d2;
-    			document.getElementById("DistanceOnAction").value = ("Drive distance today: " + details.totalDrive.toFixed(2));
-    		}  
+    			Math.round(details.totalDrive*100)/100;
+    			document.getElementById("DistanceOnAction").value = "Drive distance today: " + Math.round(details.totalDrive*100)/100;
+    		}
       	 	startTime(distance,time,opt);             
   	 	} else {
   	 		//daca butonul nu este activ se fac invizibile informatiile
@@ -244,15 +256,15 @@ function startTime(distanceIn,timeIn,optionIn){
 			
 			if (opt == "Walk"){
 				this.limit = 1;
-    			document.getElementById("DistanceOnAction").value = ("Walk distance today: " + details.totalWalk.toFixed(2));
+    			document.getElementById("DistanceOnAction").value = "Walk distance today: " + Math.round(details.totalWalk*100)/100;
     			startTime(0,0,options.getSelected());
     		} else if (opt == "Run") {
     			this.limit = 1;
-    			document.getElementById("DistanceOnAction").value = ("Run distance today: " + details.totalRun.toFixed(2));
+    			document.getElementById("DistanceOnAction").value = "Run distance today: " + Math.round(details.totalRun*100)/100;
     			startTime(0,0,options.getSelected());
     		}   else {
     			this.limit = 1;
-    			document.getElementById("DistanceOnAction").value = ("Drive distance today: " + details.totalDrive.toFixed(2));
+    			document.getElementById("DistanceOnAction").value = "Drive distance today: " + Math.round(details.totalDrive*100)/100;
     			startTime(0,0,options.getSelected());
     		}     
   	 		}           
@@ -270,117 +282,31 @@ function resetFunction(){
 }
 
 
-
-//Baza de date
-
-/*var database = {};
-
-(function (exports) {
-	
-    // IndexedDB
-    var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB,
-        dbVersion = 1.0;
-			
-		//This line deletes the database - used for testing purposes
-		//indexedDB.deleteDatabase("imageFiles");
-
-    // Create/open database
-    var request = indexedDB.open("database", dbVersion),
-		
-        db,
-				
-		//Method for creating the <image> objectStore in indexedDB
-        createObjectStore = function (dataBase) {
-            // Create an objectStore
-            dataBase.createObjectStore("data", { autoIncrement : true });
-        },
-				
-		//Method for inserting a picture in IndexedDB; It first removes a picture if there are maximum pictures already stored;
-		insertItem = function(item){
-					
-			// Open a transaction to the database
-		    var transaction = db.transaction(["data"], "readwrite");
-					
-		    // Put the blob into the database
-		   	var put = transaction.objectStore("data").put(item);
-
-		},
-				
-		//Method for getting a picture by id
-		getItemById = function(id, callback){
-		  
-		  callback = callback || function(){};	
-          // Open a transaction to the database
-          var transaction = db.transaction(["data"], "readwrite");
-					
-          // Retrieve the file that was just stored
-          transaction.objectStore("data").get(id).onsuccess = function (event) {
-              var item = event.target.result;
-			  callback(item);
-          };
-		},
-					
-		//Method for getting all stored pictures from indexedDB	
-		getAllItems = function(callback){
-			
-			callback = callback || function(){};
-			var items = [];
-			var dataObjectStore = db.transaction(["data"], "readwrite").objectStore("data");
-
-			dataObjectStore.openCursor().onsuccess = function(event) {
-				var cursor = event.target.result;
-				if (cursor) {
-					items.push({key: cursor.key, value: cursor.value});
-					    cursor.continue();
-				}
-				else {
-						callback(items);
-					  }
-			};
-		},
-				
-		//Method for deleting the picture with the lowest id(the "older" picture) from idexedDB
-		deleteItem = function(id, callback){
-			
-			callback = callback || function(){};		
-			var request = db.transaction(["data"], "readwrite")
-							.objectStore("data")
-					        .delete(id);
-			request.onsuccess = function(event) {
-				callback();
-			};
-					
-		};
- 
-    request.onerror = function (event) {
-        console.log("Error creating/accessing IndexedDB database");
-    };
- 
-    request.onsuccess = function (event) {
-        db = request.result;
- 
-        db.onerror = function (event) {
-            console.log("Error creating/accessing IndexedDB database");
-        };
-    };
-    
-    // For future use. Currently only in latest Firefox versions
-    request.onupgradeneeded = function (event) {
-		createObjectStore(request.result);
-    };
-		
-	//Here we export all the methods that we need in the other parts of the application
-	exports.insertItem = insertItem;
-	exports.getItemById = getItemById;
-	exports.getAllItems = getAllItems;
-	exports.deleteItem = deleteItem;
-		
-})(database);*/
-window.onload=function(){
- 	if(localStorage){
-		document.getElementById('frm').addEventListener('off',function(){
-			var name=document.getElementById('DistanceOnAction'.value);
-			localStorage.setItem('DistanceOnAction',DistanceOnAction);
-		});
+function findMyCurrentLocation(){
+	var geoService = navigator.geolocation;
+	if (geoService) {
+		navigator.geolocation.getCurrentPosition(showCurrentLocation,errorHandler);
+	} else {
+		$("#searchResults").html("Your Browser does not support GeoLocation.");
 	}
 }
+ 
+function showCurrentLocation(position){
+	return punct(position.coords.latitude,position.coords.longitude) ;
+}
+ 
+function errorHandler(error){
+	  console.log("Error while retrieving current position. Error code: " + error.code + ",Message: " + error.message);
+}
+
+
+//distance2Points distanta dintre 2 puncte
+function distance2Points(p1,p2){
+	console.log("am intrat in distance2Points");
+		
+	var x3 = (p1.x - p2.x) * (p1.x - p2.x);
+	var y3 = (p2.y - p2.y) * (p1.y - p2.y);
+	
+	return Math.pow((x3 + y3), 1/2);
+};
+
