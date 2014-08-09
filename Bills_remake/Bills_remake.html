@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="jQuery/jquery-ui.min.css">
+ 	 <script type='text/javascript' src="jQuery/jquery-2.1.1.min.js"></script>
+  	<script type='text/javascript' src="jQuery/jquery-ui.min.js"></script>
+    <link rel='stylesheet' type='text/css' href='css/bills_remake_stylesheet.css'/>
+      
+<link rel="stylesheet" type="text/css" href="css/headers.css"/>
+<link rel="stylesheet" type="text/css" href="css/lists.css" />
+<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+
+    <link rel="stylesheet" href="font-awesome-4.1.0/font-awesome-4.1.0/css/font-awesome.min.css">
+    <script type='text/javascript' src="js/indexedDB.js"></script>
+
+    <script type='text/javascript' src="js/bills_remake_script.js"></script>
+    
+</head>
+<body id='body'>
+<!-- DIV for the first menu of the page. (Icon, Name and score) -->
+<div id="topMenuBar">
+	<div id="logoWrapper">
+			<div id="caracterIcon">
+					<img src="Icons/logo_20140718.png">
+			</div>
+
+		<div id="userName">
+			<h1>Username</h1>
+		</div>	
+</div>
+
+<div id="pageSelect">
+<!--Life-->
+	<div id="life">
+			<a href ="life.html">
+				<i class="fa fa-heart fa-3x"></i>
+				</a>
+	</div>
+<!--Health-->
+	<div id="health" >
+			<a href ="health.html">
+				<i class="fa fa-leaf fa-3x"></i>
+				</a>
+	</div>
+<!--Range-->
+	<div id="range" >
+			<a href ="range.html">
+				<i class="fa fa-arrows fa-3x"></i>
+			</a>
+	</div>
+<!--Bills-->
+	<div id="bills" >
+			<a href ="bills.html">
+				<i class="fa fa-money fa-3x"></i>
+			</a>
+	</div>
+</div>
+
+<div id="scoreWrapper">
+		<div id="score">
+		<h1 >
+			<input type='text' style="color:white" id='scoreDisplay' />
+		</h1>
+</div>
+
+<div id="scoreIcon">
+		<i class="fa fa-trophy fa-2x"></i>
+</div>
+</div>
+</div>
+		<div class='menut' class="contain">
+	
+			<ul  class='tab-links' >
+		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_start.html'><i class="fa fa-home fa-2x"></i></a></li>
+		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/indexBills.html'><i class="fa fa-money fa-2x"></i></a></li>
+		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/FoodIndex.html'><i class="fa fa-cutlery fa-2x"></i> </a></li>
+		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/ClothesIndex.html'><i class="fa fa-male fa-2x"></i></a></li>
+		<li ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_others.html'><i class="fa fa-shopping-cart fa-2x"></i></a></li>
+	</ul>
+</div>
+<div class='scoreboard'>
+<ul>
+		<li><i id='plus' class="fa fa-plus fa-3x" ></i></li>
+		<li><div><i id='sadRobot' class="fa fa-reddit fa-4x"></i> 
+			<input type='text' id='red'/> 
+			</div></li>
+</ul>
+</div>
+<div class='FixedBills'>
+	<ul>
+		<li class='headerList'>Fixed-Bill</li>
+		<li class='headerList'>Price</li>
+		<li class='headerList'>Due Date</li>
+		<li class='headerList'>Fixed?</li>
+		
+	</ul>
+	
+	<ul id='ListFixedBills'>
+		
+	</ul>
+	<ul id='UnpaidBills'>
+	</ul>
+</div>
+<input type='button' value='Submit' id='SubButton'/>
+<input type='button' value='Pay' id='PayButton'/>
+</body>
