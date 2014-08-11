@@ -1,63 +1,57 @@
 html{
-	margin:0;
-	padding:0;
+margin:0;
+padding:0;
 }
-
-
 input[type="text"] {
-  position:relative;
+position:relative;
 }
-
-
-
 header{
-	background-color:#1f262c;
-	color: white;
-	font: Fira Master;
+background-color:#1f262c;
+color: white;
+font: Fira Master;
 }
-
 .info{
-	text-align: center;
-	height: 12rem;
-	padding:1rem;
-	margin-left:0;
-	background-color:#c8c2b2;
-	width:100%;
-	color: #1f262c;
-	margin-top:2rem;
-	}
-
-#Speed{
-	margin-top:1.1rem;
+height: 12rem;
+padding:.5rem;
+margin-left:0rem;
+width:100%;
+margin-top:0rem;
 }
-
-
- body {
-           font-family: sans-serif;
-           overflow-x: hidden;
-  			margin:0;
-  			padding:0;
-  			font-size:10px;
-       }
+#Speed, #AverageSpeed, #Distance,#DistanceOnAction,#Score{
+color:#D15A3C;
+font-size:1rem;
+margin-top:1rem;
+margin-left:0;
+font-family: sans-serif;
+}
+#ms{
+font-size:.6rem;
+font-family: sans-serif;
+}
+p{
+font-size:1rem;
+margin-left:2rem;
+}
+body {
+font-family: sans-serif;
+overflow-x: hidden;
+margin:0;
+padding:0;
+font-size:10px;
+}
 button{
-	margin-top:0;
-	width:5rem;
-  	height:2.8rem;
-	}
-
-
-
-
-
+margin-top:0;
+width:5rem;
+height:2.8rem;
+}
 /*Top Menu*/
 body {
-	background-color: #fffbd6;
-	padding: 0;
-	border: 0;
-	margin: 0;
-	font-size: 10px;
+background-color: #fffbd6;
+padding: 0;
+border: 0;
+margin: 0;
+font-size: 10px;
 }
-
 /*Top Menu*/
 #topMenuBar {
 width: 100%;
@@ -65,14 +59,12 @@ height: 2.5rem;
 background-color: #1f262c;
 text-align: center;
 }
-
 #caracterIcon {
 width: 2.5rem;
 height: 2.5rem;
 display: inline;
 background-color: #1f262c;
 }
-
 #caracterIcon > img {
 width: 2.5rem;
 height: 2.5rem;
@@ -80,48 +72,41 @@ display: inherit;
 vertical-align: middle;
 background-color: #1f262c;
 }
-
 #userName {
 width: 15rem;
 height: 2.5rem;
 display: inline;	
 background-color: #1f262c;
 }
-
 #userName > h1 {
 font-size: 0.9rem;
 display: inherit;
 color: #ffffff;
 -moz-user-select: none;
 }
-
 #score {
 width: 5rem;
 height: 7rem;
 display: inline;
 }
-
 #score > h1 {
 font-size:0.8rem;
 display: inherit;
 color: #ffffff;
 -moz-user-select: none;
 }
-
 #scoreIcon {
 width: 2.5rem;
 height: 5rem;
 display: inline;
 background-color: #1f262c;
 }
-
 #scoreIcon > i {
 width: 2rem;
 height: 5rem;
 color: #ffffff;
 display:inherit;
 }
-
 #pageSelect {
 display:inline;
 width: auto;
@@ -129,75 +114,62 @@ height:7rem;
 padding: 0.1rem;
 text-align: center;
 }
-
 #life {
 width:2.5rem;
 height:2.5rem;
 display: inherit;
 }
-
 #life > i {
 width:2rem;
 height:2rem;
 background-color: #1f262c;
 display: inline;
 }
-
 #life:active {
 color: #af543e;
 }
-
 #health {
 width:2rem;
 height:2rem;
 display: inherit;
 }
-
 #health > i{
 width:2rem;
 height:2rem;
 background-color: #1f262c;
 display: inline;
 }
-
 #health:active {
 color: #af543e;
 }
-
 #range {
 width:2rem;
 height:2rem;
 display: inherit;
 }
-
 #range > i{
 width:2rem;
 height:2rem;
 background-color: #1f262c;
 display: inline;
 }
-
 #range:active {
 color: #af543e;
 }
-
 #bills {
 width:2rem;
 height:2rem;
 display: inherit;
 }
-
 #bills > i {
 width:2rem;
 height:2rem;
 background-color: #1f262c;
 display: inline;
 }
-
 #bills:active {
 color: #af543e;
 }
-
 #scoreWrapper {
 float:right;
 display:inline;
@@ -205,67 +177,57 @@ width:auto;
 position:relative;
 top: 0.5rem;
 }
-
 #logoWrapper {
 display:inline;
 float:left;
 }
-
 a:visited {
 color: #FFFFFF;
 text-decoration: none;
 }
-
 a:link {
 color:#FFFFFF;
 text-decoration: none;
 }
-
 .Options
 {
-
-	margin-left: 0px;
-		
-	border-bottom: 2px solid #ccc;
-	text-align: center;
-	padding:0;
-	color:#1f262c;	
-	height:3rem;
-	width: 100%;
-	font-size:.8rem;
-	background-color:#D15A3C;
+margin-left: 0px;
+border-bottom: 2px solid #ccc;
+text-align: center;
+padding:0;
+color:#1f262c;	
+height:3rem;
+width: 100%;
+font-size:.8rem;
+background-color:#D15A3C;
 }
-
 .Options .item
 {
-	margin: 0px;
-	width: 25%;
-	display: inline-block;
-	height: 3rem;
-	line-height: 3rem;
-	float: left;
-	
+margin: 0px;
+width: 25%;
+display: inline-block;
+height: 3rem;
+line-height: 3rem;
+float: left;
 }
 .button
 {
-	background-color: #1f262c;
-	color: #FFF;
+background-color: #1f262c;
+color: #FFF;
 }
-
 .active
 {
-	background-color: #af543e;
-	color: #1f262c;
+background-color: #af543e;
+color: #1f262c;
 }
 #Reset{
-	background-color:#1f262c;
-	width:30%;
-	margin-left:35%;
-	color:#FFFFFF;
-	margin-top:10%;
-	text-align:center;
-	padding:0;
-	height: 2rem;
-	line-height: 2rem;
+background-color:#1f262c;
+width:30%;
+margin-left:35%;
+color:#FFFFFF;
+margin-top:25%;
+text-align:center;
+padding:0;
+height: 2rem;
+line-height: 2rem;
 }
-
