@@ -1,0 +1,215 @@
+<HTML>
+<HEAD>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<meta charset="UTF-8">
+			
+			<meta name="keywords" content="HTML">
+			<link rel="stylesheet" href="stylesheet.css" type="text/css" media="screen" 
+		title="no title" charset="utf-8"/>
+		 <script src="dFormat.js" type="text/javascript"></script>
+			<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+			<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<TITLE>Sleep</TITLE>
+	 <link href="css/bootstrap.min.css" rel="stylesheet">
+	 <link rel="stylesheet" type="text/css" href="css/style.css"/>
+	
+   <script src="scripts/jquery.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/sleep.js"></script>
+   <script src="js/alarm.js"></script>
+      <script src="js/clock.js"></script>
+	  
+   <script src="js/action1.js"></script>
+   <script src="js/canvas.js"></script>
+   <script src="js/score.js"></script>
+   <script type="text/javascript" src="js/clockp.js"></script>
+<script type="text/javascript" src="js/clockh.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/jquery.jclock-1.2.0.js" type="text/javascript"></script>
+
+
+
+</HEAD>
+<BODY onload=" score(); List(); display_ct();">
+<div class="topMenu" id="topMenuBorder">
+				<div id="caracterIcon">
+				 	<img src="icons/logo.png">
+				</div>
+
+				<div id="userName">
+					<h1>Username</h1>
+				</div>	
+<div id="pageSelect">
+				<!--Life-->
+				<div id="life">
+					<a href ="life.html">
+						<i class="fa fa-heart fa-3x"></i>
+					</a>
+				</div>
+			 	<!--Health-->
+				<div id="health" > 
+					<a href ="health.html">
+						<i class="fa fa-leaf fa-3x"></i>
+					</a>
+				</div>
+			 	<!--Range-->
+				<div id="range" > 
+					<a href ="range.html">
+						<i class="fa fa-arrows fa-3x"></i>
+					</a>
+				</div>
+			 	<!--Bills-->
+				<div id="bills" > 
+					<a href ="bills.html">
+						<i class="fa fa-money fa-3x"></i>
+					</a>
+				</div>
+			</div>
+				<div id="scoreWrapper">
+					<div id="score">
+						<h1 style="font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');
+   font-weight: 200;
+   font-size:1.8rem;
+   font-style: italic;" ></h1>
+					</div>
+					<div id="scoreIcon">
+						<i class="fa fa-trophy fa-2x"></i> 
+					</div>
+				</div>
+			</div>
+			
+		
+	<a href="food.html">
+			  <div id="bAdd1" class="active" style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');">
+					<img src="icons/icon1.gif" width="20rem" height="20rem"/>
+					Food
+				</div></a>
+<a href="sport.html">
+				<div  id="bUpdate1" style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');">
+					<img src="icons/sport.gif" width="20rem" height="20rem"/>
+					Sport
+				</div ></a>
+				<a href="sleep.html">
+					<div  id="bUpdate2" style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');">
+					<img src="icons/icon2.gif" width="20rem" height="20rem"/>
+					Sleep
+				</div ></a>
+				<button id="bRemove10">
+				<i class="fa fa-plus"></i> 
+			</button>
+			
+			
+
+			<ul id="tblList" class="testTable"  style="position:absolute;top:160px;">
+
+	</ul>
+	<form class="form-horizontal" id="form" role="form" style="position:absolute;top:200px;left:17%;width:60%;margin-bottom:50px;">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Activity Description</label>
+ 
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Activity Description"/>
+    
+  
+  
+  
+ 
+   
+
+  </div>
+ 
+</form>
+
+    <button id="bAdd"  style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');">
+					
+					Cancel
+				</button>
+
+				<button id="bUpdate" onclick="score(); set_alarm(); Add();" style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');margin-top:331.5px;" >
+					
+					Add
+				</button>
+				<button id="bAdd3"  style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');">
+					
+					Cancel
+				</button>
+
+				<button id="bUpdate3" onclick="Edit(); score();" style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');" >
+					
+					Edit
+				</button>
+<h1 id="title" style="position:absolute;top:120px;left:25%;visibility:hidden;"><small>Adding alarm</small></h1>
+			
+			<div class="alert alert-info alert-dismissable" id="total" style="position:absolute;width:90%;height:150px;top:200px;left:5%;visibility:hidden;">
+ X
+   
+</div>
+<div style="position:absolute;top:86px;">
+<div id="clock_a"></div>
+    <div class="jclock"></div>
+</div>
+
+
+<div id="canvas" style="position:absolute;top:280px;left:12%; visibility:hidden;">
+
+
+<canvas id="analogClock" width="120" height="120">Clock</canvas>
+
+</div>
+ 
+<script type="text/javascript" src="js/analogCanvasClock.js"></script>
+<script type="text/javascript">
+setupAnalogClock(document.getElementById("analogClock"), 100);
+</script>
+
+
+
+
+<div  id="alarm" style="position:absolute;top:250px;left:50%;width:30%;visibility:hidden;">
+			<table><tr><td>
+<table ><tr><a href=# OnClick=update_alarm('h','up')><img src=icons/up.gif border='0' width="30px" ></a><a href=# OnClick=update_alarm('m','up')><img src=icons/up.gif border='0' width="30px" ></a><a href=# OnClick=update_alarm('s','up')><img src=icons/up.gif border='0' width="30px" ></a></tr>
+
+<tr><input type=text size=1  id='h1' name='h1' value=00 onBlur=update_alarm('h','none') style="margin-top:50px;width:30px;" ><input type=text size=1 id='m1' name='m1' value=00 onBlur=update_alarm('m','none') style="margin-top:50px;width:30px;"><input type=text size=1 id='s1' name='s1' value=00 onBlur=update_alarm('s','none') style="margin-top:50px;width:30px;"></tr>
+
+<tr><td ><a href=# OnClick=update_alarm('h','down')><img src=icons/down.gif border='0' width="30px"  style="margin-top:50px;"></a></td><td><a href=# OnClick=update_alarm('m','down')><img src=icons/down.gif border='0' width="30px" style="margin-top:50px;"></a></td><td><a href=# OnClick=update_alarm('s','down')><img src=icons/down.gif border='0' width="30px"  style="margin-top:50px;"></a></td></tr>
+</table>
+
+<span id='ct3' style="background-color: #FFFF00;visibility:hidden;"></span> <span id='ct4' style="background-color: #f1f1f1;visibility:hidden;"></span>
+
+</div>
+
+
+</body>  
+</HTML>
