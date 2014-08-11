@@ -192,11 +192,12 @@ function startTime(distanceIn,timeIn,optionIn){
 		
 		//verifica daca s-a modificat pozitia pe gps de la untimul refresh
 		if (gps == true){
-			this.p1 = p2;
-			var p2 = findMyCurrentLocation();	
-			d2 = distanta2Pc(p,p2);
-			Math.round(d2*100)/100 ;
-		}
+				var p2 = findMyCurrentLocation();	
+				d2 = distanta2Pc(p1,p2);
+				Math.round(d2*100)/100 ;
+				this.p1 = p2;
+				}
+
 	
 		//se genereaza o distanta random pentru testare	
 		if (gps == false){
