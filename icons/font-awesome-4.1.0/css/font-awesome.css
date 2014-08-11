@@ -227,6 +227,7 @@
 }
 .fa-search-plus:before {
   content: "\f00e";
+  color:#FF4E00;
 }
 .fa-search-minus:before {
   content: "\f010";
@@ -483,6 +484,7 @@
 }
 .fa-plus:before {
   content: "\f067";
+  color:#FF4E00;
 }
 .fa-minus:before {
   content: "\f068";

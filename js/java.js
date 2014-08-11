@@ -1,49 +1,85 @@
-$(window).load(function(){
-    	function callback(objects){
-	/*document.getElementById('form').style.display='none';
-	document.getElementById('form').style.visibility='hidden';*/
+$(document).ready(function(){
+	database.initializeDB();
+	if(document.getElementById('submit')){
+		document.getElementById('submit').addEventListener('click', getItemsFromDB);
+	}
+	$('li').click(function(){
+		//$(this).toggleClass();
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
+		
+	});
+	
+	if(document.getElementById('maxfood')){		
+		document.getElementById('maxfood').value=localStorage.getItem('maxfood');
+		//database.insertItem('apples','50$');
+	}
+	document.getElementById('scoreval').value=localStorage.getItem('score');
+	//localStorage.setItem('maxfood',0);
+	
+});
+
+function updateFromLocalstorage(){
+	
+}
+
+function callback(objects){
+			
 	var rows="";
 	var ul = document.getElementById('DatabaseList');
-
-		
-	//if (document.getElementById('l8').clicked==true){
+	
+	while (ul.firstChild) {
+		ul.removeChild(ul.firstChild);
+	};
+	
 	for(var i=0; i<objects.length; i++){
-    		var item = objects[i];
-    		
-    		console.log(item.value.type);
-    		
-    		var row = document.createElement('li');
-    		row.setAttribute("id","databaseList1");
-    		row.innerHTML = item.value.type +" "+ item.value.price;
-    		row.setAttribute("rate", i);
-    		
-    		
-				if (item.value.rate==1){
-					row.style.backgroundColor='grey';
-				} else if(item.value.rate==2){
-					row.style.backgroundColor='yellow';					
-				} else if (item.value.rate==3){
-					row.style.backgroundColor='lightblue';
-				} else if (item.value.rate==4){
-					row.style.backgroundColor='green';
-				} else if(item.value.rate==5){					
-   						row.style.backgroundColor = "#AA0000";
-					}				
-				
-				ul.appendChild(row);
-				
-    	}
-    
-  
+		var item = objects[i];    		
 
-    }	
-    
-    		database.getAllItems(callback);
-	});
+	
+	month=document.getElementById("luna");	
+	m=month.options[month.selectedIndex].value;
+	day=document.getElementById('ziua');
+	d=day.options[day.selectedIndex].value;
 
+	if (m==item.value.month) {
+		if (d==item.value.day){
+
+
+		console.log(item.value.type);
+		var row = document.createElement('li');
+		row.setAttribute("id","databaseList1");
+		row.innerHTML = item.value.type +" "+ item.value.price;
+		row.setAttribute("rate", i);
+
+
+		if (item.value.rate==1){
+			row.style.backgroundColor='grey';
+		} else if(item.value.rate==2){
+			row.style.backgroundColor='yellow';					
+		} else if (item.value.rate==3){
+			row.style.backgroundColor='lightblue';
+		} else if (item.value.rate==4){
+			row.style.backgroundColor='green';
+		} else if(item.value.rate==5){					
+				row.style.backgroundColor = "#AA0000";
+		}				
+
+		} else (alert("You don't have any food stored in the selected date!"));
+	}
+	else (alert("You don't have any food stored in the selected date!"));
+	
+	ul.appendChild(row);
+	
+    }
+};
+
+function getItemsFromDB(){
+	database.getAllItems(callback);
+}
 
 function addtodatabase (){	
 	var object={};
+	var date = new Date();
 	var type=document.getElementById('typefood').value;
 	type=type.toUpperCase(type[0]);
 
@@ -60,9 +96,9 @@ function addtodatabase (){
   		var rate= document.getElementById('5').value;
 	}
 	
-	var date = new Date();
-	var day = date.getDate();
+	 
 	var month = +date.getMonth() +1;
+	var day = +date.getDate();
 
 	object.type=type;
 	object.price=price;
@@ -72,7 +108,6 @@ function addtodatabase (){
 	database.insertItem(object);
 
 }
-
 
 function more_fields(){
 	var nr_rows=localStorage.getItem('rows');
@@ -84,22 +119,6 @@ function more_fields(){
 	var p1=node1.cloneNode(true);
 	node.appendChild(p1);
 }
-
-/*
-
-$(document).ready(function(){
-	
-
-	localStorage.setItem('rows',1);
-	var more=document.getElementById('b1');
-	more.addEventListener("click",more_fields);
-	
-});
-
-*/
-
-
-
 
 function remove_fields(){
 	if (localStorage.getItem('rows')>1){		
@@ -114,37 +133,6 @@ function remove_fields(){
 	}
 
 }
-
-
-window.onload = (function(){
-	document.getElementById('scoreval').value=localStorage.getItem('score');
-	//localStorage.setItem('maxfood',0);
-	document.getElementById('maxfood').value=localStorage.getItem('maxfood');
-	//database.insertItem('apples','50$');
-	
-	
-			
-});
-
-    
-
-			
-
-
-$(document).ready(function(){
-	
-
-
-		document.getElementById('scoreval').value=localStorage.getItem('score');
-			$('li').click(function(){
-					//$(this).toggleClass();
-		 		$(this).addClass('active');
-				$(this).siblings().removeClass('active');
-		
-			});
-	
-		});
-
 
 function varf(){	
 	

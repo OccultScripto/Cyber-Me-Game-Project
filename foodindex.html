@@ -2,46 +2,82 @@
 <html>
 <title>Food</title>
 <head>     
-     	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	 <script type="text/javascript" src='js/java.js'></script>
-	 <script type="text/javascript" src='js/indexedDB.js'></script>
+		<script type="text/javascript" src='js/indexedDB.js'></script>
+     	 <script src="js/jquery-2.1.1.min.js"></script>
+     	 <script src="js/jquery-ui.min.js"></script>
+     	 <link rel='stylesheet' type='text/css' href='css/jquery-ui.min.css'/>  
+	 	<script type="text/javascript" src='js/java.js'></script>
 	 	<link rel='stylesheet' type='text/css' href='css/lists.css'/>  
-     <link rel='stylesheet' type='text/css' href='css/foodstylesheet.css'/>    
-	<link rel="stylesheet" href="icons/font-awesome-4.1.0/css/font-awesome.min.css">
+     	<link rel='stylesheet' type='text/css' href='css/foodstylesheet.css'/>    
+		<link rel="stylesheet" href="icons/font-awesome-4.1.0/css/font-awesome.min.css">
 
 	
 </head>     
 <body>
-<!-- DIV for the upper menu. -->
-			<div class="topMenu" id="topMenuBorder">
-
+	
+<!-- DIV for the first menu of the page. (Icon, Name and score) -->
+		<div id="topMenuBar">
+			<div id="logoWrapper">
 				<div id="caracterIcon">
-				 	<img src="icons/logo1.png">
+				 	<img src="icons/Logo.png">
 				</div>
 
 				<div id="userName">
-					<h2>Username</h2>
-					</div>
+					<h1>Username</h1>
+				</div>	
+			</div>
 
-				<div id="scoreWrapper">
-					<div id="score">
-						<h2><input id='scoreval'readonly/> </h2>
-					</div>
-					<div id="scoreIcon">
-						<i class="fa fa-trophy fa-2x"> </i> 
-					</div>
+			<div id="pageSelect">
+				<!--Life-->
+				<div id="life">
+					<a href ="life.html">
+						<i class="fa fa-heart fa-2x"></i>
+					</a>
+				</div>
+			 	<!--Health-->
+				<div id="health" > 
+					<a href ="health.html">
+						<i class="fa fa-leaf fa-2x"></i>
+					</a>
+				</div>
+			 	<!--Range-->
+				<div id="range" > 
+					<a href ="range.html">
+						<i class="fa fa-arrows fa-2x"></i>
+					</a>
+				</div>
+			 	<!--Bills-->
+				<div id="bills" > 
+					<a href ="bills.html">
+						<i class="fa fa-money fa-2x"></i>
+					</a>
 				</div>
 			</div>
 
-	<div class="contain">
+			<div id="scoreWrapper">
+				<div id="score">
+					<h1 id="scoreDisplay"><input id='scoreval' readonly />
+					</h1>
+				</div>
+
+				<div id="scoreIcon">
+					<i class="fa fa-trophy fa-2x"></i> 
+				</div>
+			</div>
+		</div>
+
+
+	<div  >
+	<div class='menut' class="contain">
 	
-			<ul  id='bar'class='tab-links' >
-		<li class='menut' class='activetab' ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_start.html'><i class="fa fa-home fa-2x"></i></a></li>
-		<li class='menut' class='activetab'><a href='http://127.0.0.1:8020/NewProj/MergeUs/indexBills.html'><i class="fa fa-money fa-2x"></i></a></li>
-		<li class='menut' class='activetab' ><a href='foodindex.html'><i class="fa fa-cutlery fa-2x"></i> </a></li>
-		<li class='menut' class='activetab'><a href='http://127.0.0.1:8020/NewProj/MergeUs/ClothesIndex.html'><i class="fa fa-male fa-2x"></i></a></li>
-		<li class='menut' class='activetab' ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_others.html'><i class="fa fa-shopping-cart fa-2x"></i></a></li>
+			<ul  class='tab-links' >
+		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_start.html'><i class="fa fa-home fa-2x"></i></a></li>
+		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/indexBills.html'><i class="fa fa-money fa-2x"></i></a></li>
+		<li  ><a href='foodindex.html'><i class="fa fa-cutlery fa-2x"></i> </a></li>
+		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/ClothesIndex.html'><i class="fa fa-male fa-2x"></i></a></li>
+		<li ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_others.html'><i class="fa fa-shopping-cart fa-2x"></i></a></li>
 	</ul>
+</div>
 </div>
 		
 		
@@ -50,8 +86,9 @@
 			<p> </p>
 			<p>
 				<i class="fa fa-star" id='star'> <input type="text" id="maxfood" ></i> 
-				<input name="Submit" id='submit' type="submit" value="Go to:"><select name="Month" size="1">
-				<option selected="" id='l1' value=1>January
+				<input name="Submit" id='submit' type="button" value="Go to:">
+				<select name="Month" id='luna' size="1">
+				<option id='l1' value=1>January
 				</option><option id='l2' value=2>February
 				</option><option id='l3' value=3>March
 				</option><option id='l4' value=4>April
@@ -63,7 +100,7 @@
 				</option><option id='l10' value=10>October
 				</option><option id='l11' value=11>November
 				</option><option id='l12' value=12>December
-			</option></select> <select name="Day" size="1"> 
+			</option></select> <select name="Day" id='ziua' size="1"> 
 				<option selected="" value="01">01
 				</option><option value="02">02
 				</option><option value="03">03
@@ -95,36 +132,17 @@
 				</option><option value="29">29
 				</option><option value="30">30
 				</option><option value="31">31
-			</option></select> <a href="addfood.html"><i class="fa fa-plus"> </i></a> </p></form>
+			</option></select> <a href="addfood.html"><i id='plus' class="fa fa-plus"> </i></a> </p></form>
 			
 			
-<legend class="action">Food</legend>
-    <section id='change_area'>
-      <table id='field'>
-      	<tr id='allFields'>
-      		<td >
-      			<input id='field1' type="text" placeholder="Type"  />	
-      		</td>
-      		
-      		<td >
-      			 <input type="text" placeholder="Price"  required="">	
-      		</td>
-       		
-       		
-      	</tr>
-    
-       
-         </table>
-        <p></p>
+<legend class="action" id='lista'>Food</legend>    
+      
+        <p> </p>
         <section data-type="list" class="pack-end">
         <ul id='DatabaseList'>
         	
         </ul>
         </section>
-    </section>
-
-
-
 
 </body>
 </html>
