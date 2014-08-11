@@ -17,21 +17,30 @@ header{
 }
 
 .info{
-	text-align: center;
+
 	height: 12rem;
-	padding:1rem;
-	margin-left:0;
-	background-color:#c8c2b2;
+	padding:.5rem;
+	margin-left:0rem;
+	
 	width:100%;
-	color: #1f262c;
-	margin-top:2rem;
+	margin-top:0rem;
 	}
-
-#Speed{
-	margin-top:1.1rem;
+#Speed, #AverageSpeed, #Distance,#DistanceOnAction,#Score{
+	
+	color:#D15A3C;
+	font-size:1rem;
+	margin-top:1rem;
+	margin-left:0;
+	font-family: sans-serif;
 }
-
-
+#ms{
+	font-size:.6rem;
+	font-family: sans-serif;
+}
+p{
+	font-size:1rem;
+	margin-left:2rem;
+}
  body {
            font-family: sans-serif;
            overflow-x: hidden;
@@ -262,7 +271,7 @@ text-decoration: none;
 	width:30%;
 	margin-left:35%;
 	color:#FFFFFF;
-	margin-top:10%;
+	margin-top:25%;
 	text-align:center;
 	padding:0;
 	height: 2rem;
