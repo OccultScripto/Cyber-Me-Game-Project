@@ -115,21 +115,21 @@ function adaugaScore(distance){
 	console.log("am intrat in adaugaScore");
 		
 	if (options.getSelected() == "Walk"){
-		if (distance / 1000 > limit){
+		if (distance / 10 > limit){
 			this.limit ++;
 			this.score += 2;
 		}
 	}
 	
 	if (options.getSelected() == "Run"){
-		if (distance / 1000 > limit){
+		if (distance / 5> limit){
 			this.limit ++;
 			this.score += 3;
 		}
 	}
 	
 	if (options.getSelected() == "Drive"){
-		if (distance / 5000 > limit){
+		if (distance / 100 > limit){
 			this.limit ++;
 			this.score += 1;
 		}
