@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		
 		<link type="text/css" rel="stylesheet" href="css/socialstylesheet.css"/>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script src="js/social.js" type="text/javascript"></script>
+		<script src="js/social.js~" type="text/javascript"></script>
 		<script src="js/jquery.js"></script>
-		<!--<script src="ajax.js"></script>
-		--><link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 		<title> CyberMe Social</title>
-		
 	</head>
 	<body>	
 		
@@ -92,7 +91,18 @@
 		<a href="checkin.html">
 		<img id="bCheckin" style="margin:0;max-height: 1.8rem;max-width: 1.8rem; margin-left:2.2rem"src="Icons/location.png"></a>
 		
-		<div id="n"><p>Here is the news feed!</p>
-			<div id='pic'><img src="Icons/logo_20140718.png"></div>
+		<div id="n">
+			<script type="text/javascript">
+				var first_array = new Array();
+				first_array[0] = "Real knowledge is to know the extent of one's ignorance - Confucius";
+				first_array[1] = "Give a girl the right shoes, and she can conquer the world - Marilyn Monroe";
+				first_array[2] = "If you can't make it good, at least make it look good - BIll Gates";
+				first_array[3] = "The way to get started is to quit talking and begin doing - Walt Disney";
+				
+				var counter=0;
+				for (counter=0; counter<first_array.length; counter++)
+				   document.write(first_array[counter] + "<br>" + "<br>");
+				
+			</script>
 		</div>
 	</body>

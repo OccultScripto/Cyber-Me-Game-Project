@@ -1,0 +1,374 @@
+
+body {
+background-color: #fffbd6;
+padding: 0;
+border: 0;
+margin: 0;
+font-size: 10px;
+}
+/*Top Menu*/
+#topMenuBar {
+width: 100%;
+height: 2.5rem;
+background-color: #1f262c;
+text-align: center;
+}
+#caracterIcon {
+width: 2.5rem;
+height: 2.5rem;
+display: inline;
+background-color: #1f262c;
+}
+#caracterIcon > img {
+width: 2.5rem;
+height: 2.5rem;
+display: inherit;
+vertical-align: middle;
+background-color: #1f262c;
+}
+#userName {
+width: 15rem;
+height: 2.5rem;
+display: inline;	
+background-color: #1f262c;
+}
+#userName > h1 {
+font-size: 0.9rem;
+display: inherit;
+color: #ffffff;
+-moz-user-select: none;
+}
+#score {
+width: 5rem;
+height: 7rem;
+display: inline;
+}
+#score > h1 {
+font-size:0.8rem;
+display: inherit;
+color: #ffffff;
+-moz-user-select: none;
+}
+#scoreIcon {
+width: 2.5rem;
+height: 5rem;
+display: inline;
+background-color: #1f262c;
+}
+#scoreIcon > i {
+width: 2rem;
+height: 5rem;
+color: #ffffff;
+display:inherit;
+}
+#pageSelect {
+display:inline;
+width: auto;
+height:7rem;
+padding: 0.1rem;
+text-align: center;
+line-height: 3rem;
+}
+#life {
+width:2.5rem;
+height:2.5rem;
+display: inherit;
+}
+#life > i {
+width:2rem;
+height:2rem;
+background-color: #1f262c;
+display: inline;
+line-height: 2rem;
+}
+#life:active {
+color: #af543e;
+}
+#health {
+width:2rem;
+height:2rem;
+display: inherit;
+}
+#health > i{
+width:2rem;
+height:2rem;
+background-color: #1f262c;
+display: inline;
+line-height: 2rem;
+}
+#health:active {
+color: #af543e;
+}
+#range {
+width:2rem;
+height:2rem;
+display: inherit;
+}
+#range > i{
+width:2rem;
+height:2rem;
+background-color: #1f262c;
+display: inline;
+line-height: 2rem;
+}
+#range:active {
+color: #af543e;
+}
+#bills {
+width:2rem;
+height:2rem;
+display: inherit;
+}
+#bills > i {
+width:2rem;
+height:2rem;
+background-color: #1f262c;
+display: inline;
+line-height: 2rem;
+}
+#bills:active {
+color: #af543e;
+}
+#scoreWrapper {
+float:right;
+display:inline;
+width:auto;
+position:relative;
+top: 0.5rem;
+margin-left:0.1rem;
+}
+#logoWrapper {
+display:inline;
+float:left;
+}
+
+/* Bottom Menu */
+
+#bottomMenuContainer {
+	width: 100%;
+	height: 20%;	
+	background-color: #FFEBD6;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+.MenuImages{
+	margin:0;
+	max-height:1.8rem;
+	max-width: 1.8rem; 
+	margin-left:2.7rem;
+}
+
+
+/* Content */
+
+.content{
+	margin-top: 1rem;
+}
+
+#datepicker{
+	text-align: center;
+	margin-left: 2.5rem;
+	width: 10rem;
+	border-width:2px;
+    border-style:solid;
+	border-top:none;
+	border-right:none;
+	border-left:none;
+	background-color: #FFEBD6;
+	border-left-color:#686868;
+    border-bottom-color:#686868;
+}
+#datep{
+	display: inline-block;
+	width: 49.5%;
+}
+
+#addEvent{
+	display: inline-block;
+	width: 49.5%;
+	position: relative;
+}
+
+#bEvent{
+	background-color: #af543e ;
+	width: 8rem;
+	margin-left: 3.5rem;
+	color: #FFFFFF;
+	border: none;
+}
+
+.loc{
+	text-align: center;
+	display: block;
+    margin-left: 1.7rem;
+    width:20rem;
+    margin-top:3rem;
+    border-width:2px;
+    border-style:solid;
+	border-top:none;
+	border-right:none;
+	border-left:none;
+	background-color:#1b915c;
+	border-left-color:#686868;
+    border-bottom-color:#686868;
+}
+
+#mes{
+	text-align: center;
+	display: block;
+	width:20rem;
+	height: 1.5rem;
+    margin-left: 1.7rem;
+    margin-top:3rem;
+    border-width:2px;
+    border-style:solid;
+	border-top:none;
+	border-right:none;
+	border-left:none;
+	background-color:#1b915c;
+	border-left-color:#686868;
+    border-bottom-color:#686868;
+}
+
+.dButtons{
+	background-color: #505050 ;
+	color: white;
+	width:20rem;
+	height: 3rem;
+	margin-top:1rem;
+	margin-left: 1.7rem;
+	border: none;
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(15, 0, 15, 0.17);
+	-moz-box-shadow:    0px 3px 5px 0px rgba(15, 0, 15, 0.17);
+	box-shadow:         0px 3px 5px 0px rgba(15, 0, 15, 0.17);
+	border-radius: 8px;
+}
+
+#menu{
+	border: 0.1rem solid #006666;
+	-webkit-box-shadow: 2px 3px 7px 0px rgba(33, 82, 50, 0.72);
+	-moz-box-shadow:    2px 3px 7px 0px rgba(33, 82, 50, 0.72);
+	box-shadow:         2px 3px 7px 0px rgba(33, 82, 50, 0.72);
+	background-color: #1b915c;
+	padding-bottom: 0.6rem; 
+	position: absolute;
+	width: 26.2rem;
+	height: 30rem;
+	margin-left: -14.5rem;
+}
+
+#locat{
+	margin-top: 3rem;
+}
+
+#dAdd{
+	margin-top: 3rem;
+}
+
+#showEvent{
+	margin-top: 2rem;
+	padding-left: 2rem;
+	font-size: 1rem;
+	
+}
+
+#eventlist{
+	margin-top: 2rem;
+	padding-left: 2rem;
+	font-size: 1rem;
+}
+
+/* Headers (Date, Location, Message, Hour1, Hour2 ) */
+
+#headers{
+	margin-top:3rem;
+	text-align: center; 
+	font-size: 1rem;
+	margin-bottom:1rem;
+}
+
+.headerNames{
+	width:5rem; 
+	display:inline-block;
+	border: 1px solid #FFCC99;
+	font-weight: bold;
+	color: #993300;
+}
+
+#locHeader{
+	width:5.5rem;
+}
+
+#mesHeader{
+	padding
+}
+
+/* Event list */
+
+#EventList{
+	margin-top:0.5rem; 
+	text-align: center; 
+	font-size: 1rem; 
+	width:100%;
+	overflow: scroll;
+	height: 27rem;
+}
+
+.EventListFields{
+	width:5rem; 
+	display:inline-block;
+	vertical-align:top;
+	word-wrap:break-word;
+}
+
+/* The message field from the event list*/
+#Mes{
+	width:5rem; 
+	display:inline-block;  
+	vertical-align: top;
+}
+
+/* Appended divs */
+.msg{
+min-width: 5rem;
+max-width: 5rem;
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+min-height:2.5rem; 
+max-height: 2.5rem;
+float:left;
+padding-left: 0.3rem;
+}
+
+#DateAppend{
+	margin-left:-1rem; 
+	min-height:2.5rem; 
+	max-height:2.5rem; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+}
+
+#LocAppend{
+	min-height:2.5rem; 
+	max-height:2.5rem; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+}
+
+.H1H2Append{
+	padding-left:1.2rem; 
+	min-height:2.5rem;
+	max-height: 2.5rem; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+}
+section[role="status"] p{
+	word-wrap:normal;
+}
+section[role="status"]{
+	bottom: -1rem !important;
+}
+
+

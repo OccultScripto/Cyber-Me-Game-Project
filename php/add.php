@@ -13,7 +13,9 @@
 		if (!mysql_query($sql,$con)){
 			die('Error: ' . mysql_error());
 		}		
-		echo "User added";
+		
+		echo "User added!";
+
 		mysql_close($con);
 	?>
 
