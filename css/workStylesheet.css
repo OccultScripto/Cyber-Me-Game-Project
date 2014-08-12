@@ -1,0 +1,483 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	background-color: #fffbd6; 
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+/*Top Menu*/
+#topMenuBar {
+	width: 100%;
+	height: 3rem;
+	background-color: #1f262c;
+	text-align: center;
+}
+
+#caracterIcon {
+	width: 3rem;
+	height: 3rem;
+	display: inline;
+	background-color: #1f262c;
+}
+
+#caracterIcon > img {
+	width: 3rem;
+	height: 3rem;
+	display: inherit;
+	vertical-align: middle;
+	background-color: #1f262c;
+}
+
+#userName {
+	width: 15rem;
+	height: 3rem;
+	display: inline;	
+	background-color: #1f262c;
+}
+
+#userName > h1 {
+	font-size: 1.2rem;
+	display: inherit;
+	color: #ffffff;
+	-moz-user-select: none;
+}
+
+#score {
+	width: 5rem;
+	height: 7rem;
+	display: inline;
+}
+
+#score > h1 {
+	font-size:1rem;
+	display: inherit;
+	color: #ffffff;
+	-moz-user-select: none;
+	line-height: 1rem;
+}
+
+#scoreIcon {
+	width: 3rem;
+	height: 5rem;
+	display: inline;
+	background-color: #1f262c;
+}
+
+#scoreIcon > i {
+	width: 2rem;
+	height: 5rem;
+	color: #ffffff;
+	display:inherit;
+}
+
+#pageSelect {
+	display:inline;
+	width: auto;
+	height:7rem;
+	padding: 0.1rem;
+	text-align: center;
+	line-height: 3rem;
+}
+
+#life {
+	width:2.5rem;
+	height:2.5rem;
+	display: inherit;
+}
+
+#life > i {
+	width:2rem;
+	height:2rem;
+	background-color: #1f262c;
+	display: inline;
+	line-height: 2rem;
+}
+
+#life:active {
+	color: #af543e;
+}
+
+#health {
+	width:2rem;
+	height:2rem;
+	display: inherit;
+}
+
+#health > i{
+	width:2rem;
+	height:2rem;
+	background-color: #1f262c;
+	display: inline;
+	line-height: 2rem;
+}
+
+#health:active {
+	color: #af543e;
+}
+
+#range {
+	width:2rem;
+	height:2rem;
+	display: inherit;
+}
+
+#range > i{
+	width:2rem;
+	height:2rem;
+	background-color: #1f262c;
+	display: inline;
+	line-height: 2rem;
+}
+
+#range:active {
+	color: #af543e;
+}
+
+#bills {
+	width:2rem;
+	height:2rem;
+	display: inherit;
+}
+
+#bills > i {
+	width:2rem;
+	height:2rem;
+	background-color: #1f262c;
+	display: inline;
+	line-height: 2rem;
+}
+
+#bills:active {
+	color: #af543e;
+}
+
+#scoreWrapper {
+	float:right;
+	display:inline;
+	width:auto;
+	position:relative;
+	top: 0.5rem;
+	margin-left:0.1rem;
+}
+
+#logoWrapper {
+	display:inline;
+	float:left;
+}
+
+/*Second Menu*/
+#secondMenuContainer {
+	background-color: #22b573;
+	width:100%;
+	height:3rem;
+	display:inline;
+}
+
+#secondButtonLeft {
+	height: 3rem;
+	width: 49.5%;
+	background-color: #22b573;
+	color: #FFFFFF;
+	display: inline;
+	float:left;
+	text-align:center;
+	vertical-align:middle;
+	-moz-user-select: none;
+	line-height: 0.6rem;
+}
+
+#secondButtonLeft:active {
+	background-color:#006579;
+}
+
+#secondButtonRight {
+	height: 3rem;
+	width: 49.5%;
+	background-color: #22b573;
+	color: #FFFFFF;
+	display: inline;
+	float:right;
+	text-align: center;
+	vertical-align:middle;
+	-moz-user-select: none;
+	line-height: 0.6rem;
+}
+
+#secondButtonLeft > h2 {
+	vertical-align:middle;
+}
+#secondButtonRight > h2 {
+	vertical-align:middle;
+}
+
+/*Links*/
+
+a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+a:link {
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+/*Forms*/
+#changeWrapper {
+	width: 100%;
+	height: 21rem;
+	text-align: center;
+	position:relative;
+	display:none;
+	visibility: hidden;
+}
+
+#changeWrapper form {
+	text-align: center;
+	margin-top: 6rem;
+	position: relative;
+	top:4rem;
+}
+
+#changeWrapper input {
+	width: 20rem;
+	text-align: center;
+	background-color: #fffbd6;
+	border: none;
+	border-bottom: solid 1px #1f262c;
+	color: #1f262c;
+	font-size: 2rem;
+	padding-bottom: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+#selectType {
+	background-color: #1f262c;	
+	border: none;
+	font-size: 1.5rem;
+	color: #FFFFFF;
+	width: 12rem;
+	height: 3rem;
+	
+}
+#selectType:active {
+	background-color: #006579;
+}
+
+#submitField {
+	background-color: #af543e ;
+	color: #FFFFFF;
+	font-size: 2rem;
+	width:12rem;
+	height: 4rem;	
+	margin-top: 16.5rem;
+	padding: 0.5rem;
+	border:none;
+}
+
+#submitField :active {
+	background-color: #af543e;
+}
+
+/*List*/
+/*
+#habbitList {
+	width: 100%;
+	height: 30rem;
+	overflow-y:scroll;
+	display:inline;
+	padding:0;
+}
+
+#listRow {
+	width: 100%rem;
+	height:2rem;
+}
+
+#listCheck {
+	width: 2rem;
+	height: 2rem;
+}
+
+#listItem {
+	color: #1f262c;
+	font-size: 1.1rem;
+	width: 12rem;
+	text-align:center;
+}
+
+#listType	{
+	width: 2rem;
+	height: 2rem;
+	margin-right: 1rem;
+}
+
+#listType img {
+	width: 2rem;
+	height: 2rem;
+}
+#listPic {
+	width: 2rem;
+	height: 2rem;
+	margin-right: 2rem;
+}
+
+#listPic img {
+	width: 2rem;
+	height: 2rem;
+}
+
+#listEdit	{
+	width: 2rem;
+	height: 2rem;
+}
+
+#listEdit input {
+	width: 1rem;
+	height: 1rem;
+}
+
+#listRemove {
+	width: 2rem;
+	height: 2rem;
+}
+
+#listRemove input {
+	width: 1rem;
+	height: 1rem;
+}
+
+#listRow:nth-child(even) {
+    background-color: #FFFFFF;
+}
+/*
+#listWrapper ul li {
+	vertical-align: top;
+	float: left;
+	display:inline;
+}*/
+
+
+/*Add Button from the bottom of the page*/
+#addButton { 
+	width: 100%;
+	display:inline-block;
+	height:3.8rem;
+	bottom: 0rem;
+	left:0rem;
+	position: fixed;
+	text-align: center;
+	background-color: #af543e; 
+}
+
+#addButton:active {
+	color: #af544f;
+}
+
+#habbitTypeModal{
+	display:none;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	
+}
+#action-menu {
+	background-color: #000000;
+}
+
+#modalDeleteConfirm {
+	display: none;
+	width:100%
+	height: 100%;
+}
+
+/*List*/
+
+#tbList {
+	width: 100%;
+	height: 30rem;
+	overflow-y:scroll;
+	display:inline;
+}
+#tbList >ul {
+	padding:0;
+}
+
+#tableRow {
+	width: 100%rem;
+	height:2rem;
+	padding:0;
+}
+
+#tableCheck {
+	width: 2rem;
+	height: 2rem;
+}
+#chacked{
+	width: 2rem;
+	height: 2rem;
+}
+#tableItem {
+	color: #1f262c;
+	font-size: 1.5rem;
+	width: 9rem;
+	text-align:center;
+}
+
+#tableType	{
+	width: 3rem;
+	height: 3rem;
+	margin-right: 0.5rem;
+}
+
+#tableType img {
+	width: 3rem;
+	height: 3rem;
+}
+#tablePic {
+	width: 3rem;
+	height: 3rem;
+	margin-right: 0.5rem;
+}
+
+#tablePic img {
+	width: 3rem;
+	height: 3rem;
+}
+
+#tableEdit	{
+	width: 2rem;
+	height: 2rem;
+}
+
+#tableEdit input {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+#tableRemove {
+	width: 2rem;
+	height: 2rem;
+}
+
+#tableRemove input {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+#tableWrapper ul li {
+	vertical-align: top;
+	float: left;
+	display:inline;
+}
+/*flot test*/
+#fRight {
+	float: right;
+}

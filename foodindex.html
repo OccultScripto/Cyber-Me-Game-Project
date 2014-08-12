@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<title>Food</title>
+<head>     
+		<script type="text/javascript" src='js/indexedDBFood.js'></script>
+     	 <script src="js/jquery-2.1.1.min.js"></script>
+     	 <script src="js/jquery-ui.min.js"></script>
+     	 <link rel='stylesheet' type='text/css' href='css/jquery-ui.min.css'/>  
+	 	<script type="text/javascript" src='js/java.js'></script>
+	 	<link rel='stylesheet' type='text/css' href='css/listsB.css'/>  
+     	<link rel='stylesheet' type='text/css' href='css/foodstylesheet.css'/>    
+		<link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
+
+	
+</head>     
+<body>
+	
+<!-- DIV for the first menu of the page. (Icon, Name and score) -->
+		<div id="topMenuBar">
+			<div id="logoWrapper">
+				<div id="caracterIcon">
+				 	<img src="Icons/Logo.png">
+				</div>
+
+				<div id="userName">
+					<h1>Username</h1>
+				</div>	
+			</div>
+
+			<div id="pageSelect">
+				<!--Life-->
+				<div id="life">
+					<a href ="life.html">
+						<i class="fa fa-heart fa-2x"></i>
+					</a>
+				</div>
+			 	<!--Health-->
+				<div id="health" > 
+					<a href ="health.html">
+						<i class="fa fa-leaf fa-2x"></i>
+					</a>
+				</div>
+			 	<!--Range-->
+				<div id="range" > 
+					<a href ="range.html">
+						<i class="fa fa-arrows fa-2x"></i>
+					</a>
+				</div>
+			 	<!--Bills-->
+				<div id="bills" > 
+					<a href ="bills.html">
+						<i class="fa fa-money fa-2x"></i>
+					</a>
+				</div>
+			</div>
+
+			<div id="scoreWrapper">
+				<div id="score">
+					<h1 id="scoreDisplay"><input id='scoreval' readonly />
+					</h1>
+				</div>
+
+				<div id="scoreIcon">
+					<i class="fa fa-trophy fa-2x"></i> 
+				</div>
+			</div>
+		</div>
+
+
+	<div  >
+	<div class='menut' class="contain">
+	
+			<ul  class='tab-links' >
+		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_start.html'><i class="fa fa-home fa-2x"></i></a></li>
+		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/indexBills.html'><i class="fa fa-money fa-2x"></i></a></li>
+		<li  ><a href='foodindex.html'><i class="fa fa-cutlery fa-2x"></i> </a></li>
+		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/ClothesIndex.html'><i class="fa fa-male fa-2x"></i></a></li>
+		<li ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_others.html'><i class="fa fa-shopping-cart fa-2x"></i></a></li>
+	</ul>
+</div>
+</div>
+		
+		
+	<form>
+			<input name="Search" type="hidden" value="power">
+			<p> </p>
+			<p>
+				<i class="fa fa-star" id='star'> <input type="text" id="maxfood" ></i> 
+				<input name="Submit" id='submit' type="button" value="Go to:">
+				<select name="Month" id='luna' size="1">
+				<option id='l1' value=1>January
+				</option><option id='l2' value=2>February
+				</option><option id='l3' value=3>March
+				</option><option id='l4' value=4>April
+				</option><option id='l5' value=5>May
+				</option><option id='l6' value=6>June
+				</option><option id='l7' value=7>July
+				</option><option id='l8' value=8>August
+				</option><option id='l9' value=9>September
+				</option><option id='l10' value=10>October
+				</option><option id='l11' value=11>November
+				</option><option id='l12' value=12>December
+			</option></select> <select name="Day" id='ziua' size="1"> 
+				<option selected="" value="01">01
+				</option><option value="02">02
+				</option><option value="03">03
+				</option><option value="04">04
+				</option><option value="05">05
+				</option><option value="06">06
+				</option><option value="07">07
+				</option><option value="08">08
+				</option><option value="09">09
+				</option><option value="10">10
+				</option><option value="11">11
+				</option><option value="12">12
+				</option><option value="13">13
+				</option><option value="14">14
+				</option><option value="15">15
+				</option><option value="16">16
+				</option><option value="17">17
+				</option><option value="18">18
+				</option><option value="19">19
+				</option><option value="20">20
+				</option><option value="21">21
+				</option><option value="22">22
+				</option><option value="23">23
+				</option><option value="24">24
+				</option><option value="25">25
+				</option><option value="26">26
+				</option><option value="27">27
+				</option><option value="28">28
+				</option><option value="29">29
+				</option><option value="30">30
+				</option><option value="31">31
+			</option></select> <a href="addfood.html"><i id='plus' class="fa fa-plus"> </i></a> </p></form>
+			
+			
+<legend class="action" id='lista'>Food</legend>    
+      
+        <p> </p>
+        <section data-type="list" class="pack-end">
+        <ul id='DatabaseList'>
+        	
+        </ul>
+        </section>
+
+</body>
+</html>

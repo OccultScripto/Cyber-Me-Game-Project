@@ -1,0 +1,307 @@
+html{
+	background-color:#FFF5EE;
+	margin: 0 0 0 0;
+	
+	
+}
+body{
+	font-size:10px;
+	margin: 0 0 0 0;
+	
+	
+}
+.topMenu {
+		background-color: #999999;
+		
+}
+#pageSelect {
+	display:inline;
+	width: auto;
+	height:7rem;
+	padding: 0.1rem;
+	text-align: center;
+	line-height:3rem;
+}
+
+#life {
+	width:2.5rem;
+	height:2.5rem;
+	display: inherit;
+}
+
+#life > i {
+	width:2rem;
+	height:2rem;
+	background-color: #1f262c;
+	display: inline;
+}
+
+#life:active {
+	color: #af543e;
+}
+
+#health {
+	width:2rem;
+	height:2rem;
+	display: inherit;
+}
+
+#health > i{
+	width:2rem;
+	height:2rem;
+	background-color: #1f262c;
+	display: inline;
+}
+
+#health:active {
+	color: #af543e;
+}
+
+#range {
+	width:2rem;
+	height:2rem;
+	display: inherit;
+}
+
+#range > i{
+	width:2rem;
+	height:2rem;
+	background-color: #1f262c;
+	display: inline;
+}
+
+#range:active {
+	color: #af543e;
+}
+
+#bills {
+	width:2rem;
+	height:2rem;
+	display: inherit;
+}
+
+#bills > i {
+	width:2rem;
+	height:2rem;
+	background-color: #1f262c;
+	display: inline;
+}
+
+#bills:active {
+	color: #af543e;
+}
+
+a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:link {
+	color:#FFFFFF;
+	text-decoration: none;
+}
+#topMenuBorder {
+	width: 20rem;
+	height: 3.3rem;	
+	border:none;
+	background-color: #1f262c;
+	display: inline-block;
+	vertical-align:middle;
+
+}
+
+#caracterIcon {
+	width: 2rem;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	vertical-align:middle;
+}
+
+#caracterIcon img {
+	max-width: 2.5rem;
+	max-height: 2.5rem;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	text-align: center;
+}
+
+#userName {
+	color: #ffffff;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	text-align: center;
+}
+
+#scoreWrapper{
+	border:none;
+	float: right;
+	display: inline-block;
+	margin-top: 1.3rem;
+	margin-right: 1rem;	
+	
+}
+
+#scoreIcon {
+	width:auto;
+	margin: 0;
+	padding: 0;
+	display: inline-block;	
+}
+
+#scoreIcon img {
+	max-width: 1.9rem;
+	max-height: 1.9rem;
+	margin: 0;
+	color: #FFFFFF;
+}
+
+#scoreIcon i {
+	color: #FFFFFF;
+}
+
+#pointss{
+	border:none;
+	font-size:medium;
+	color:white;
+	display: inline-block;	
+}
+
+#navbar {
+	display:inline-block;
+	text-align: center;
+	width:20rem;
+	height: 2rem;
+	background: #F88158;
+	
+	
+}
+
+#navbar ul {
+	margin: 0;
+	padding: 0;
+	float: none;
+	list-style-type: none;
+}
+
+#navbar li {
+	padding: 0 2rem  0 0;
+	float: right;
+	border-right: 0.1rem solid white;
+	
+}
+#navbar ul li:first-child { 
+	border-right: none;
+}
+
+a:hover{background-color: #C04000;}
+
+
+#navbar ul li a:link, #navbar ul li a:active, #navbar ul li a:visited {
+	
+	padding: 0.3rem;
+	line-height: 1.8rem;
+	color: white;
+	text-decoration: none;
+}
+#secondbar{
+	display:inline-block;
+	text-align: center;
+	width:20rem;
+	height:2rem;
+	background: #F88158;
+	
+}
+#secondbar ol{
+	
+	margin: 0;
+	padding: 0;
+	float: none;
+	list-style-type: none;
+}
+#secondbar ol li{
+	padding: 0.2rem 0.25rem 0 0.4rem;
+	float: right;
+	border-right: 0.1rem solid white;
+	line-height: 1.8rem;
+	color: white;
+	text-decoration: none;
+}
+#secondbar ol li:first-child { 
+	border-right: none;
+}
+
+.mod{
+	margin-left:2rem;
+}
+
+#total{
+	display:inline-block;
+	height: 0.1rem;
+}
+#totalSum{
+	border:none;
+	margin-top:0.2rem;
+	width:2.5rem;
+	height: 1rem;
+}
+#start{
+	margin-left:0.1rem;	
+	border-style:outset;
+}
+#Save{
+	margin-top:4rem;
+}
+#ui-datepicker-div{
+	margin: 0rem 10rem 6rem 6.2rem;
+	background-color:#888888;
+}
+/* Content */
+
+
+/* Headers (Date, Location, Message, Hour1, Hour2 ) */
+
+#headers{
+	text-align: left; 
+	font-size: 1rem;
+	margin: 3rem 1rem 1rem 1rem;
+}
+
+.headerNames{
+	width:5rem; 
+	display:inline-block;
+	border: 1px solid #FFCC99;
+	font-weight: bold;
+	color: #993300;
+	text-align:center;
+}
+
+/* Event list */
+
+#listItems{ 
+	list-style-type: none;
+	text-align: left; 
+	overflow: scroll;
+	height: 27rem;
+	font-weight: bold;
+}
+
+#incomeDate{
+	margin-left:2rem;
+}
+
+.row{
+	display:inline-block;
+	margin: 0 0.5rem 0.5rem 0;
+	font-size: 0.8rem;
+	width:4rem;;
+}
+.filterButton{
+	margin-top:0.2rem;
+	border-style:outset;
+	width:2rem;
+	font-size:small;
+	float:center;
+}
+

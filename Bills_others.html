@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Cyber Me/Bills/Others</title>
+	
+	<link type="text/css" rel="stylesheet" href="css/Bills_others.css"/>
+	<link type="text/css" rel="stylesheet" href="css/Bills_othersAction_menu.css"/>
+	<link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
+
+	<!--link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"--> 
+  	<!--link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"-->
+
+	<script type="text/javascript" src="js/Bills_othersIndexDB.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+  	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 
+  	<script type="text/javascript" src="js/Bills_others.js"></script>	
+  	<script type="text/javascript" src="js/Bills_othersFunctions.js"></script>
+  	<script type="text/javascript" src="js/jQuery.js"></script>
+  	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  	<script type="stylesheet" src="css/jquery-ui.min.css"></script>
+ 	
+</head>
+
+<body>
+		<div class="topMenu" id="topMenuBorder">
+			<div id="caracterIcon">
+				<img src="icon/logo_20140718.png">
+			</div>
+
+			<div id="userName">
+				<h2>Username</h2>
+			</div>
+			<div id="pageSelect">
+			<!--Life-->
+			<div id="life">
+					<a href ="life.html">
+						<i class="fa fa-heart fa-3x"></i>
+						</a>
+			</div>
+			<!--Health-->
+			<div id="health" >
+					<a href ="health.html">
+						<i class="fa fa-leaf fa-3x"></i>
+						</a>
+			</div>
+			<!--Range-->
+			<div id="range" >
+					<a href ="range.html">
+						<i class="fa fa-arrows fa-3x"></i>
+					</a>
+			</div>
+			<!--Bills-->
+			<div id="bills" >
+					<a href ="bills.html">
+						<i class="fa fa-money fa-3x"></i>
+					</a>
+			</div>
+			</div>
+
+			<div id="scoreWrapper">
+					<span id='pointss'></span>
+
+						<div id="scoreIcon">
+							<i class="fa fa-trophy fa-2x"></i>
+						</div>
+				</div>
+		</div>
+		
+	<div id="navbar">
+		<ul>
+			<li><a href="Bills_others.html"><i class="fa fa-shopping-cart fa-2x"></i></a></li>
+			<li><a href="bills.html"><i class="fa fa-money fa-2x"></i></a></li>
+			<li><a href="food.html"><i class="fa fa-cutlery fa-2x"></i> </a></li>
+			<li><a href="clothes.html"><i class="fa fa-male fa-2x"></i></a></li>
+			<li><a href="Bills_start.html"><i class="fa fa-cog fa-2x"></i></a></li>
+		</ul>
+	</div>
+		
+	<div id="secondbar" >
+		<ol>
+			<li id="button"> 
+				<button type="button" id="start"><i class="fa fa-plus fa-1x"></i> </button>
+			</li>
+			<li><button class="filterButton" id="day">D</button></li>
+			<li><button class="filterButton" id="week">W</button></li>
+			<li><button class="filterButton" id="month">M</button></li>
+			<li><button class="filterButton" id="quater">Q</button></li>
+			<li><button class="filterButton" id="year">Y</button></li>
+			<li id="total"> 
+				<input type="text" name="tot" id="totalSum"/> 
+			</li>		
+		</ol>
+	</div>
+	
+	<div id="headers">
+			<div class="headerNames" id="nameHeader">Name</div>
+            <div class="headerNames" id="priceHeader">Price</div>
+			<div class="headerNames" id="dateHeader">Date</div>
+           
+        </div>
+
+        <div id='list'>
+        	<ul id="listItems">
+
+        	</ul>
+		</div>
+		
+	<section id="action-menu" data-position="back" class="fullscreen" style="display: none">
+		<form role="dialog" data-type="action" onsubmit="return false;"> 
+			<header>Add Product</header> 
+			<!-- this header is optional -->
+ 				<menu type="toolbar"> 
+					<form> 
+						<input type="text" class="mod" id="nameId" placeholder="Name">
+						<input type='text' class="mod" name="server" id="InputSum" placeholder="InputSum"> 
+						<input type="text" class="dati" id="incomeDate" placeholder="incomeDate"> 
+						
+						<button class="modal" id="Save"> Add </button>
+ 						<button class="modal" id="close"> Cancel </button> 
+ 			
+ 					</form>
+ 				</menu>
+			</form> 
+	</section>
+</body>	
+</html>

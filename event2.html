@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Event Planner 2</title>	
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="css/event2.css"/>
+		<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
+	    <!--link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"--> 
+	    <!--link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"-->
+	        <link rel="stylesheet" href="css/action_menu_old.css">
+	  	<link rel="stylesheet" href="Icons/action_icons.css">
+	  	<link rel="stylesheet" href="css/status.css">
+    		<script src="js/social.js" type="text/javascript"></script>
+	  	<script src="js/jquerySocial.js"></script>
+	  	
+	    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	    <script type="text/javascript" src="js/event2.js"></script>
+	    <script type="text/javascript" src="js/indexedDB.js"></script>
+
+</head>   
+<body>
+	  <!-- Top Menu -->
+	    <div class="topMenu" id="topMenuBorder">
+      		<div id="caracterIcon">
+				<img src="Icons/<script src="js/social.js" type="text/javascript"></script>logo_20140718.png">
+			</div>
+			<div id="userName">
+				<h2>Username</h2>
+			</div>
+			<div id="scoreWrapper">
+				<div id="score">
+					<h2>1234</h2>
+				</div>
+				<div id="scoreIcon">
+					<i class="fa fa-trophy fa-2x"></i>
+				</div>
+			</div>
+	    </div>
+	    
+	 <!-- Middle Menu -->
+	   <div id="middleMenuContainer">
+	   		<div id="middleButtonLeft">
+				<a href="workMain.html">
+					<h2>Work</h2>
+				</a>
+			</div>
+				<a href="social.html">
+		        	<div id="middleButtonRight">
+						<h2>Social</h2>
+					</div>
+				</a>
+	   </div>
+	  
+	 <!-- Bottom Menu -->
+	 <div id= "bottomMenuContainer">
+	   <div style="width:24%; display: inline-block" >
+	         <img class="MenuImages" id="bAdd" src="Icons/1406651994_user-add.png">
+	   </div>
+	   <div style="width:24%; display: inline-block" >
+	  		 <img class="MenuImages" id="bDisplay" src="Icons/1406652270_group.png">
+	   </div>
+	   <div style="width:24%; display: inline-block" >
+	         <a href="event2.html">
+	         <img class="MenuImages" id="bEvents"; src="Icons/event.png"></a>
+	   </div>
+	   <div style="width:24%; display: inline-block" >
+	         <a href="checkin.html">
+	         <img class="MenuImages" id="bCheckin" src="Icons/location.png"></a>
+	   </div>
+	</div>
+	
+	<!-- Content -->
+	
+	<div class="content">
+		<div id="horizontal">
+			<div id="datep">
+				<input type="text" id="datepicker">
+			</div>
+			<button id="bEvent" type="button">Add Event</button>
+	    </div>
+			
+		<div id="headers">
+			<div class="headerNames">Data</div>
+			<div class="headerNames" id="locHeader">Location</div>
+            <div class="headerNames">Message</div>
+            <div class="headerNames">From</div>
+            <div class="headerNames">To</div>
+        </div>
+        <div id="EventList">
+			<div class="EventListFields" id="Date"></div>
+			<div class="EventListFields" id="Loc"></div>
+            <div class="EventListFields" id="Mes"></div>
+            <div class="EventListFields" id="H1"></div>
+            <div class="EventListFields" id="H2"></div>
+        </div>
+			
+			
+  
+  		<!-- Action Menu -->
+  		<section id="action-menu" data-position="back" class="fullscreen" style="display: none">
+	   		<form role="dialog" data-type="action" onsubmit="return false;">
+				<header>Add Event</header> <!-- this header is optional -->
+				<menu type="toolbar">
+		      		<form>
+				   		<input type="text" class="loc" id="locat" value="Location">
+			  	  	</form>
+		       			 <textarea class="loc" id="mes" rows="3" cols="19">Message</textarea>		
+			   		<form>
+			   			 <input type="text" class="loc" id="hour1" value="Starting Hour">
+			 	    </form>
+				  	<form>
+						 <input type="text" class="loc" id="hour2" value="Ending Hour">
+			 		</form>
+		       			 <button class="loc" id="dAdd"> Add </button>
+		      			 <button class="loc" id="dCancel"> Cancel </button>
+		   		</menu>
+	 	    </form>
+	  </section>
+	
+     <!-- Status -->
+     <section id ="Status" role="status" style="display: none">
+   			 
+  	</section>			
+   	</div>
+</body>
+</html>
