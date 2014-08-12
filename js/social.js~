@@ -27,7 +27,7 @@ $(document).ready(function(){
     });
 	$('#bDisplay').click(function(){
         var result = JSON.parse(localStorage.getItem('friendlist'));
-        $('#n').html('' + '<img style ="width: 15%;margin-left: 15.3rem;position: fixed;bottom: 0px;" src="Icons/logo_20140718.png">');
+        $('#n').html('' + '<img style ="width:15%;margin-top: 19.5rem; margin-left:1.3rem;position: fixed;" src="Icons/logo_20140718.png">');
         var flist=$('<ol></ol>');
         flist.attr('id','flist');  
         for(var i=0; i<result.length; i++){
