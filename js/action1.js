@@ -24,6 +24,8 @@ $('#bRemove20').click(function() {
 	$('#form').css('visibility','hidden');
 	$('#tblList').css('visibility','hidden');
 		$('#tblList2').css('visibility','hidden');
+		$('#title').css('visibility','hidden');
+	$('#alarm').css('visibility','hidden');
 	$('#bAdd').css('visibility','hidden');
 	$('#bUpdate').css('visibility','hidden');
 	$('#cr1').css('visibility','visible');
