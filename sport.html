@@ -1,0 +1,1066 @@
+<HTML>
+<HEAD>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<meta charset="UTF-8">
+			
+			<meta name="keywords" content="HTML">
+			 
+	
+			
+			<script  src="js/sport.js"></script>
+			<script  src="js/score.js"></script>
+			<link href="css/bootstrap.min.css" rel="stylesheet">
+   <script src="scripts/jquery.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+			<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+			<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<TITLE>Sport</TITLE>
+	 
+	 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+ 
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"> </script>
+
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script type="text/javascript" src="js/modernizr.custom.29473.js"></script>
+
+</HEAD>
+<BODY onload=" score();">
+<div class="topMenu" id="topMenuBorder">
+				<div id="caracterIcon">
+				 	<img src="icons/logo.png">
+				</div>
+
+				<div id="userName">
+					<h1>Username</h1>
+				</div>	
+<div id="pageSelect">
+				<!--Life-->
+				<div id="life">
+					<a href ="life.html">
+						<i class="fa fa-heart fa-3x"></i>
+					</a>
+				</div>
+			 	<!--Health-->
+				<div id="health" > 
+					<a href ="health.html">
+						<i class="fa fa-leaf fa-3x"></i>
+					</a>
+				</div>
+			 	<!--Range-->
+				<div id="range" > 
+					<a href ="range.html">
+						<i class="fa fa-arrows fa-3x"></i>
+					</a>
+				</div>
+			 	<!--Bills-->
+				<div id="bills" > 
+					<a href ="bills.html">
+						<i class="fa fa-money fa-3x"></i>
+					</a>
+				</div>
+			</div>
+				<div id="scoreWrapper">
+					<div id="score">
+						<h1 style="font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');
+   font-weight: 200;
+   font-size:1.8rem;
+   font-style: italic;" ></h1>
+					</div>
+					<div id="scoreIcon">
+						<i class="fa fa-trophy fa-2x"></i> 
+					</div>
+				</div>
+			</div>
+						<div style="position:absolute;left:10%;top:100px;">
+	
+	</div>
+	<a href="food.html">
+			  <div id="bAdd1" class="active" style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');background:#af543e;">
+					<img src="icons/icon1.gif" width="20rem" height="20rem"/>
+					Food
+				</div></a>
+<a href="sport.html">
+				<div id="bUpdate1" style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');background:#AD6A59;">
+					<img src="icons/sport.gif" width="20rem" height="20rem"/>
+					Sport
+				</div></a>
+				<a href="sleep.html">
+					<div id="bUpdate2" style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');">
+					<img src="icons/icon2.gif" width="20rem" height="20rem"/>
+					Sleep
+				</div></a>
+				<div id="bRemove" style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');">
+		
+				<i class="fa fa-play"></i>
+				Exercise
+			</div>
+			<div id="bRemove2" style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');" >
+			<i class="fa fa-play"></i>
+			Workout
+			</div>
+			
+
+			<table id="tblList" class="table table-hover" style="position:absolute;top:120px;">
+
+	</table>
+		<form role="form" id="form" style="position:absolute;top:200px;left:20%;width:60%;margin-bottom:50px;">
+   <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" 
+         placeholder="Enter Name">
+   
+   <label for="name1">Calories:</label>
+      <input type="text" class="form-control" id="name1" 
+         placeholder="Enter calories"/>
+   
+   <label for="name2">Protein:</label>
+      <input type="text" class="form-control" id="name2" 
+         placeholder="Enter protein"/>
+   
+   <label for="name3">Carbohydrate:</label>
+      <input type="text" class="form-control" id="name3" 
+         placeholder="Enter carbohydrate"/>
+   
+   <label for="name4">Fat:</label>
+      <input type="text" class="form-control" id="name4" 
+         placeholder="Enter total fat"/>
+   </div>
+   
+   </form>
+    <button id="bAdd"  style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');">
+					
+					Cancel
+				</button>
+
+				<button id="bUpdate" onclick="Add(); score();" style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');" >
+					
+					Add
+				</button>
+				<button id="bAdd3"  style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');">
+					
+					Cancel
+				</button>
+
+				<button id="bUpdate3" onclick="Edit(); score();" style="font-size:12px;font-family: 'Fira Sans';src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');" >
+					
+					Edit
+				</button>
+<h1 id="title" style="position:absolute;top:120px;left:13%;width:80%;visibility:hidden;"><small>Select type of exercise</small></h1>
+			<h1 id="work1" style="position:absolute;top:120px;left:13%;width:80%;visibility:hidden;"><small>Select type of workout</small></h1>
+			
+<div id="qu" style="position:absolute;height:200px;width:90%;top:190px;left:5%;bottom:50px;">
+		<center><p style="font-family: 'Fira Sans';
+   src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');
+   font-weight: 200;
+   font-style: italic;margin-bottom:50px;">	<small>"Strength does not come from winning. Your struggles develop your strengths. When you go through hardships and decide not to surrender, that is strength."
+</small></br><b> Arnold Schwarzenegger</b>
+
+   </br></br>
+   
+</p>
+<center><p style="font-family: 'Fira Sans';
+   src: url('eot/FiraSans-UltraLightItalic.eot');
+   src: local('Fira Sans UltraLight Italic'),
+        url('eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'),
+        url('woff/FiraSans-UltraLightItalic.woff') format('woff'),
+        url('ttf/FiraSans-UltraLightItalic.ttf') format('truetype');
+   font-weight: 200;
+   font-style: italic;margin-bottom:50px;"> <small>"If you always put limits on everything you do, physical or anything else, it will spread into your work and into your life. There are no limits. There are only plateaus; and you must not stay there, you must go beyond them."
+</small></br> <b>Bruce Lee</b>
+
+   </br></br>
+   
+</p>
+   
+   </div>
+
+   
+<form role="form" id="form1" style="position:absolute;top:180px;left:15%;width:70%;height:10%;">
+   <div class="form-group" style="overflow:scroll;">
+      <label for="name">Select from here...</label>
+      <select class="form-control" height="200px" >
+	   <option>...</option>
+         <option id="back">Back</option>
+         <option id="biceps">Biceps</option>
+         <option id="triceps">Triceps</option>
+         <option id="chest">Chest</option>
+         <option id="shoulders">Shoulders</option>
+		 <option id="abs"> Abs</option>
+         <option id="legs">Legs</option>
+         <option id="cardio">Cardio</option>
+         <option id="forearms">Forearms</option>
+         
+      </select>
+   </div>
+</form>
+
+	
+<div id="accordion1" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Incline Hammer Curls</small></h2>
+<div style="width:200px;">
+<img src="icons/biceps1.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Incline Inner-Biceps Curl</small></h2>
+<div>
+<img src="icons/biceps2.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Standing  Curl</small></h2>
+<div><img src="icons/biceps3.gif" width="120px" height="40px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>EZ Bar Curl</small></h2>
+<div><img src="icons/biceps4.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Wide-grip barbell curl</small></h2>
+<div style="width:200px;"><img src="icons/biceps5.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:300px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:320px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:340px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Zottman Curl</small></h2>
+<div><img src="icons/biceps5.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:330px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:350px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Barbell Curl</small></h2>
+<div><img src="icons/biceps7.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:360px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:380px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:400px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Hammer Curl</small></h2>
+<div><img src="icons/biceps7.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:390px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:410px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:430px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+</div>
+
+<!-------------------------------------------------------------------------------->
+
+<div id="accordion" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Back Extension</small></h2>
+<div style="width:200px;">
+<img src="icons/back1.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Bar Muscle Up</small></h2>
+<div>
+<img src="icons/back2.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Grip Front Lat Pulldown</small></h2>
+<div><img src="icons/bck3.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Deadlift</small></h2>
+<div><img src="icons/back4.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Dumbbell Shrugs</small></h2>
+<div style="width:200px;"><img src="icons/back5.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:300px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:320px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:340px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Upright Rows</small></h2>
+<div><img src="icons/back6.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:330px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:350px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Stiff-Legged Deadlift</small></h2>
+<div><img src="icons/back7.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:360px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:380px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:400px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>One-Arm Dumbbell Row</small></h2>
+<div><img src="icons/back8.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:390px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:410px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:430px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+</div>
+<!-------------------------------------------------------------------------------->
+<div id="accordion2" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Bench Dips</small></h2>
+<div style="width:200px;">
+<img src="icons/triceps1.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Bench Press </small></h2>
+<div>
+<img src="icons/tr1.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+
+<h2><small>Cable Tricep Extension</small></h2>
+<div style="width:200px;"><img src="icons/tr2.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Close-Grip Bench Press</small></h2>
+<div><img src="icons/biceps5.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Close-Grip Dumbbell Press</small></h2>
+<div><img src="icons/tr3.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:290px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:330px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Close-Grip EZ-Bar Press</small></h2>
+<div><img src="icons/tr4.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:330px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:350px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+</div>
+<!-------------------------------------------------------------------------------->
+<div id="accordion3" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Barbell Bench Press</small></h2>
+<div style="width:200px;">
+<img src="icons/c1.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Forward Cable Crossover</small></h2>
+<div>
+<img src="icons/c2.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+
+<h2><small>Flat Bench Press</small></h2>
+<div style="width:200px;"><img src="icons/c3.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Push Ups</small></h2>
+<div><img src="icons/c4.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Chest Dips</small></h2>
+<div><img src="icons/c5.jpg" width="80px" height="10px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:290px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:330px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Decline Press</small></h2>
+<div><img src="icons/c6.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:310px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:330px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:350px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Incline Bench Press</small></h2>
+<div><img src="icons/c7.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:350px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:390px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+</div>
+
+<!-------------------------------------------------------------------------------->
+<div id="accordion4" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Shoulder Press</small></h2>
+<div style="width:200px;">
+<img src="icons/s1.png" width="80px" height="30px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Deltoid Raise</small></h2>
+<div>
+<img src="icons/s2.gif" width="100px" height="40px" style="position:absolute;left:25%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+
+<h2><small>Kettlebell Press</small></h2>
+<div style="width:200px;"><img src="icons/s3.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Back Flyes</small></h2>
+<div><img src="icons/s4.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Battling Ropes</small></h2>
+<div><img src="icons/s5.png" width="80px" height="10px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:290px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:330px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Band Pull Apart</small></h2>
+<div><img src="icons/s6.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:310px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:330px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:350px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Clean and Press</small></h2>
+<div><img src="icons/s7.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:350px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:390px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+</div>
+
+<!-------------------------------------------------------------------------------->
+<div id="accordion5" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Bicycle exercises</small></h2>
+<div style="width:200px;">
+<img src="icons/a1.jpg" width="80px" height="30px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Exercise Ball Crunch</small></h2>
+<div>
+<img src="icons/a2.gif" width="100px" height="40px" style="position:absolute;left:25%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+
+<h2><small>Vertical Leg Crunch</small></h2>
+<div style="width:200px;"><img src="icons/a3.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Torso Track</small></h2>
+<div><img src="icons/a4.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>FLong Arm Crunch</small></h2>
+<div><img src="icons/a5.jpg" width="80px" height="10px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:290px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:330px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Reverse Crunch</small></h2>
+<div><img src="icons/a7.jpg" width="150px" height="40px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:330px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:350px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Bent-Knee Hip Raise</small></h2>
+<div><img src="icons/a6.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:350px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:390px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+</div>
+
+<!-------------------------------------------------------------------------------->
+<div id="accordion6" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Squat</small></h2>
+<div style="width:200px;">
+<img src="icons/l1.jpg" width="80px" height="30px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Ski Jumps</small></h2>
+<div>
+<img src="icons/l2.jpg" width="100px" height="40px" style="position:absolute;left:25%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+
+<h2><small>Leg Lift</small></h2>
+<div style="width:200px;"><img src="icons/l3.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Side Lunge</small></h2>
+<div><img src="icons/l4.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Leg Curl</small></h2>
+<div><img src="icons/l5.png" width="80px" height="10px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:290px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:330px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Leg Extension</small></h2>
+<div><img src="icons/l6.jpg" width="100px" height="40px" style="position:absolute;left:25%;">
+<h5 style="position:absolute;top:330px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:350px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Calf Raises</small></h2>
+<div><img src="icons/l7.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:350px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:390px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Mountain Climbers</small></h2>
+<div><img src="icons/l8.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:370px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:390px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:410px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+</div>
+
+<!-------------------------------------------------------------------------------->
+<div id="accordion7" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Step Ups</small></h2>
+<div style="width:200px;">
+<img src="icons/ca1.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Jumping Jacks-Step</small></h2>
+<div>
+<img src="icons/ca2.jpg" width="100px" height="40px" style="position:absolute;left:25%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+
+<h2><small>Squat Jump</small></h2>
+<div style="width:200px;"><img src="icons/ca3.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Box Jump</small></h2>
+<div><img src="icons/ca4.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Crossover Jacks</small></h2>
+<div><img src="icons/ca5.jpg" width="80px" height="10px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:290px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:330px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Flutter Kicks</small></h2>
+<div><img src="icons/ca6.jpg" width="100px" height="40px" style="position:absolute;left:25%;">
+<h5 style="position:absolute;top:330px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:350px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Windmill Jackknife Crunch</small></h2>
+<div><img src="icons/ca7.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:350px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:390px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Jogging</small></h2>
+<div><img src="icons/ca8.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+
+<h5 style="position:absolute;top:420px;left:5%;">Time:<small>1H</small></h5>
+</div>
+</div>
+<!-------------------------------------------------------------------------------->
+<div id="accordion8" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small> Barbell Wrist Curl</small></h2>
+<div style="width:200px;">
+<img src="icons/f1.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Barbell Reverse Curl</small></h2>
+<div>
+<img src="icons/f2.gif" width="100px" height="40px" style="position:absolute;left:25%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+
+<h2><small>Reverse Wrist Curl</small></h2>
+<div style="width:200px;"><img src="icons/f3.jpg" width="80px" height="30px" style="position:absolute;left:25%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Kneeling Forearm Stretch  </small></h2>
+<div><img src="icons/f4.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+
+
+</div>
+		
+		
+		
+		   
+<form role="form" id="form2" style="position:absolute;top:180px;left:15%;width:70%;height:10%;">
+   <div class="form-group" style="overflow:scroll;">
+      <label for="name">Select from here...</label>
+      <select class="form-control" height="200px" >
+	   <option>...</option>
+         <option id="body">BodyBuilding</option>
+         <option id="fat">Fat Burning</option>
+         <option id="without">Without Weights</option>
+      </select>
+   </div>
+</form>
+		
+		<div id="day" class="form-inline" style="position:absolute;top:250px;left:3%;visibility:hidden;">
+
+   <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="optionsRadios1" 
+         value="option1" > Day1
+   </label>
+   <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="optionsRadios2" 
+         value="option2"> Day2
+   </label>
+    <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="optionsRadios3" 
+         value="option3" > Day3
+   </label>
+   <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="optionsRadios4" 
+         value="option4"> Day4
+   </label>
+    <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="optionsRadios5" 
+         value="option5" > Day5
+   </label>
+   <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="optionsRadios6" 
+         value="option6"> Day6
+   </label>
+    <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="optionsRadios7" 
+         value="option7" > Day7
+   </label>
+   
+</div>
+<!-------------------------------------------------------------------------------->
+
+<div id="accordion10" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+
+<h2><small>Barbell Bench Press</small></h2>
+<div style="width:200px;">
+<img src="icons/c1.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Forward Cable Crossover</small></h2>
+<div>
+<img src="icons/c2.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Flat Bench Press</small></h2>
+<div style="width:200px;"><img src="icons/c3.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Push Ups</small></h2>
+<div><img src="icons/c4.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Chest Dips</small></h2>
+<div><img src="icons/c5.jpg" width="80px" height="10px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:290px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:330px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+
+</div>
+<div id="accordion11" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Squat</small></h2>
+<div style="width:200px;">
+<img src="icons/l1.jpg" width="80px" height="30px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Ski Jumps</small></h2>
+<div>
+<img src="icons/l2.jpg" width="100px" height="40px" style="position:absolute;left:25%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+
+<h2><small>Leg Lift</small></h2>
+<div style="width:200px;"><img src="icons/l3.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Mountain Climbers</small></h2>
+<div><img src="icons/l8.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Leg Curl</small></h2>
+<div><img src="icons/l5.png" width="80px" height="10px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:290px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:330px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Leg Extension</small></h2>
+<div><img src="icons/l6.jpg" width="100px" height="40px" style="position:absolute;left:25%;">
+<h5 style="position:absolute;top:330px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:350px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Calf Raises</small></h2>
+<div><img src="icons/l7.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:350px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:390px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+
+</div>
+<div class="alert alert-info alert-dismissable" id="rec" style="position:absolute;width:60%;height:50px;top:320px;left:12%;visibility:hidden;">
+<center><p>Muscle Recovery Day</p></center>
+   
+</div>
+<div id="accordion12" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Shoulder Press</small></h2>
+<div style="width:200px;">
+<img src="icons/s1.png" width="80px" height="30px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Deltoid Raise</small></h2>
+<div>
+<img src="icons/s2.gif" width="100px" height="40px" style="position:absolute;left:25%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+
+<h2><small>Kettlebell Press</small></h2>
+<div style="width:200px;"><img src="icons/s3.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Back Flyes</small></h2>
+<div><img src="icons/s4.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Battling Ropes</small></h2>
+<div><img src="icons/s5.png" width="80px" height="10px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:290px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:330px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+
+</div>
+
+<div id="accordion13" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Incline Hammer Curls</small></h2>
+<div style="width:200px;">
+<img src="icons/biceps1.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Incline Inner-Biceps Curl</small></h2>
+<div>
+<img src="icons/biceps2.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Standing  Curl</small></h2>
+<div><img src="icons/biceps3.gif" width="120px" height="40px" style="position:absolute;left:35%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Close-Grip Bench Press</small></h2>
+<div><img src="icons/biceps5.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Close-Grip Dumbbell Press</small></h2>
+<div><img src="icons/tr3.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:290px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:330px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Close-Grip EZ-Bar Press</small></h2>
+<div><img src="icons/tr4.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:330px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:350px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:370px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+
+</div>
+
+
+<div id="accordion14" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Back Extension</small></h2>
+<div style="width:200px;">
+<img src="icons/back1.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>One-Arm Dumbbell Row</small></h2>
+<div>
+<img src="icons/back8.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:230px;left:5%;">Tips:<small>min to max weight</small></h5>
+</div>
+<h2><small>Grip Front Lat Pulldown</small></h2>
+<div><img src="icons/bck3.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:270px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Deadlift</small></h2>
+<div><img src="icons/back4.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+<h2><small>Dumbbell Shrugs</small></h2>
+<div style="width:200px;"><img src="icons/back5.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:300px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:320px;left:5%;">Reps:<small>8-12</small></h5>
+<h5 style="position:absolute;top:340px;left:5%;">Tips:<small>min to max weight</small></h5></div>
+</div>
+<!-------------------------->
+<div id="day1" class="form-inline" style="position:absolute;top:250px;left:3%;visibility:hidden;">
+
+   <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="options1" 
+         value="option1" > Day1
+   </label>
+   <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="options2" 
+         value="option2"> Day2
+   </label>
+    <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="options3" 
+         value="option3" > Day3
+   </label>
+   <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="options4" 
+         value="option4"> Day4
+   </label>
+    <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="options5" 
+         value="option5" > Day5
+   </label>
+   <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="options6" 
+         value="option6"> Day6
+   </label>
+    <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="options7" 
+         value="option7" > Day7
+   </label>
+   
+</div>
+<div id="accordion20" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Pull-Ups</small></h2>
+<div style="width:200px;">
+<img src="icons/w1.png" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>5</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+
+</div>
+<h2><small>Pulls-Ups Reverse Grip</small></h2>
+<div>
+<img src="icons/w2.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+
+</div>
+<h2><small>Leg Raises</small></h2>
+<div><img src="icons/w3.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>6</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5></div>
+
+<h2><small>Running</small></h2>
+<div><img src="icons/w4.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+
+<h5 style="position:absolute;top:290px;left:5%;">Time:<small>1H</small></h5></div>
+
+
+
+</div>
+
+<div id="accordion21" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Triceps Dips</small></h2>
+<div style="width:200px;">
+<img src="icons/w6.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5></div>
+
+
+<h2><small>Parallel Bar Dips</small></h2>
+<div>
+<img src="icons/w5.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5></div>
+
+
+<h2><small>Floor Hip Extensions</small></h2>
+<div><img src="icons/w7.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>3</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5></div>
+
+<h2><small>Burpee</small></h2>
+<div><img src="icons/w8.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+</div>
+
+</div>
+
+
+
+<div id="accordion22" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Crunches</small></h2>
+<div style="width:200px;">
+<img src="icons/w9.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+
+</div>
+<h2><small>Incline Leg Raises</small></h2>
+<div>
+<img src="icons/w10.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+
+</div>
+<h2><small>Squat Jump</small></h2>
+<div><img src="icons/w11.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5></div>
+
+<h2><small>Tuck Jump</small></h2>
+<div><img src="icons/w12.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
+
+
+</div>
+</div>
+
+<div id="accordion23" style="position:absolute;top:300px;left:18%;visibility:hidden;bottom:50px;">
+<h2><small>Bridging</small></h2>
+<div style="width:200px;">
+<img src="icons/w13.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:170px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:190px;left:5%;">Reps:<small>8-12</small></h5>
+
+</div>
+<h2><small>Jumping Jacks</small></h2>
+<div>
+<img src="icons/w14.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:190px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:210px;left:5%;">Reps:<small>8-12</small></h5>
+
+</div>
+<h2><small>Mountain Climbers</small></h2>
+<div><img src="icons/w15.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
+<h5 style="position:absolute;top:230px;left:5%;">Sets:<small>4</small></h5>
+<h5 style="position:absolute;top:250px;left:5%;">Reps:<small>8-12</small></h5>
+</div>
+
+
+</div>
+
+
+<div id="day2" class="form-inline" style="position:absolute;top:250px;left:3%;visibility:hidden;">
+
+   <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="option1" 
+         value="option1" > Day1
+   </label>
+   <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="option2" 
+         value="option2"> Day2
+   </label>
+    <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="option3" 
+         value="option3" > Day3
+   </label>
+   <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="option4" 
+         value="option4"> Day4
+   </label>
+    <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="option5" 
+         value="option5" > Day5
+   </label>
+   <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="option6" 
+         value="option6"> Day6
+   </label>
+    <label class="checkbox-inline">
+      <input type="radio" name="optionsRadiosinline" id="option7" 
+         value="option7" > Day7
+   </label>
+   
+</div>
+<div class="alert alert-info alert-dismissable" id="rec1" style="position:absolute;width:60%;height:50px;top:320px;left:12%;visibility:hidden;">
+<center><p>Same exercise as BodyBuilding Training but more reps and not max weight you can lift!</p></center>
+   
+</div>
+
+<div id="accordion30" style="position:absolute;top:400px;left:16%;visibility:hidden;bottom:50px;">
+
+<h2><small>Running</small></h2>
+<div><img src="icons/w4.gif" width="150px" height="50px" style="position:absolute;left:15%;">
+
+<h5 style="position:absolute;top:190px;left:5%;">Time:<small>1H</small></h5></div>
+</div>
+
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/accordion.js"></script>
+
+</body>  
+</HTML>

@@ -1,0 +1,21 @@
+$(document).ready(function(){
+$( "#accordion" ).accordion();
+$( "#accordion1" ).accordion();
+$( "#accordion2" ).accordion();
+$( "#accordion3" ).accordion();
+$( "#accordion4" ).accordion();
+$( "#accordion5" ).accordion();
+$( "#accordion6" ).accordion();
+$( "#accordion7" ).accordion();
+$( "#accordion8" ).accordion();
+$( "#accordion10" ).accordion();
+$( "#accordion11" ).accordion();
+$( "#accordion12" ).accordion();
+$( "#accordion13" ).accordion();
+$( "#accordion14" ).accordion();
+$( "#accordion20" ).accordion();
+$( "#accordion21" ).accordion();
+$( "#accordion22" ).accordion();
+$( "#accordion23" ).accordion();
+$( "#accordion30" ).accordion();
+});
