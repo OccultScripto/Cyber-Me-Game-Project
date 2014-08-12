@@ -7,6 +7,7 @@ var limit = 0;
 var active = false;
 var refreshTime = 1;
 var p1;
+var gps = false;
 //initializarea aplicatiei
 function init(){
 console.log("am intrat in init");
@@ -85,7 +86,7 @@ this.totalDrive = 0;
 };
 function addDistance(){
 console.log("am intrat in addDistance");
-return (Math.random(10) * 10 + 1);
+return (Math.random(10) * 100 + 1);
 };
 //AdaugaScore - adauga puncte urilizatorului in functie de distanta parcursa si optiunea selectata
 function adaugaScore(distance){
@@ -151,46 +152,23 @@ var time = timeIn;
 var speed;
 time = time + 1;
 //verifica daca s-a modificat pozitia pe gps de la untimul refresh
-if (false){
-this.p1 = p2;
+if (gps == true){
 var p2 = findMyCurrentLocation();
-d2 = distanta2Pc(p,p2);
+d2 = distanta2Pc(p1,p2);
 Math.round(d2*100)/100 ;
+this.p1 = p2;
 }
 //se genereaza o distanta random pentru testare
-if (true){
+if (gps == false){
 var d2 = addDistance();
 Math.round(d2*100)/100 ;
 }
 distance = distance + d2;
 aspeed = distance / time;
 speed = d2/refreshTime;
-//verific daca trebuie adaugate puncte
 adaugaScore(distance);
-//actualizez datele in interfata
-document.getElementById('Speed').innerHTML=(Math.round(speed*100)/100);
-document.getElementById('AverageSpeed').innerHTML=( Math.round(aspeed*100)/100 );
-document.getElementById('Distance').innerHTML=( Math.round(distance*100)/100 );
-document.getElementById('Score').innerHTML=( this.score);
-//daca butonul de on este inca activ si optiunea selecetata este tot aceeasi.
-//modific distanta totala pentru actiunea selectata
 if (active == true && opt == options.getSelected()) {
-if (opt == "Walk"){
-details.totalWalk = details.totalWalk + d2;
-Math.round(details.totalWalk*100)/100;
-document.getElementById("ActionType").innerHTML = " walk: " ;
-document.getElementById("DistanceOnAction").innerHTML = Math.round(details.totalWalk*100)/100;
-} else if (opt == "Run") {
-details.totalRun = details.totalRun + d2;
-Math.round(details.totalRun*100)/100;
-document.getElementById("ActionType").innerHTML = " run: ";
-document.getElementById("DistanceOnAction").innerHTML = Math.round(details.totalRun*100)/100;
-} else {
-details.totalDrive = details.totalDrive + d2;
-Math.round(details.totalDrive*100)/100;
-document.getElementById("ActionType").innerHTML = " drive: " ;
-document.getElementById("DistanceOnAction").innerHTML = Math.round(details.totalDrive*100)/100;
-}
+updateElements(opt,d2,speed,aspeed,distance);
 startTime(distance,time,opt);
 } else {
 //daca butonul nu este activ se fac invizibile informatiile
@@ -198,7 +176,64 @@ if (!active){
 console.log("active false, option true");
 } else {
 console.log("active true, option false");
-// butonul este activ dar s-a schimbat optiunea
+resetElements(opt);
+}
+}
+}, refreshTime * 1000);
+}
+function updateElements(opt,d2,speed,aspeed,distance){
+document.getElementById('Speed').innerHTML=(Math.round(speed*100)/100);
+document.getElementById('AverageSpeed').innerHTML=( Math.round(aspeed*100)/100 );
+if(distance < 1000){
+document.getElementById('Distance').innerHTML=( Math.round(distance*100)/100 );
+document.getElementById("Distance2").innerHTML = " m" ;
+} else {
+document.getElementById('Distance').innerHTML= Math.round((Math.round(distance *10)/100))/100;
+document.getElementById("Distance2").innerHTML = " km" ;
+}
+document.getElementById('Score').innerHTML=( this.score);
+if (opt == "Walk"){
+details.totalWalk = details.totalWalk + d2;
+if (details.totalWalk < 1000){
+Math.round(details.totalWalk*100)/100;
+document.getElementById("ActionType").innerHTML = " walk: " ;
+document.getElementById("DistanceOnAction").innerHTML = Math.round(details.totalWalk*100)/100;
+document.getElementById("DistanceOnAction2").innerHTML = " m" ;
+} else {
+Math.round(details.totalWalk*100)/100;
+document.getElementById("ActionType").innerHTML = " walk: " ;
+document.getElementById("DistanceOnAction").innerHTML = Math.round((Math.round(details.totalWalk*10)/100))/100;
+document.getElementById("DistanceOnAction2").innerHTML = " km" ;
+}
+} else if (opt == "Run") {
+details.totalRun = details.totalRun + d2;
+if (details.totalRun < 1000){
+Math.round(details.totalRun*100)/100;
+document.getElementById("ActionType").innerHTML = " run: ";
+document.getElementById("DistanceOnAction").innerHTML = Math.round(details.totalRun*100)/100;
+document.getElementById("DistanceOnAction2").innerHTML = " m" ;
+} else {
+Math.round(details.totalRun*100)/100;
+document.getElementById("ActionType").innerHTML = " run: ";
+document.getElementById("DistanceOnAction").innerHTML = Math.round((Math.round(details.totalRun*10)/100))/100;
+document.getElementById("DistanceOnAction2").innerHTML = " km" ;
+}
+} else {
+details.totalDrive = details.totalDrive + d2;
+if (details.totalDrive < 1000){
+Math.round(details.totalDrive*100)/100;
+document.getElementById("ActionType").innerHTML = " drive: " ;
+document.getElementById("DistanceOnAction").innerHTML = Math.round(details.totalDrive*100)/100;
+document.getElementById("DistanceOnAction2").innerHTML = " m" ;
+} else {
+Math.round(details.totalDrive*100)/100;
+document.getElementById("ActionType").innerHTML = " drive: " ;
+document.getElementById("DistanceOnAction").innerHTML = Math.round((Math.round(details.totalDrive*10)/100))/100;
+document.getElementById("DistanceOnAction2").innerHTML = " km" ;
+}
+}
+}
+function resetElements(opt){
 document.getElementById('Speed').innerHTML=("0");
 document.getElementById('AverageSpeed').innerHTML=("0");
 document.getElementById('Distance').innerHTML=("0");
@@ -218,9 +253,6 @@ document.getElementById("ActionType").innerHTML = " drive: " ;
 document.getElementById("DistanceOnAction").innerHTML = Math.round(details.totalDrive*100)/100;
 startTime(0,0,options.getSelected());
 }
-}
-}
-}, refreshTime * 1000);
 }
 function setSelected(node){
 options.setSelected(node);
@@ -248,5 +280,15 @@ function distance2Points(p1,p2){
 console.log("am intrat in distance2Points");
 var x3 = (p1.x - p2.x) * (p1.x - p2.x);
 var y3 = (p2.y - p2.y) * (p1.y - p2.y);
-return Math.pow((x3 + y3), 1/2);
+var R = 6371; // km
+var φ1 = p1.x.toRadians();
+var φ2 = p2.x.toRadians();
+var Δφ = (p2.x-p1.x).toRadians();
+var Δλ = (p2.y-p2.y).toRadians();
+var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+Math.cos(φ1) * Math.cos(φ2) *
+Math.sin(Δλ/2) * Math.sin(Δλ/2);
+var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+var d = R * c * 1000;
+return Math.round(d*100)/100;
 };
