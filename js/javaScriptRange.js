@@ -118,13 +118,15 @@ function adaugaScore(distance){
 		if (distance / 1000 > limit){
 			this.limit ++;
 			this.score += 2;
+			localStorage.setItem("score", this.score);
 		}
 	}
 	
 	if (options.getSelected() == "Run"){
-		if (distance / 1000 > limit){
+		if (distance / 2000 > limit){
 			this.limit ++;
 			this.score += 3;
+			localStorage.setItem("score", this.score);
 		}
 	}
 	
@@ -132,6 +134,7 @@ function adaugaScore(distance){
 		if (distance / 5000 > limit){
 			this.limit ++;
 			this.score += 1;
+			localStorage.setItem("score", this.score);
 		}
 	}
 };
@@ -155,10 +158,14 @@ function onFunction(){
 		else details.totalRun =parseFloat(localStorage.getItem('Run'));
 		if (isNaN(localStorage.getItem('Drive'))) details.totalDrive = 0;
 		else details.totalDrive =parseFloat(localStorage.getItem('Drive'));
+		if (isNaN(localStorage.getItem('score'))) this.score = 0;
+		else this.score = parseInt(localStorage.getItem('score'));
+		
 		
 		if (details.totalWalk == NaN) details.totalWalk = 0;
 		if (details.totalRun == NaN) details.totalRun = 0;
 		if (details.totalDrive == NaN) details.totalDrive = 0;
+		if (this.score == NaN) this.score = 0;
 		
 		window.timer = 0; 
 		startTime(0,0,options.getSelected());
@@ -174,7 +181,7 @@ function onFunction(){
   	 	localStorage.setItem("Walk", Math.round(details.totalWalk*100)/100);
   		localStorage.setItem("Run", Math.round(details.totalRun*100)/100);
   	 	localStorage.setItem("Drive", Math.round(details.totalDrive*100)/100);
-		localStorage.setItem("Score", this.score);
+		localStorage.setItem("score", this.score);
 	}
 };
       
@@ -315,6 +322,7 @@ function setSelected(node){
 function resetFunction(){
 	console.log("s-a apasat butonul reset");
 	details.reset();
+	this.score = 0;
 }
 
 
