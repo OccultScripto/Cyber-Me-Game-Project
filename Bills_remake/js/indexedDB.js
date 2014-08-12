@@ -9,7 +9,6 @@ var database = (function () {
 		//indexedDB.deleteDatabase("database");
 		
 		this.initializeDB = function(callback) {
-		  callback = callback || function(){};
 		  if (window.indexedDB) {
 			  console.log("IndexedDB support is there");
 			}
@@ -54,22 +53,15 @@ var database = (function () {
 			};
 		};
 				
-		//Method for inserting a picture in IndexedDB; It first removes a picture if there are maximum pictures already stored;
+		//Method for inserting an item to indexedDB
 		this.insertItem = function(item){
-			
-			console.log("DB before insert: ", db, this.db);
+					
 			// Open a transaction to the database
 		    var transaction = db.transaction(["data"], "readwrite");
 			console.log("Insert item to DB: ", db, transaction);
 		    // Put the blob into the database
-		   	var put = transaction.objectStore("data").put(item);
+		   	var add = transaction.objectStore("data").add(item);
 
-		};
-		
-		this.modifyItem=function(item){
-			 
-			 var transaction=db.transaction(['data'],"readwrite");
-			 var put = transaction.objectStore("data").put(item.value.date);
 		};
 				
 		//Method for getting a picture by id
@@ -104,6 +96,23 @@ var database = (function () {
 					  }
 			};
 		};
+		//Method for updating a record
+		this.updateItem = function(key, newItem){
+			
+			var self = this;
+			// Open a transaction to the database
+            var transaction = db.transaction(["data"], "readwrite");
+			
+            // Retrieve the file that was just stored
+            transaction.objectStore("data").get(key).onsuccess = function (event) {
+                var item = event.target.result;
+				
+				for(var i in newItem){
+					item[i] = newItem[i];
+				}
+				var update = transaction.objectStore("data").put(item);
+			};
+		};
 				
 		//Method for deleting the picture with the lowest id(the "older" picture) from idexedDB
 		this.deleteItem = function(id, callback){
@@ -117,8 +126,6 @@ var database = (function () {
 			};
 					
 		};
-		
-		this.db = db;
 	
 		return this;
 		

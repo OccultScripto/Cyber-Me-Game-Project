@@ -28,7 +28,7 @@ list-style: none outside none;
 height: 1rem;
 margin-left: 0rem;
 margin-right: 0rem;
-padding: 0rem 1rem 1rem 1rem;
+padding: 0rem 0rem 1rem 1rem;
 display: inline;
 margin-bottom: -1rem;
   }
@@ -331,9 +331,10 @@ input[id=score_val]{
 	
 }
 .menut{
-	background-color:#af543e;
+	background-color:#22b573;
 	margin:2rem solid black;
 	height:3rem;
+	width: 100%;
 	
 	display:inline-block;
 	
@@ -406,10 +407,12 @@ li img{
 	border: 1px solid black;
 }
 .InputField{
-	display:inline-block;
-	width:1rem;
-	width: 4rem;
-	margin-left:-1rem;
+	display: inline-block;
+width: 5rem;
+margin-left: -3rem;
+margin-top: 1rem;
+padding-left: 1rem;
+margin-right: 1rem;
 
 margin-top: 1rem
 }
@@ -427,6 +430,7 @@ text-align: center;
 #FixedListItem{
 	display:block;
 	font-size: 1rem;
+	padding-bottom:0.5rem;
 
 }
 .FixedListItemClass{
@@ -442,4 +446,37 @@ margin-bottom: 1rem;
 margin-left: -3rem;
 margin-right: 3rem;
 padding-left: 1rem;
+background-color: orange;
+text-align: center;
+padding: 0.5rem;
+font-style: Arial;
+font-family: Arial;
+}
+#TotalBills{
+	background-color: #FFEBD6;
+width: 3rem;
+font-size: 1rem;
+text-align: center;
+border: none;
+}
+#SubButton{
+border-radius: 16%;
+	background-color:#00ADAD;
+	padding:0.5rem;
+	    margin-right: 2rem;
+    margin-left: 6rem;
+    margin-top: 1rem;
+
+}
+#PayButton{
+border-radius: 16%;
+	background-color:#008000;
+	padding:0.5rem;
+	
+}
+.FixedLi{
+	display: inline;
+padding: 3rem;
+margin-left: -5rem;
+	
 }
