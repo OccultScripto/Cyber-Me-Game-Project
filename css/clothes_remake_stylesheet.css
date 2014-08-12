@@ -28,7 +28,7 @@ list-style: none outside none;
 height: 1rem;
 margin-left: 0rem;
 margin-right: 0rem;
-padding: 0rem 1rem 1rem 1rem;
+padding: 0rem 0rem 1rem 1rem;
 display: inline;
 margin-bottom: -1rem;
   }
@@ -331,10 +331,10 @@ input[id=score_val]{
 	
 }
 .menut{
-	background-color:#af543e;
+	background-color:#22b573;
 	margin:2rem solid black;
 	height:3rem;
-	
+	width: 100%;
 	display:inline-block;
 	
 	
@@ -488,6 +488,7 @@ width: 3rem;
 #DatabaseList{
 	
 	background-color:#F97C17; 
+	visibility: hidden;
 }
 #nameD{
 	width:50%;
@@ -507,12 +508,15 @@ input[id=scoreDisplay]{
 	
 }
 #submit{
-	border-radius:50%;
+border-radius: 16%;
 	background-color:#00ADAD;
-	padding:1rem;
+	padding:0.5rem;
+	margin-right: 2rem;
+margin-left: 3rem;
+	
 }
 #remove{
-	border-radius:50%;
+border-radius: 16%;
 	background-color:#EA4B12;
-	padding:1rem;
+	padding:0.5rem;
 }
