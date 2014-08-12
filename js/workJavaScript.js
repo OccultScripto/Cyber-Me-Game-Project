@@ -64,15 +64,38 @@ function Add() {
 	object.name = name;
 	object.type = habbitType;
 	object.picture = imgPicture;
-	/*
-	var currentTime =  new Date();
-	console.log("Timnp", currentTime);
-	var finalTime = currentTime;
-	finalTime.setHours(parseInt(time,10));
-	*/
-	alert("The data was saved.");
+
+	var dateNow = new Date();
+	var currentTime = dateNow.getTime();
+	console.log("Current Time:", currentTime);
+
+	var dateFinish = dateNow;
+	dateFinish.setHours(dateFinish.getHours() + parseInt(time, 10));
+	var dataFinal = Date.parse(dateFinish);
+	console.log("Final Time:", dataFinal);
+	//object.currentTime =currentTime;
+	object.finishTime = dataFinal;
+	//alert("The data was saved.");
 	database.insertItem(object);
 } 
+
+function verificareData(objects){
+	for (var i = 0;i < objects.length; i++) {
+		if (objects[i].finishTime)
+	}
+	
+}
+
+function verifyHabbitExpirationTime(){
+	var dateNow = new Date();
+	var currentTime = dateNow.getTime();
+	database.getAllItems(verificareData);	
+};
+window.setInterval(function(){
+  /// call your function here
+  verifyHabbitExpirationTime();
+}, 5000);
+
 
 // Function that make a call to the hideTable function after the Add button was clicked.
 // HideTable function will display the input fields and then after the submit button will
