@@ -15,7 +15,7 @@
 		
 		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="js/general.js"></script>
-		<script type="text/javascript" src="js/indexedDBWork.js"></script>
+		<script type="text/javascript" src="js/indexedDB.js"></script>
 		<script type="text/javascript" src="js/workJavaScript.js"></script>
 		
 	</head>
@@ -91,19 +91,18 @@
 		<!-- DIV for the inputs forms of the page.(Input forms and submit  button) -->
 		<div id="changeWrapper">
 			<form id="formInputs">
-				<input id="formName" type="text" name="Name" value="Name"
-				 onclick="clearContent(this);" > <br>
-				
-				<input id="formTime" type="text" name="Time Allocated" value = "Time" 
-				onclick="clearContent(this);"> <br>
+				<input id="formName" type="text" name="Name" value="Name"> 
+				<br>
+				<input id="formTime" type="text" name="Time Allocated" value = "Time">
+				<br>
 				
 				<!--<input id="formRepeat" type="text" name="Number of Repeats" value="Number of Repeats"
 				 onclick="clearContent(this);"> <br>-->
 								
-				<button id="selectType" type="button" onclick="showSelectType();">Select Type</button>
+				<button id="selectType" type="button">Select Type</button>
 			</form>			
 			
-			<button id="submitField" type="button" onclick="sendInfo();">Submit</button>	
+			<button id="submitField" type="button" >Submit</button>	
 		</div>
 		
 		<div id="tableWrapper">
@@ -116,17 +115,17 @@
     			<section class="scrollable">
       			<h1>Type of Habbits</h1>
       			<ol role="listbox">
-        			<li data-name="Arts" onclick="selectedType(this);" aria-selected="false" role="option"><label role="presentation"> <span>Arts</span></label></li>
-        			<li data-name="Bills" onclick="selectedType(this);" aria-selected="" role="option"><label role="presentation"> <span>Bills</span></label></li>
-        			<li data-name="Fitness" onclick="selectedType(this);" aria-selected="" role="option"><label role="presentation"> <span>Fitness</span></label></li>
-        			<li data-name="Games" onclick="selectedType(this);" aria-selected="" role="option"><label role="presentation"> <span>Games</span></label></li>
-        			<li data-name="Health" onclick="selectedType(this);" aria-selected="" role="option"><label role="presentation"> <span>Health</span></label></li>
-        			<li data-name="Movies" onclick="selectedType(this);" aria-selected="" role="option"><label role="presentation"> <span>Movies</span></label></li>
-        			<li data-name="Range" onclick="selectedType(this);" aria-selected="" role="option"><label role="presentation"> <span>Range</span></label></li>
-        			<li data-name="Run" onclick="selectedType(this);" aria-selected="" role="option"><label role="presentation"> <span>Run</span></label></li>
-        			<li data-name="Social" onclick="selectedType(this);" aria-selected="" role="option"><label role="presentation"> <span>Social</span></label></li>
-        			<li data-name="Speed" onclick="selectedType(this);" aria-selected="" role="option"><label role="presentation"> <span>Speed</span></label></li>
-        			<li data-name="Others" onclick="selectedType(this);" aria-selected="" role="option"><label role="presentation"> <span>Others</span></label></li>
+        			<li data-name="Arts"  aria-selected="false" role="option"><label role="presentation"> <span>Arts</span></label></li>
+        			<li data-name="Bills"  aria-selected="" role="option"><label role="presentation"> <span>Bills</span></label></li>
+        			<li data-name="Fitness"  aria-selected="" role="option"><label role="presentation"> <span>Fitness</span></label></li>
+        			<li data-name="Games"  aria-selected="" role="option"><label role="presentation"> <span>Games</span></label></li>
+        			<li data-name="Health"  aria-selected="" role="option"><label role="presentation"> <span>Health</span></label></li>
+        			<li data-name="Movies"  aria-selected="" role="option"><label role="presentation"> <span>Movies</span></label></li>
+        			<li data-name="Range"  aria-selected="" role="option"><label role="presentation"> <span>Range</span></label></li>
+        			<li data-name="Run"  aria-selected="" role="option"><label role="presentation"> <span>Run</span></label></li>
+        			<li data-name="Social"  aria-selected="" role="option"><label role="presentation"> <span>Social</span></label></li>
+        			<li data-name="Speed"  aria-selected="" role="option"><label role="presentation"> <span>Speed</span></label></li>
+        			<li data-name="Others"  aria-selected="" role="option"><label role="presentation"> <span>Others</span></label></li>
       			</ol>
     			</section>
     			<!--<menu>
@@ -148,8 +147,19 @@
   				</menu>
 			</form>
  		</div>
- 		
- 		<div onclick="newHabbit();">
+		<div id="habbitFinish">
+		 			<form role="dialog" data-type="confirm">
+		  				<section>
+		   					<h1>Confirmation</h1><!-- this heading is optional -->
+		    				<p>Did you finish the Objective?</p>
+		 				</section>
+		  				<menu>
+		    				<button id="cancelFinish">No</button>
+		    				<button  id="confirmFinish" class="danger">Yes</button>
+		  				</menu>
+					</form>
+		 		</div>
+ 		<div>
  			<i id="addButton" class="fa fa-plus-circle fa-5x" ></i>
  		</div>
 	</body>

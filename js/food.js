@@ -1,18 +1,12 @@
 var selected_index = 0;
 var edit_index = null;
 var tb = localStorage.getItem("tb");
-tb = JSON.parse(tb);
-if(tb == null) 
+console.log(tb);
+//tb = JSON.parse(tb);
+if(tb == null) {
 	tb = [];
-	var arr = [];
+}
 
-arr[0]= new Image();
-arr[0].src = "<i class='fa fa-pencil'></i>";
-
-arr[1]= new Image();
-arr[1].src = "Icons/image2.png";
-pictureChoice = arr[0].src;
-pictureChoice1 = arr[1].src;
 function Add() {
 	var client = JSON.stringify({
 		Name: document.getElementById("name").value,
@@ -20,13 +14,11 @@ function Add() {
 		Protein : document.getElementById("name2").value,
 		Carbohydrate : document.getElementById("name3").value,
 		Fat : document.getElementById("name4").value,
-		time:new Date(),
-		img:pictureChoice
-		
+		time:new Date()
 	});
 	
 	tb.push(client);
-	localStorage.setItem("tb", JSON.stringify(tb));
+	localStorage.setItem("tb", tb);
 	
 	//alert("The data was saved.");
 return true;
@@ -59,7 +51,7 @@ function Edit() {
 		time:new Date()
 		});
 		//tb.push(a);
-		localStorage.setItem("tb", JSON.stringify(tb));
+		localStorage.setItem("tb", tb);
 		//alert("The data was edited.");
 
 		return true;
@@ -120,17 +112,10 @@ function calculate() {
 
 function List() {		
 
-
-
-
-	
-		
-		
-
 	var rows = "";
 
 	for(var i in tb){
-		var cli = JSON.parse(tb[i]);
+		var cli = tb[i];
 	  rows += "<ul class='testBody' id=itemIndex" + i + ">"+
 	  "<li class='testRow'>"+
 	  			" 	<span>"+cli.Name+"</span>" +

@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	
+	database.currentStore = database.stores.work;
 	database.initializeDB(getAllFromDB);
 	
 	$('#datepicker').datepicker({ dateFormat: "yy-mm-dd"}).datepicker("setDate", "0");
@@ -15,8 +16,8 @@ $(document).ready(function(){
     });
     
 
-	$(".msg").live('click', function(){
-		jQuery('#Status').html('');
+	$(".msg").on('click', function(){
+		$('#Status').html('');
 		$('#Status').append('<p>' + $(this).text()+'</div>');
    		$("#Status").show("slow").delay(4000).fadeOut(1000);
    		// utils.status.show($(this).text(),500);
