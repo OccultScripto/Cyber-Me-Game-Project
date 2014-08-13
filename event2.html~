@@ -81,7 +81,19 @@
 		</a>
 
 		</div>
-	
+	<!-- Button Bar-->
+		<div id="container" style="position:relative; margin-bottom: 5%;"></div>
+		
+		<img id="bAdd" style="margin:0;max-height: 1.8rem; margin-left:2.4rem" src="Icons/1406651994_user-add.png">
+		<img id="bDisplay" style="margin:0;max-height: 1.8rem;max-width: 1.8rem; margin-left:2.2rem" src="Icons/1406652270_group.png">
+		
+		<a href="event2.html">
+		<img id="bEvents" style="margin:0;max-height: 1.8rem;max-width: 1.8rem; margin-left:3.7rem" src="Icons/event.png"></a>
+		
+		<a href="checkin.html">
+		<img id="bCheckin" style="margin:0;max-height: 1.8rem;max-width: 1.8rem; margin-left:2.2rem"src="Icons/location.png"></a>
+			
+
 	<!-- Content -->
 	
 	<div class="content">
