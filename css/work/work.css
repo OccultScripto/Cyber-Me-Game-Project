@@ -1,173 +1,4 @@
-html {
-	font-size: 10px;
-}
 
-body {
-	background-color: #fffbd6; 
-	padding: 0;
-	border: 0;
-	margin: 0;
-}
-
-/*Top Menu*/
-#topMenuBar {
-	width: 100%;
-	height: 3rem;
-	background-color: #1f262c;
-	text-align: center;
-}
-
-#caracterIcon {
-	width: 3rem;
-	height: 3rem;
-	display: inline;
-	background-color: #1f262c;
-}
-
-#caracterIcon > img {
-	width: 3rem;
-	height: 3rem;
-	display: inherit;
-	vertical-align: middle;
-	background-color: #1f262c;
-}
-
-#userName {
-	width: 15rem;
-	height: 3rem;
-	display: inline;	
-	background-color: #1f262c;
-}
-
-#userName > h1 {
-	font-size: 1.2rem;
-	display: inherit;
-	color: #ffffff;
-	-moz-user-select: none;
-}
-
-#score {
-	width: 5rem;
-	height: 7rem;
-	display: inline;
-}
-
-#score > h1 {
-	font-size:1rem;
-	display: inherit;
-	color: #ffffff;
-	-moz-user-select: none;
-	line-height: 1rem;
-}
-
-#scoreIcon {
-	width: 3rem;
-	height: 5rem;
-	display: inline;
-	background-color: #1f262c;
-}
-
-#scoreIcon > i {
-	width: 2rem;
-	height: 5rem;
-	color: #ffffff;
-	display:inherit;
-}
-
-#pageSelect {
-	display:inline;
-	width: auto;
-	height:7rem;
-	padding: 0.1rem;
-	text-align: center;
-	line-height: 3rem;
-}
-
-#life {
-	width:2.5rem;
-	height:2.5rem;
-	display: inherit;
-}
-
-#life > i {
-	width:2rem;
-	height:2rem;
-	background-color: #1f262c;
-	display: inline;
-	line-height: 2rem;
-}
-
-#life:active {
-	color: #af543e;
-}
-
-#health {
-	width:2rem;
-	height:2rem;
-	display: inherit;
-}
-
-#health > i{
-	width:2rem;
-	height:2rem;
-	background-color: #1f262c;
-	display: inline;
-	line-height: 2rem;
-}
-
-#health:active {
-	color: #af543e;
-}
-
-#range {
-	width:2rem;
-	height:2rem;
-	display: inherit;
-}
-
-#range > i{
-	width:2rem;
-	height:2rem;
-	background-color: #1f262c;
-	display: inline;
-	line-height: 2rem;
-}
-
-#range:active {
-	color: #af543e;
-}
-
-#bills {
-	width:2rem;
-	height:2rem;
-	display: inherit;
-}
-
-#bills > i {
-	width:2rem;
-	height:2rem;
-	background-color: #1f262c;
-	display: inline;
-	line-height: 2rem;
-}
-
-#bills:active {
-	color: #af543e;
-}
-
-#scoreWrapper {
-	float:right;
-	display:inline;
-	width:auto;
-	position:relative;
-	top: 0.5rem;
-	margin-left:0.1rem;
-}
-
-#logoWrapper {
-	display:inline;
-	float:left;
-}
 
 /*Second Menu*/
 #secondMenuContainer {
@@ -212,18 +43,6 @@ body {
 }
 #secondButtonRight > h2 {
 	vertical-align:middle;
-}
-
-/*Links*/
-
-a:visited {
-	color: #FFFFFF;
-	text-decoration: none;
-}
-
-a:link {
-	color:#FFFFFF;
-	text-decoration: none;
 }
 
 /*Forms*/
@@ -405,6 +224,7 @@ a:link {
 }
 #tbList >ul {
 	padding:0;
+	line-height: 2rem;
 }
 
 #tableRow {
@@ -476,6 +296,7 @@ tr:nth-child(even) {
 	vertical-align: top;
 	float: left;
 	display:inline;
+	font-size: 1.4rem;
 }
 /*flot test*/
 #fRight {
