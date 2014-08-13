@@ -93,7 +93,7 @@ $('#total').click(function() {
 	$('#tblList3').css('visibility','hidden');
 	$('#tblList4').css('visibility','hidden');
 })
-$('#fil').click(function() {
+/*$('#fil').click(function() {
    ListbyDate();
 	$('#tblList').css('visibility','hidden');
 	$('#form').css('visibility','hidden');
@@ -105,7 +105,7 @@ $('#fil').click(function() {
 	$('#tblList2').css('visibility','hidden');
 	$('#tblList3').css('visibility','hidden');
 	$('#tblList4').css('visibility','hidden');
-})
+})*/
 $('#y1').click(function() {
    ListbyYear();
 	$('#tblList').css('visibility','hidden');

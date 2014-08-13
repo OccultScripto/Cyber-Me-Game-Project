@@ -1,33 +1,25 @@
-<HTML>
-<HEAD>
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
 <meta charset="UTF-8">
-			 <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-			<meta name="keywords" content="HTML">
-			
-			
-			<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-			<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<TITLE>Food</TITLE>
-	 <link href="css/bootstrap.min.css" rel="stylesheet">
-   <script src="scripts/jquery.min.js"></script>
-   <script src="js/bootstrap.min.js"></script>
-   <link rel="stylesheet" type="text/css" href="css/dhtmlxcalendar.css"/>
-   <link rel="stylesheet" type="text/css" href="css\style.css"/>
+	<title>Food</title>
+	<meta name="keywords" content="HTML">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+	<link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/dhtmlxcalendar.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  
+	<script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 	<script src="js/dhtmlxcalendar.js"></script>
 	<script src="js/food.js"></script>
- 
-<script src="js/score.js"></script>
-<script src="js/action.js"></script>
-<script src="js/calendar.js"></script>
+	<script src="js/score.js"></script>
+	<script src="js/action.js"></script>
+	<script src="js/calendar.js"></script>
 
-<script src="js/score.js"></script>
-
-
-</HEAD>
-<BODY onload="List(); score(); doOnLoad();">
+</head>
+<body onload="List(); score(); doOnLoad();">
 <div class="topMenu" id="topMenuBorder">
 				<div id="caracterIcon">
 				 	<img src="Icons/logo.png">
@@ -39,32 +31,32 @@
 <div id="pageSelect">
 				<!--Life-->
 				<div id="life">
-					<a href ="life.html">
+					<a href ="work.html">
 						<i class="fa fa-heart fa-3x"></i>
 					</a>
 				</div>
 			 	<!--Health-->
 				<div id="health" > 
-					<a href ="health.html">
+					<a href ="food.html">
 						<i class="fa fa-leaf fa-3x"></i>
 					</a>
 				</div>
 			 	<!--Range-->
 				<div id="range" > 
-					<a href ="range.html">
+					<a href ="indexRange.html">
 						<i class="fa fa-arrows fa-3x"></i>
 					</a>
 				</div>
 			 	<!--Bills-->
 				<div id="bills" > 
-					<a href ="bills.html">
+					<a href ="Bills_start.html">
 						<i class="fa fa-money fa-3x"></i>
 					</a>
 				</div>
 			</div>
 				<div id="scoreWrapper">
 				<div id="score">
-					<h1 style="color:white;">sdasd
+					<h1 style="color:white;">
 					</h1>
 				</div>
 					<div id="scoreIcon" >
@@ -154,9 +146,9 @@
       </select>
    </div>
 
-			<div style="position:absolute;top:107px;height:120px;left:17.7%;width:33%;"><input type="text" width="66%" id="calendar" style="height:23px;" ></div>
-			<button onclick="List()" id="fil1" class="btn btn-default" style="position:absolute;left:0%;top:106px;width:17%;"><i class="fa fa-database"></i></button>
-<button onclick="ListbyDate()" id="fil" class="btn btn-default" style="position:absolute;left:83%;top:106px;width:17%;"><i class="fa fa-calendar"></i></button>
+			<!--div style="position:absolute;top:107px;height:120px;left:17.7%;width:33%;"><input type="text" width="66%" id="calendar" style="height:23px;" ></div-->
+			<button onclick="List()" id="fil1" class="btn btn-default" ><!--i class="fa fa-database"></i-->List All</button>
+<!--button onclick="ListbyDate()" id="fil" class="btn btn-default" style="position:absolute;left:83%;top:106px;width:17%;"><i class="fa fa-calendar"></i></button-->
 			<ul id="tblList" class="testTable" style="position:absolute;top:180px;">
   
 </ul>
@@ -237,16 +229,5 @@
  
    
 </div>
-
-
-
-
-<script type="text/javascript" src="./jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
-<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="./js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-<script type="text/javascript" src="./js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
-
-
-
 </body>  
-</HTML>
+</html>

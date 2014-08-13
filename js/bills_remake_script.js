@@ -10,11 +10,12 @@ window.onload=(function(){
 
 
 function newBill(){
+if (document.getElementById('NameDB')==null){
 	var ul = document.getElementById('ListFixedBills');
 	var input1 = document.createElement('input');
 		input1.setAttribute("id","NameDB");
 		input1.setAttribute("type","text");
-		input1.setAttribute("placeholder","Name");
+		input1.setAttribute("placeholder","Bill");
 		input1.setAttribute("class","InputField");
 
 
@@ -47,7 +48,7 @@ function newBill(){
 	//ul.appendChild(br2);
 	$(input3).datepicker();
 	
-
+}
 
 }
 
@@ -71,6 +72,9 @@ function newBill(){
 	}
 	function Pay(){
 		database.getAllItems(payBills);
+	}
+	function ShowAll(){
+		database.getAllItems(ShowBills);
 	}
 	
 function  classChange(e){
@@ -116,9 +120,9 @@ function payBills(item,key){
 
     		var row = document.createElement('li');
     		row.setAttribute("id","FixedListItem");
-    		row.innerHTML = "<li class='FixedLi'>"+item.value.name+"</li>" +
-    		"<li class='FixedLi'>"+item.value.price+"</li> "+ 
-    		"<li class='FixedLi'>"+item.value.date+"</li>";
+    		row.innerHTML = "<div id='NameDBB' class='FixedLi'>"+item.value.name+"</div>" +
+    		"<div class='FixedLi' id='PriceDBB'>"+item.value.price+"</div> "+ 
+    		"<div class='FixedLi' id='DateDBB'>"+item.value.date+"</div>";
     		row.appendChild(icon);	
     	  
     		ul.appendChild(row);
@@ -166,9 +170,9 @@ function payBills(item,key){
 
     		var row = document.createElement('li');
     		row.setAttribute("id","FixedListItem");
-    		row.innerHTML = "<li class='FixedLi'>"+item.value.name+"</li>" +
-    		"<li class='FixedLi'>"+item.value.price+"</li> "+ 
-    		"<li class='FixedLi'>"+item.value.date+"</li>";
+    		row.innerHTML = "<div id='NameDBB' class='FixedLi'>"+item.value.name+"</div>" +
+    		"<div class='FixedLi' id='PriceDBB'>"+item.value.price+"</div> "+ 
+    		"<div class='FixedLi' id='DateDBB'>"+item.value.date+"</div>";
     		row.appendChild(icon);	
     	  
     		ul.appendChild(row);
@@ -199,6 +203,49 @@ function payBills(item,key){
 		red.style.visibility='hidden';
 }		
 	}
+	
+	
+function ShowBills(objects){
+	var rows="";
+		var ul = document.getElementById('AllBills');
+		for(var i=0; i<objects.length; i++){
+    		var item = objects[i];
+    		var x=i;
+    		
+    		 var icon=document.createElement('i');
+    	    icon.setAttribute('id',item.key);
+    	    icon.setAttribute('class','fa fa-usd fa-1x');
+    	  //  icon.setAttribute('value',i);
+    	 //   icon.innerHTML="<i id="+i+" class='fa fa-usd fa-1x' onclick='' >"
+    	    	
+    	    icon.addEventListener('click',function(){classChange(this);});
+    	    icon.addEventListener('click',function(){
+    	     	var key=parseInt(this.getAttribute('id'),10);
+    	     	console.log('key is',key);
+    	     	function callback(item){
+    	     		console.log('got item',item);
+    	     		payBills(item,key);
+    	     	}
+    	     	database.getItemById(key,callback);
+    	     });
+
+
+    		var row = document.createElement('li');
+    		row.setAttribute("id","FixedListItem");
+    		row.innerHTML = "<div id='NameDBB' class='FixedLi'>"+item.value.name+"</div>" +
+    		"<div class='FixedLi' id='PriceDBB'>"+item.value.price+"</div> "+ 
+    		"<div class='FixedLi' id='DateDBB'>"+item.value.date+"</div>";
+    		row.appendChild(icon);	
+    	  
+    		ul.appendChild(row);
+
+    		
+
+    			
+				
+    	}
+	
+}
 	
 	
 function UpdatePayDay(objects){
@@ -330,6 +377,9 @@ $(document).ready(function(){
 		ul = document.getElementById('UnpaidBills');
 		ul.style.visibility='hidden';
 	    ul.innerHTML="";
+	    var allB=document.getElementById('AllBills');
+		 allB.style.visibility='visible';
+	     allB.innerHTML="";
 	    allBills=document.getElementById('ListFixedBills');
 	    if (allBills.style.visibility=='hidden')
 	    {
@@ -363,7 +413,7 @@ $(submit).click(function(){
  object.price=price;
  object.date=date;
  object.paid=0;
- alert(object.name);
+
 
   	database.insertItem(object);
 });
@@ -376,6 +426,11 @@ $(robot).click(function(){
     var allBills=document.getElementById('ListFixedBills');
     allBills.style.visibility='hidden';
     allBills.innerHTML="";
+    var allB=document.getElementById('AllBills');
+	 allB.style.visibility='visible';
+	     allB.innerHTML="";
+
+
     ul = document.getElementById('UnpaidBills');
 
 	 if (ul.style.visibility=='hidden')
@@ -385,6 +440,19 @@ $(robot).click(function(){
 	    ul.style.visibility='visible';
 
 
+});
+var all=document.getElementById('allBills');
+$(all).click(function(){
+	document.getElementById('SubButton').disabled=true;
+	 var allBills=document.getElementById('ListFixedBills');
+    allBills.style.visibility='hidden';
+    allBills.innerHTML="";
+    ul = document.getElementById('UnpaidBills');
+	ul.style.visibility='hidden';
+	 ul.innerHTML="";
+	 var allB=document.getElementById('AllBills');
+	 allB.style.visibility='visible';
+	database.initializeDB(ShowAll);
 });
  
 

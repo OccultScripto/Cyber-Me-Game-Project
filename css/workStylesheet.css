@@ -8,15 +8,12 @@ body {
 	border: 0;
 	margin: 0;
 }
-
-/*Top Menu*/
 #topMenuBar {
 	width: 100%;
-	height: 3rem;
+	height: 5rem;
 	background-color: #1f262c;
 	text-align: center;
 }
-
 #caracterIcon {
 	width: 3rem;
 	height: 3rem;

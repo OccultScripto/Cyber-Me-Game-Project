@@ -1,37 +1,71 @@
-var database = {};
 
-(function (exports) {
+var database = (function () {
 	
-    // IndexedDB
     var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB,
-        dbVersion = 1.0;
+        dbVersion = 1,
+		db;
 			
 		//This line deletes the database - used for testing purposes
 		//indexedDB.deleteDatabase("database");
-
-    // Create/open database
-    var request = indexedDB.open("database", dbVersion),
-    db,
+		
+		this.initializeDB = function(callback) {
+		  if (window.indexedDB) {
+			  console.log("IndexedDB support is there");
+			}
+			else {
+			   alert("Indexed DB is not supported. Where are you trying to run this ? ");
+			}
+ 
+			// open the database
+			// 1st parameter : Database name. We are using the name 'notesdb'
+			// 2nd parameter is the version of the database.
+			var request = indexedDB.open('database', dbVersion);
+ 
+			request.onsuccess = function (e) {
+			  // e.target.result has the connection to the database
+			  db = e.target.result;
+			  console.log("Success initializing de DB ", db);
+			  callback();
+			  //Alternately, if you want - you can retrieve all the items
+			};
+ 
+			request.onerror = function (e) {
+			   console.log(e);
+			};
+ 
+			// this will fire when the version of the database changes
+			// We can only create Object stores in a versionchange transaction.
+			request.onupgradeneeded = function (e) {
+			   // e.target.result holds the connection to database
+			   db = e.target.result;
+ 
+			   if (db.objectStoreNames.contains("data")) {
+			     db.deleteObjectStore("data");
+			   }
+ 
+			   // create a store named 'notes'
+			   // 1st parameter is the store name
+			   // 2nd parameter is the key field that we can specify here. Here we have opted for autoIncrement but it could be your
+			   // own provided value also.
+			   var objectStore = db.createObjectStore('data', { keyPath: 'id', autoIncrement: true });
+ 
+			   console.log("Object Store has been created");
+			};
+		};
 				
-		//Method for creating the <image> objectStore in indexedDB
-        createObjectStore = function (dataBase) {
-            // Create an objectStore
-            dataBase.createObjectStore("data", { autoIncrement : true });
-        },
-				
-		//Method for inserting a picture in IndexedDB; It first removes a picture if there are maximum pictures already stored;
-		insertItem = function(item){
+		//Method for inserting an item to indexedDB
+		this.insertItem = function(item){
 					
 			// Open a transaction to the database
-		    var transaction = db.transaction("data", "readwrite");
-					
+		    var transaction = db.transaction(["data"], "readwrite");
+			console.log("Insert item to DB: ", db, transaction);
 		    // Put the blob into the database
-		   	var put = transaction.objectStore("data").put(item);
+		   	var add = transaction.objectStore("data").add(item);
 
-		},
+		};
 				
 		//Method for getting a picture by id
-		getItemById = function(id, callback){
+		this.getItemById = function(id, callback){
 		  
 		  callback = callback || function(){};	
           // Open a transaction to the database
@@ -41,15 +75,12 @@ var database = {};
           transaction.objectStore("data").get(id).onsuccess = function (event) {
               var item = event.target.result;
 			  callback(item);
-			  document.getElementById('databaseName').value=item.name;
-			  document.getElementById('databasePrice').value=item.price;
-			  
           };
-		},
+		};
 					
 		//Method for getting all stored pictures from indexedDB	
-		getAllItems = function(callback){
-			
+		this.getAllItems = function(callback){
+			console.log("The db is: ", db);
 			callback = callback || function(){};
 			var items = [];
 			var dataObjectStore = db.transaction(["data"], "readwrite").objectStore("data");
@@ -59,15 +90,32 @@ var database = {};
 				if (cursor) {
 					items.push({key: cursor.key, value: cursor.value});
 					    cursor.continue();
-					    				}
+				}
 				else {
 						callback(items);
 					  }
 			};
-		},
+		};
+		//Method for updating a record
+		this.updateItem = function(key, newItem){
+			
+			var self = this;
+			// Open a transaction to the database
+            var transaction = db.transaction(["data"], "readwrite");
+			
+            // Retrieve the file that was just stored
+            transaction.objectStore("data").get(key).onsuccess = function (event) {
+                var item = event.target.result;
+				
+				for(var i in newItem){
+					item[i] = newItem[i];
+				}
+				var update = transaction.objectStore("data").put(item);
+			};
+		};
 				
 		//Method for deleting the picture with the lowest id(the "older" picture) from idexedDB
-		deleteItem = function(id, callback){
+		this.deleteItem = function(id, callback){
 			
 			callback = callback || function(){};		
 			var request = db.transaction(["data"], "readwrite")
@@ -78,33 +126,7 @@ var database = {};
 			};
 					
 		};
- 
-    request.onerror = function (event) {
-        console.log("Error creating/accessing IndexedDB database");
-    };
- 
-    request.onsuccess = function (event) {
-        db = request.result;
- 
-        db.onerror = function (event) {
-            console.log("Error creating/accessing IndexedDB database");
-        };
-    };
-    
-    // For future use. Currently only in latest Firefox versions
-    request.onupgradeneeded = function (event) {
-		createObjectStore(request.result);
-    };
-
-
+	
+		return this;
 		
-	//Here we export all the methods that we need in the other parts of the application
-	exports.insertItem = insertItem;
-	exports.getItemById = getItemById;
-	exports.getAllItems = getAllItems;
-	exports.deleteItem = deleteItem;
-		
-})(database);
-
-
-
+})();

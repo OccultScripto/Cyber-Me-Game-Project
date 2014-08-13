@@ -2,23 +2,21 @@
 <head>
 	<title></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <link rel='stylesheet' type='text/css' href='css/clothes_remake_stylesheet.css'/>
+	
+	<link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link rel='stylesheet' type='text/css' href='css/clothes_remake_stylesheet.css'/>
+	<link rel="stylesheet" type="text/css" href="css/headers.css"/>
+	<link rel="stylesheet" type="text/css" href="css/lists.css" />
+	<link rel="stylesheet" type="text/css" href="css/buttons.css" />
       
-<link rel="stylesheet" type="text/css" href="css/headers.css"/>
-<link rel="stylesheet" type="text/css" href="css/lists.css" />
-<link rel="stylesheet" type="text/css" href="css/buttons.css" />
-
-    <link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css'/>
-    <link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
-         <script type='text/javascript' src="js/indexedDBClothes.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="js/indexedDBClothes.js"></script>
 	<script src="js/Chart.js"></script>
-
-    <script type='text/javascript' src="js/clothes_remake_script.js"></script>
+	<script type='text/javascript' src="js/clothes_remake_script.js"></script>
     
 </head>
 <body id='body'>
@@ -34,32 +32,43 @@
 		</div>	
 </div>
 
-<div id="pageSelect">
-<!--Life-->
-	<div id="life">
-			<a href ="life.html">
-				<i class="fa fa-heart fa-3x"></i>
-				</a>
-	</div>
-<!--Health-->
-	<div id="health" >
-			<a href ="health.html">
-				<i class="fa fa-leaf fa-3x"></i>
-				</a>
-	</div>
-<!--Range-->
-	<div id="range" >
-			<a href ="range.html">
-				<i class="fa fa-arrows fa-3x"></i>
-			</a>
-	</div>
-<!--Bills-->
-	<div id="bills" >
-			<a href ="bills.html">
-				<i class="fa fa-money fa-3x"></i>
-			</a>
-	</div>
-</div>
+		<div id="topMenuBar">
+			<div id="logoWrapper">
+				<div id="caracterIcon">
+				 	<img src="Icons/Logo.png">
+				</div>
+				
+				<div id="userName">
+					<h1 id="user">Username</h1>
+				</div>	
+			</div>
+		
+			<div id="pageSelect">
+				<!--Life-->
+				<div id="life">
+					<a href ="work.html">
+						<i class="fa fa-heart fa-3x"></i>
+					</a>
+				</div>
+			 	<!--Health-->
+				<div id="health" > 
+					<a href ="food.html">
+						<i class="fa fa-leaf fa-3x"></i>
+					</a>
+				</div>
+			 	<!--Range-->
+				<div id="range" > 
+					<a href ="indexRange.html">
+						<i class="fa fa-arrows fa-3x"></i>
+					</a>
+				</div>
+			 	<!--Bills-->
+				<div id="bills" > 
+					<a href ="Bills_start.html">
+						<i class="fa fa-money fa-3x"></i>
+					</a>
+				</div>
+			</div>
 
 <div id="scoreWrapper">
 		<div id="score">
@@ -75,12 +84,12 @@
 </div>
 		<div class='menut' class="contain">
 	
-			<ul  class='tab-links' >
-		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_start.html'><i class="fa fa-home fa-2x"></i></a></li>
-		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/indexBills.html'><i class="fa fa-money fa-2x"></i></a></li>
-		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/FoodIndex.html'><i class="fa fa-cutlery fa-2x"></i> </a></li>
-		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/ClothesIndex.html'><i class="fa fa-male fa-2x"></i></a></li>
-		<li ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_others.html'><i class="fa fa-shopping-cart fa-2x"></i></a></li>
+	<ul  class='tab-links' >
+			<li><a href="Bills_others.html"><i class="fa fa-shopping-cart fa-2x"></i></a></li>
+			<li><a href="Bills_remake.html"><i class="fa fa-money fa-2x"></i></a></li>
+			<li><a href="foodindex.html"><i class="fa fa-cutlery fa-2x"></i> </a></li>
+			<li><a href="clothes_remake.html"><i class="fa fa-male fa-2x"></i></a></li>
+			<li><a href="Bills_start.html"><i class="fa fa-cog fa-2x"></i></a></li>
 	</ul>
 </div>
 <div class='scoreboard'>
@@ -120,17 +129,7 @@
     <section id='change_area'>
       <ul id='field'>
       <li id='allFields'>
-      	<!--	<td >-->
-      			<input id='field3' type="text" placeholder="Type"  />	
-      	<!--	</td>
-      		<td  >-->
-      			 <input id='name' type="text" placeholder="Item purchased" required="">	
-      	<!--	</td>
-      		<td >-->
-      			 <input id='price' type="text" placeholder="Price"  required="">	
-      	<!--	</td>
-       		
-       	-->
+      	
       	</li>
     
        
@@ -139,8 +138,7 @@
        <!--<button class='recommend' id='submit' value='Submit' onclick="TotalScore();add();">Submit</button>
                 <button class='danger' id='remove'>Remove</button>-->
 
-        	<input id='remove' type="button" value='Remove'onclick="remove_fields();"/>
-        	<input id='submit' type='button' value='Submit' onclick="TotalScore();add();"  />
+        	<input id='submit' type='button' value='Submit'/>
         </div>
     </section>
   

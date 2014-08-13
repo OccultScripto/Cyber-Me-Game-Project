@@ -1,6 +1,7 @@
 // Load the content of the database at first start.
 document.addEventListener("DOMContentLoaded", function(event) {    
   	initializeDB(dataBase);
+	general.getUsername();
  });
 
 // Declare a global variable who stores in Local Storage the actual score.
@@ -81,7 +82,9 @@ function Add() {
 
 function verificareData(objects){
 	for (var i = 0;i < objects.length; i++) {
-		if (objects[i].finishTime)
+		if (objects[i].finishTime){
+			
+		}
 	}
 	
 }

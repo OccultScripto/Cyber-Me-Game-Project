@@ -470,8 +470,15 @@ margin-right: 3rem;
 	font-size:1rem;
 }
 #listRow{
-	display:block;
-}
+    display: block;
+    text-align: left;
+    color: #FFF;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-family: "Helvetica";
+    font-size: 1rem;
+    line-height: 2rem;
+    }
 .col-md-2{
 	display:inline-block;
 }
@@ -487,19 +494,26 @@ width: 3rem;
 
 #DatabaseList{
 	
-	background-color:#F97C17; 
+	background-color:#FFA500;; 
 	visibility: hidden;
+	text-align: center;
 }
 #nameD{
-	width:50%;
-	text-align:center;
+	    margin-left: 1rem;
+    width: calc(50% - 1rem - 1px);
+    border-right: 1px solid #FFF;
 }
 #priceD{
-	width:50%;
-	text-align: center;
+	text-align: right;
+margin-right: 1rem;
+width: calc(50% - 1rem);
+}
+#priceD::after{
+	content:' $';
 }
 #myChart{
 	margin-top:0rem;
+	visibility: hidden;
 }
 input[id=scoreDisplay]{
 	background-color:#1f262c;
@@ -520,4 +534,3 @@ border-radius: 16%;
 	background-color:#EA4B12;
 	padding:0.5rem;
 }
-

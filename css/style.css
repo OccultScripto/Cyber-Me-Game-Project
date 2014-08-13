@@ -1101,5 +1101,13 @@ input[name="controls"] {display: none;}
 	
 }
 
+#fil1{
+	position: absolute;
+	left: 0%;
+	top: 100px;
+	width: 100%;
+	height: 1.8rem;
+}
+
 
 

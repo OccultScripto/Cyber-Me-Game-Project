@@ -23,6 +23,7 @@ margin-right: 5rem;
 	
 }
  .tab-links li {
+ 	text-align:center;
   float: left;
 list-style: none outside none;
 height: 1rem;
@@ -335,7 +336,7 @@ input[id=score_val]{
 	margin:2rem solid black;
 	height:3rem;
 	width: 100%;
-	
+	text-align:center;
 	display:inline-block;
 	
 	
@@ -413,7 +414,7 @@ margin-left: -3rem;
 margin-top: 1rem;
 padding-left: 1rem;
 margin-right: 1rem;
-
+background-color: inherit;
 margin-top: 1rem
 }
 #red{
@@ -431,6 +432,7 @@ text-align: center;
 	display:block;
 	font-size: 1rem;
 	padding-bottom:0.5rem;
+	text-align:center;
 
 }
 .FixedListItemClass{
@@ -443,14 +445,18 @@ text-align: center;
 .headerList{
 	font-size: 0.8rem;
 margin-bottom: 1rem;
-margin-left: -3rem;
+margin-left: -4rem;
 margin-right: 3rem;
-padding-left: 1rem;
-background-color: orange;
+background-color: #FFA500;
 text-align: center;
-padding: 0.5rem;
-font-style: Arial;
-font-family: Arial;
+color: #FFF;
+text-transform: capitalize;
+font-weight: 400;
+font-family: "Helvetica";
+padding-bottom: 0.5rem;
+padding-top: 0.5rem;
+padding-left: 1rem;
+padding-right: 1rem;
 }
 #TotalBills{
 	background-color: #FFEBD6;
@@ -466,6 +472,7 @@ border-radius: 16%;
 	    margin-right: 2rem;
     margin-left: 6rem;
     margin-top: 1rem;
+    text-align: center;
 
 }
 #PayButton{
@@ -475,8 +482,47 @@ border-radius: 16%;
 	
 }
 .FixedLi{
-	display: inline;
-padding: 3rem;
-margin-left: -5rem;
+	    display: inline;
+    margin-left: -7rem;
+   margin-right: 2rem;
+padding-left: 3rem;
+padding-right: 3rem;
+}
 	
+}
+#DisplayList{
+	padding:1rem;
+}
+#headerDB{
+	text-align:center;
+}
+.scoreboard{
+text-align: center;
+padding-left: 0rem;
+padding-right: 2rem;}
+.tab-links{
+text-align: center;
+}
+.scoreboard li{
+    padding: 0rem 2rem 0rem 1rem;
+    margin-left: -3rem;
+    margin-right: 0rem;
+}
+#NameDBB{
+    width:20%;
+    font-family:'Helvetica';
+    float:left;
+}
+#PriceDBB{
+    width:20%;
+    font-family:'Helvetica';
+    float:left;
+}
+#DateDBB{
+    width:20%;
+    font-family:'Helvetica';
+    float:left;
+}
+.menut ul{
+	margin-left:2rem;
 }
