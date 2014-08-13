@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	database.currentStore = database.stores.food;
 	database.initializeDB();
 	if(document.getElementById('submit')){
 		document.getElementById('submit').addEventListener('click', getItemsFromDB);
@@ -24,7 +25,8 @@ function updateFromLocalstorage(){
 }
 
 function callback(objects){
-			
+	
+	console.log("Food objects are: ", objects);
 	var rows="";
 	var ul = document.getElementById('DatabaseList');
 	
@@ -74,6 +76,7 @@ function callback(objects){
 };
 
 function getItemsFromDB(){
+	alert("asfafa");
 	database.getAllItems(callback);
 }
 

@@ -2,11 +2,16 @@
 <html>
 <title>Food</title>
 <head>
-	
-     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	 <script type="text/javascript" src='js/java.js'></script>
-	 <script type="text/javascript" src='js/indexedDBFood.js'></script>
-	 	<link rel='stylesheet' type='text/css' href='css/listsB.css'/>  
+
+		
+		 <script src="js/jquery-2.1.1.min.js"></script>
+     	 <script src="js/jquery-ui.min.js"></script>
+     	 <script type="text/javascript" src='js/indexedDB.js'></script>
+     	 <script type="text/javascript" src='js/java.js'></script>
+     	 <link rel='stylesheet' type='text/css' href='css/jquery-ui.min.css'/>  
+	 
+
+	 	<link rel='stylesheet' type='text/css' href='css/lists.css'/>  
           <link rel='stylesheet' type='text/css' href='css/foodmain.css'/>    
 
 	<link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
@@ -20,7 +25,7 @@
 		<div id="topMenuBar">
 			<div id="logoWrapper">
 				<div id="caracterIcon">
-				 	<img src="Icons/Logo.png">
+				 	<img src="icons/Logo.png">
 				</div>
 
 				<div id="userName">
@@ -31,25 +36,25 @@
 			<div id="pageSelect">
 				<!--Life-->
 				<div id="life">
-					<a href ="work.html">
+					<a href ="life.html">
 						<i class="fa fa-heart fa-3x"></i>
 					</a>
 				</div>
 			 	<!--Health-->
 				<div id="health" > 
-					<a href ="food.html">
+					<a href ="health.html">
 						<i class="fa fa-leaf fa-3x"></i>
 					</a>
 				</div>
 			 	<!--Range-->
 				<div id="range" > 
-					<a href ="indexRange.html">
+					<a href ="range.html">
 						<i class="fa fa-arrows fa-3x"></i>
 					</a>
 				</div>
 			 	<!--Bills-->
 				<div id="bills" > 
-					<a href ="Bills_start.html">
+					<a href ="bills.html">
 						<i class="fa fa-money fa-3x"></i>
 					</a>
 				</div>
@@ -72,11 +77,11 @@
 	<div class='menut' class="contain">
 	
 			<ul  class='tab-links' >
-			<li><a href="Bills_others.html"><i class="fa fa-shopping-cart fa-2x"></i></a></li>
-			<li><a href="Bills_remake.html"><i class="fa fa-money fa-2x"></i></a></li>
-			<li><a href="foodindex.html"><i class="fa fa-cutlery fa-2x"></i> </a></li>
-			<li><a href="clothes_remake.html"><i class="fa fa-male fa-2x"></i></a></li>
-			<li><a href="Bills_start.html"><i class="fa fa-cog fa-2x"></i></a></li>
+		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_start.html'><i class="fa fa-home fa-2x"></i></a></li>
+		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/indexBills.html'><i class="fa fa-money fa-2x"></i></a></li>
+		<li  ><a href='foodindex.html'><i class="fa fa-cutlery fa-2x"></i> </a></li>
+		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/ClothesIndex.html'><i class="fa fa-male fa-2x"></i></a></li>
+		<li ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_others.html'><i class="fa fa-shopping-cart fa-2x"></i></a></li>
 	</ul>
 </div>
 </div>
@@ -94,20 +99,20 @@
        		</p> 
     	 	<p align="center"> <label align="center"> *For extra points rate the importance of food below: &#x25BC;</label></p>
         	<p align="center">          
-            	<input class='nice' type="radio" id='1' name = "radSize" value = "1" checked = "checked" onclick="setValue(value)";/>
+            	<input class='nice' type="radio" id='1' name = "radSize" value = "1" checked = "checked" onchange="setValue(value)";/>
             	<label for = "size1">1</label>
           
-            	<input class='nice' type="radio" id='2' name = "radSize" value = "2" onclick="setValue(value)";/>
+            	<input class='nice' type="radio" id='2' name = "radSize" value = "2" onchange="setValue(value)";/>
             	<label for = "size2">2</label>
  
-            	<input class='nice' type="radio" id='3' name = "radSize" value = "3" onclick="setValue(value)";/>
+            	<input class='nice' type="radio" id='3' name = "radSize" value = "3" onchange="setValue(value)";/>
            	 	<label for = "size3">3</label>
           
 
-            	<input class='nice' type="radio" id='4' name = "radSize" value = "4" onclick="setValue(value)";/>
+            	<input class='nice' type="radio" id='4' name = "radSize" value = "4" onchange="setValue(value)";/>
            	 	<label for = "size4">4</label>
           
-            	<input class='nice' type="radio" id='5' name = "radSize"   value = "5"  onclick="setValue(value)";/>
+            	<input class='nice' type="radio" id='5' name = "radSize"   value = "5"  onchange="setValue(value)";/>
             	<label for = "size5">5*</label>
         	</p>       
 			

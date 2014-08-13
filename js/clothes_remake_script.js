@@ -1,13 +1,5 @@
 var filter = null;
 
-
-window.onload=(function(){
-   
-
-
-	
-})();
-
 function init(){
 	
 	document.getElementById('name').value="";
@@ -27,6 +19,9 @@ function DB(){
 	database.getAllItems(callback);
 
 };
+function nr(){
+	database.getAllItems(nrTypes);
+}
 function Points(value){
 
 x=value;
@@ -161,9 +156,8 @@ function remove_fields(){
 	
 }
 
-function nrTtypes(){
   	
-function call(objects){
+function nrTypes(objects){
 /*document.getElementById('form').style.display='none';
 document.getElementById('form').style.visibility='hidden';*/
 	var rows="";
@@ -194,9 +188,8 @@ var office=0;
 
 
 };
-database.getAllItems(call);
 
-}
+
 function reset(){
 	localStorage.setItem('Formalt',0);
 	localStorage.setItem('Officet',0);
@@ -251,11 +244,7 @@ var ctx = document.getElementById("myChart").getContext("2d");
 var myNewChart = new Chart(ctx).PolarArea(data);   
 new Chart(ctx).PolarArea(data, data.labels);
 var myBarChart = new Chart(ctx).Bar(data, data.datasets);
- /* 
-  var chart="";
-   chart+="<canvas id='myChart' width='400' height='400'></canvas>";
-   document.getElementById("column2").innerHTML ="<div>"+chart +"</div>";	
-		*/
+
 };
 
 
@@ -318,6 +307,7 @@ document.getElementById('DatabaseList').style.visibility='hidden';
 
 $(document).ready(function(){
 //reset();
+	database.currentStore = database.stores.clothes;
 	document.getElementById('scoreDisplay').value=localStorage.getItem('score');
 
 	   window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
@@ -350,7 +340,7 @@ object.price=price;
 Points(price);
 TotalScore();
 database.insertItem(object);
-nrTtypes();
+nr();
 
 	
 });
@@ -394,19 +384,25 @@ $(rem).click(function(){
 	 
 	d.addEventListener("click",function(){
 		tableCreate('Formal');
-		$("#myChart").css("visibility", "visible");
+			database.initializeDB(nr);
+
+		//$("#myChart").css("visibility", "visible");
 	});
 	
 	var shirt=document.getElementById('shirt');
 	shirt.addEventListener('click',function(){
 		tableCreate('Office');
-		$("#myChart").css("visibility", "visible");
+			database.initializeDB(nr);
+
+		//$("#myChart").css("visibility", "visible");
 		});
 	
 	var tshirt=document.getElementById('tshirt');
 	tshirt.addEventListener('click',function(){
 		tableCreate('Casual');
-		$("#myChart").css("visibility", "visible");
+			database.initializeDB(nr);
+
+		//$("#myChart").css("visibility", "visible");
 		});
 	//document.getElementById('score_val').readonly=true;
 	//document.getElementById('score_val').value=localStorage.getItem('score');
@@ -432,6 +428,9 @@ $(rem).click(function(){
 				$('#plus3').removeClass('green');
 				document.getElementById('field3').value="Formal";
 				add.disabled=false;
+				document.getElementById('scoreFormal').value=localStorage.getItem('Formalt');
+ 				 document.getElementById('scoreOffice').value=localStorage.getItem('Officet');
+  				 document.getElementById('scoreCasual').value=localStorage.getItem('Casualt');
 
 			var nr_rows=localStorage.getItem('rows');
 	nr_rows=+nr_rows+ +1;
@@ -445,6 +444,9 @@ $(rem).click(function(){
    		$('#plus3').removeClass('green');
    				document.getElementById('field3').value="Office";
    				add.disabled=false;
+   				document.getElementById('scoreFormal').value=localStorage.getItem('Formalt');
+ 				 document.getElementById('scoreOffice').value=localStorage.getItem('Officet');
+  				 document.getElementById('scoreCasual').value=localStorage.getItem('Casualt');
 
    	var nr_rows=localStorage.getItem('rows');
 	nr_rows=+nr_rows+ +1;
@@ -457,6 +459,9 @@ $(rem).click(function(){
    		$('#plus2').removeClass('green');
    				document.getElementById('field3').value="Casual";
    				add.disabled=false;
+   				document.getElementById('scoreFormal').value=localStorage.getItem('Formalt');
+  				document.getElementById('scoreOffice').value=localStorage.getItem('Officet');
+  			 document.getElementById('scoreCasual').value=localStorage.getItem('Casualt');
 
    	var nr_rows=localStorage.getItem('rows');
 	nr_rows=+nr_rows+ +1;

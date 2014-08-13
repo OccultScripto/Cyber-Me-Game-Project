@@ -499,8 +499,18 @@ html, body, #map-canvas {
         }
         #map-canvas{
             /*height: 300px;*/
-            box-shadow: 5px 3px 5px 0px #ccc
+            box-shadow: 5px 3px 5px 0px #ccc;
+						left: 0 !important;
+						top: 5.5rem !important;
+						position: absolute !important;
+						width: 100% !important;
         }
+				#myModal{
+					top: 5.5rem !important;
+					background: white;
+					position: absolute;
+					width: 100%;
+				}
         #check-box{
             padding: 10px;
             width: 60%;

@@ -1,5 +1,5 @@
 html{
-	background-color:#FFF5EE;
+	background-color:#FFF5EE !important;
 	margin: 0 0 0 0;
 	
 	
@@ -304,4 +304,60 @@ a:hover{background-color: #C04000;}
 	font-size:small;
 	float:center;
 }
+.menut{
+	background-color:#22b573;
+	margin:2rem solid black;
+	height:3rem;
+	width: 100%;
+	text-align:center;
+	display:inline-block;
+	
+}
+.menut ul{
+	margin-left:2rem;
+	
 
+	
+}
+.contain{
+
+	display:inline-block;
+	margin-top: -1rem;
+margin-left: -5rem;
+margin-right: 5rem;
+}
+.tab-links:after{
+	 display:block;
+        clear:both;
+        content:'';
+	
+}
+ .tab-links li {
+ 	text-align:center;
+  float: left;
+list-style: none outside none;
+height: 1rem;
+margin-left: 0rem;
+margin-right: 0rem;
+padding: 0rem 0rem 1rem 1rem;
+display: inline;
+margin-bottom: -1rem;
+  }
+ 
+        .tab-links a {
+           /* padding:9px 15px;*/
+           display:inline-block;
+          
+           
+           
+            font-weight:600;
+            color:white;
+            
+            transition:all linear 0.15s;
+        }
+ 
+        .tab-links :hover {
+            background:orange;
+            text-decoration:none;
+        }
+ 

@@ -23,14 +23,15 @@ margin-right: 5rem;
 	
 }
  .tab-links li {
-  float: left;
-list-style: none outside none;
-height: 1rem;
-margin-left: 0rem;
-margin-right: 0rem;
-padding: 0rem 0rem 1rem 1rem;
-display: inline;
-margin-bottom: -1rem;
+      text-align: center;
+    float: left;
+    list-style: none outside none;
+    height: 1rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    padding: 0rem 0rem 1rem 1rem;
+    display: inline;
+    margin-bottom: -1rem;
   }
  
         .tab-links a {
@@ -156,6 +157,7 @@ width: 100%;
 height: 2.5rem;
 background-color: #1f262c;
 text-align: center;
+padding-bottom: 1rem;
 }
 div {
 display: block;
@@ -331,12 +333,11 @@ input[id=score_val]{
 	
 }
 .menut{
-	background-color:#22b573;
-	margin:2rem solid black;
-	height:3rem;
-	width: 100%;
-	display:inline-block;
-	
+background-color: #22B573;
+height: 3rem;
+width: 100%;
+text-align: center;
+display: inline-block;
 	
 	
 
@@ -405,10 +406,7 @@ h3{
 .fa-2x {
     font-size: 2rem;
 }
-ul{
-	
-	margin-left:2rem;
-}
+
 li{
 	display: inline-block;
 }
@@ -513,7 +511,6 @@ width: calc(50% - 1rem);
 }
 #myChart{
 	margin-top:0rem;
-	visibility: hidden;
 }
 input[id=scoreDisplay]{
 	background-color:#1f262c;

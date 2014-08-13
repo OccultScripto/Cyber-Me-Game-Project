@@ -19,6 +19,7 @@ var database = (function () {
 		this.currentStore = this.stores.work;
 		
 		this.initializeDB = function(callback) {
+			callback = callback || function(){};
 		  if (window.indexedDB) {
 			  console.log("IndexedDB support is there");
 			}
@@ -47,6 +48,7 @@ var database = (function () {
 			// We can only create Object stores in a versionchange transaction.
 			request.onupgradeneeded = function (e) {
 			   // e.target.result holds the connection to database
+				 console.log("cleared all stores!!!");
 			   db = e.target.result;
  
 			   if(db.objectStoreNames.contains(database.stores.work)) {
@@ -111,7 +113,7 @@ var database = (function () {
 					
 		//Method for getting all stored pictures from indexedDB	
 		this.getAllItems = function(callback){
-			console.log("The db is: ", db);
+			console.log("The db is: ", this.currentStore, db);
 			callback = callback || function(){};
 			var items = [];
 			var dataObjectStore = db.transaction([database.currentStore], "readwrite").objectStore(database.currentStore);

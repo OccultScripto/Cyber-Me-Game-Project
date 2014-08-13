@@ -5,32 +5,22 @@
 	
 	<link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/jquery-ui.min.css">
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link rel='stylesheet' type='text/css' href='css/clothes_remake_stylesheet.css'/>
 	<link rel="stylesheet" type="text/css" href="css/headers.css"/>
 	<link rel="stylesheet" type="text/css" href="css/lists.css" />
 	<link rel="stylesheet" type="text/css" href="css/buttons.css" />
-      
+     	<script src="js/Chart.js"></script>
+ 
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-  <script type='text/javascript' src="js/indexedDBClothes.js"></script>
-	<script src="js/Chart.js"></script>
+  <script type='text/javascript' src="js/indexedDB.js"></script>
 	<script type='text/javascript' src="js/clothes_remake_script.js"></script>
     
 </head>
 <body id='body'>
 <!-- DIV for the first menu of the page. (Icon, Name and score) -->
-<div id="topMenuBar">
-	<div id="logoWrapper">
-			<div id="caracterIcon">
-					<img src="Icons/logo_20140718.png">
-			</div>
 
-		<div id="userName">
-			<h1>Username</h1>
-		</div>	
-</div>
 
 		<div id="topMenuBar">
 			<div id="logoWrapper">
@@ -81,8 +71,7 @@
 		<i class="fa fa-trophy fa-2x"></i>
 </div>
 </div>
-</div>
-		<div class='menut' class="contain">
+<div class='menut' class="contain">
 	
 	<ul  class='tab-links' >
 			<li><a href="Bills_others.html"><i class="fa fa-shopping-cart fa-2x"></i></a></li>
@@ -140,12 +129,13 @@
 
         	<input id='submit' type='button' value='Submit'/>
         </div>
+
     </section>
-  
+
 </form>
+          	<canvas id='myChart' width='100' height='50'></canvas>
 
 </div>
-	<canvas id='myChart' width='400' height='90'></canvas>
 </body>
 
 

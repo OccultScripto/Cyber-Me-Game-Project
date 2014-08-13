@@ -1,12 +1,8 @@
-html{
-	background-color:#FFF5EE;
-	margin: 0 0 0 0;
-	width:100%;
-	
-}
+
 body{
 	font-size:10px;
 	margin: 0 0 0 0;
+	background-color:#FFEBD6 !important;
 }
 .topMenu {
 		background-color: #999999;
@@ -196,15 +192,15 @@ a:hover{background-color: #C04000;}
 }
 
 .image{
-	margin-left: 6rem;
+	margin-left: 11rem;
 	margin-top: 2rem;
 	width: 6.5rem;
 	height: 8rem;
 }
 
 #data{
-	margin-left:3.5rem;
-	margin-top:1.9rem;s
+	margin-left:8.5rem;
+	margin-top:1.9rem;
 }
 .Income{
 	font: bold 7rem ,Verdana, sans-serif;
@@ -242,7 +238,69 @@ a:hover{background-color: #C04000;}
 	
 }
 #Save{
-	margin-left:4rem;
-	border-style:ridge;
-}
+border-radius: 16%;
+	background-color:#00ADAD;
+	padding:0.5rem;
+	   margin-right: 2rem;
+margin-left: 3rem;
+margin-top: 3rem;
+    text-align: center;
 
+}
+.menut{
+	background-color:#22b573;
+	margin:2rem solid black;
+	height:3rem;
+	width: 100%;
+	text-align:center;
+	display:inline-block;
+	
+}
+.menut ul{
+	margin-left:2rem;
+	
+
+	
+}
+.contain{
+
+	display:inline-block;
+	margin-top: -1rem;
+margin-left: -5rem;
+margin-right: 5rem;
+}
+.tab-links:after{
+	 display:block;
+        clear:both;
+        content:'';
+	
+}
+ .tab-links li {
+ 	text-align:center;
+  float: left;
+list-style: none outside none;
+height: 1rem;
+margin-left: 0rem;
+margin-right: 0rem;
+padding: 0rem 0rem 1rem 1rem;
+display: inline;
+margin-bottom: -1rem;
+  }
+ 
+        .tab-links a {
+           /* padding:9px 15px;*/
+           display:inline-block;
+          
+           
+           
+            font-weight:600;
+            color:white;
+            
+            transition:all linear 0.15s;
+        }
+ 
+        .tab-links :hover {
+            background:orange;
+            text-decoration:none;
+        }
+ 

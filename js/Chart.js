@@ -37,7 +37,7 @@
 	Chart.defaults = {
 		global: {
 			// Boolean - Whether to animate the chart
-			animation: true,
+			animation:false,
 
 			// Number - Number of animation steps
 			animationSteps: 60,
@@ -96,10 +96,10 @@
                         maintainAspectRatio: true,
 
 			// Boolean - Determines whether to draw tooltips on the canvas or not - attaches events to touchmove & mousemove
-			showTooltips: true,
+			showTooltips: false,
 
 			// Array - Array of string names to attach tooltip events
-			tooltipEvents: ["mousemove", "touchstart", "touchmove", "mouseout"],
+			//tooltipEvents: ["mousemove", "touchstart", "touchmove", "mouseout"],
 
 			// String - Tooltip background colour
 			tooltipFillColor: "rgba(0,0,0,0.8)",

@@ -1,13 +1,121 @@
-window.onload=(function(){
-   
+$(document).ready(function(){
+	database.currentStore = database.stores.bills;
+	
+	document.getElementById('scoreDisplay').value=localStorage.getItem('score');
 
+	database.initializeDB(countUnpaid);
+	database.initializeDB(getAllFromDB);
+	database.initializeDB(Total);
+//	database.initializeDB(UpdateMonth);
+		var d=new Date();
+    	Crtmonth=d.getMonth()+1;
+    if (Crtmonth!=localStorage.getItem('MonthDB')){
+    		database.initializeDB(UpdateMonth);
+
+    }	
+	ul = document.getElementById('UnpaidBills');
+		ul.style.visibility='hidden';
+	//database.initializeDB(Pay);
+
+	document.getElementById('SubButton').disabled=true;
 
 	
-})();
+	$('#plus').click(function(){
+
+		document.getElementById('SubButton').disabled=false;
+
+		$(this).toggleClass('green');
+		ul = document.getElementById('UnpaidBills');
+		ul.style.visibility='hidden';
+	    ul.innerHTML="";
+	    var allB=document.getElementById('AllBills');
+		 allB.style.visibility='hidden';
+	     allB.innerHTML="";
+	    allBills=document.getElementById('ListFixedBills');
+	    if (allBills.style.visibility=='hidden')
+	    {
+         	database.initializeDB(getAllFromDB);
+		}
+    	allBills.style.visibility='visible';
+
+		//newBill();
+	});
+var submit=document.getElementById('SubButton');
+
+console.log(submit);
+$(submit).click(function(){
+
+  var object={};
+  var name=document.getElementById('NameDB').value;
+    var price=document.getElementById('PriceDB').value;
+    var date=document.getElementById('dueDateDB').value;
+    var fix=document.getElementById('FixedDB');
+    Points(price);
+    TotalScore();
+    if (fix.checked){
+    	object.fixed=1;
+    }
+    else
+    {
+    	object.fixed=0;
+    }
+    console.log('values',name,price,date);
+ object.name=name;
+ object.price=price;
+ object.date=date;
+ object.paid=0;
 
 
+  	database.insertItem(object);
+});
+var robot=document.getElementById('sadRobot');
+$(robot).click(function(){
+	document.getElementById('SubButton').disabled=true;
+
+	var red=document.getElementById('red');
+	red.style.visibility='hidden';
+    var allBills=document.getElementById('ListFixedBills');
+    allBills.style.visibility='hidden';
+    allBills.innerHTML="";
+    var allB=document.getElementById('AllBills');
+	 allB.style.visibility='hidden';
+	     allB.innerHTML="";
 
 
+    ul = document.getElementById('UnpaidBills');
+
+	 if (ul.style.visibility=='hidden')
+	    {
+			database.initializeDB(getUnpaidDB);
+		}
+	    ul.style.visibility='visible';
+
+
+});
+var all=document.getElementById('allBills');
+$(all).click(function(){
+	document.getElementById('SubButton').disabled=true;
+	 var allBills=document.getElementById('ListFixedBills');
+    allBills.style.visibility='hidden';
+    allBills.innerHTML="";
+    ul = document.getElementById('UnpaidBills');
+	ul.style.visibility='hidden';
+	 ul.innerHTML="";
+	 var allB=document.getElementById('AllBills');
+	 
+	 if (allB.style.visibility=='hidden')
+	    {
+			database.initializeDB(ShowAll);
+		}
+	 allB.style.visibility='visible';
+});
+ 
+
+plus=document.getElementById('plus');
+plus.addEventListener('click',newBill);
+
+});
+	
 
 function newBill(){
 if (document.getElementById('NameDB')==null){
@@ -347,120 +455,3 @@ function TotalPrice(objects){
     	localStorage.setItem('TotalBills',total);
 	document.getElementById('TotalBills').value=localStorage.getItem('TotalBills');
 }
-
-$(document).ready(function(){
-	
-	document.getElementById('scoreDisplay').value=localStorage.getItem('score');
-
-	database.initializeDB(countUnpaid);
-	database.initializeDB(getAllFromDB);
-	database.initializeDB(Total);
-//	database.initializeDB(UpdateMonth);
-		var d=new Date();
-    	Crtmonth=d.getMonth()+1;
-    if (Crtmonth!=localStorage.getItem('MonthDB')){
-    		database.initializeDB(UpdateMonth);
-
-    }	
-	ul = document.getElementById('UnpaidBills');
-		ul.style.visibility='hidden';
-	//database.initializeDB(Pay);
-
-	document.getElementById('SubButton').disabled=true;
-
-	
-	$('#plus').click(function(){
-
-		document.getElementById('SubButton').disabled=false;
-
-		$(this).toggleClass('green');
-		ul = document.getElementById('UnpaidBills');
-		ul.style.visibility='hidden';
-	    ul.innerHTML="";
-	    var allB=document.getElementById('AllBills');
-		 allB.style.visibility='visible';
-	     allB.innerHTML="";
-	    allBills=document.getElementById('ListFixedBills');
-	    if (allBills.style.visibility=='hidden')
-	    {
-         	database.initializeDB(getAllFromDB);
-		}
-    	allBills.style.visibility='visible';
-
-		//newBill();
-	});
-var submit=document.getElementById('SubButton');
-
-console.log(submit);
-$(submit).click(function(){
-
-  var object={};
-  var name=document.getElementById('NameDB').value;
-    var price=document.getElementById('PriceDB').value;
-    var date=document.getElementById('dueDateDB').value;
-    var fix=document.getElementById('FixedDB');
-    Points(price);
-    TotalScore();
-    if (fix.checked){
-    	object.fixed=1;
-    }
-    else
-    {
-    	object.fixed=0;
-    }
-    console.log('values',name,price,date);
- object.name=name;
- object.price=price;
- object.date=date;
- object.paid=0;
-
-
-  	database.insertItem(object);
-});
-var robot=document.getElementById('sadRobot');
-$(robot).click(function(){
-	document.getElementById('SubButton').disabled=true;
-
-	var red=document.getElementById('red');
-	red.style.visibility='hidden';
-    var allBills=document.getElementById('ListFixedBills');
-    allBills.style.visibility='hidden';
-    allBills.innerHTML="";
-    var allB=document.getElementById('AllBills');
-	 allB.style.visibility='visible';
-	     allB.innerHTML="";
-
-
-    ul = document.getElementById('UnpaidBills');
-
-	 if (ul.style.visibility=='hidden')
-	    {
-			database.initializeDB(getUnpaidDB);
-		}
-	    ul.style.visibility='visible';
-
-
-});
-var all=document.getElementById('allBills');
-$(all).click(function(){
-	document.getElementById('SubButton').disabled=true;
-	 var allBills=document.getElementById('ListFixedBills');
-    allBills.style.visibility='hidden';
-    allBills.innerHTML="";
-    ul = document.getElementById('UnpaidBills');
-	ul.style.visibility='hidden';
-	 ul.innerHTML="";
-	 var allB=document.getElementById('AllBills');
-	 allB.style.visibility='visible';
-	database.initializeDB(ShowAll);
-});
- 
-
-plus=document.getElementById('plus');
-plus.addEventListener('click',newBill);
-
-
-
-
-});
-	
