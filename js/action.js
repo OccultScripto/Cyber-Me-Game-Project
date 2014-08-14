@@ -11,6 +11,7 @@ $('#bRemove').click(function() {
 		$('#tblList2').css('visibility','hidden');
 	$('#tblList3').css('visibility','hidden');
 	$('#tblList4').css('visibility','hidden');
+	$('#total').css('visibility','hidden');
 	
 })
 function edit(){
@@ -93,7 +94,7 @@ $('#total').click(function() {
 	$('#tblList3').css('visibility','hidden');
 	$('#tblList4').css('visibility','hidden');
 })
-/*$('#fil').click(function() {
+$('#fil').click(function() {
    ListbyDate();
 	$('#tblList').css('visibility','hidden');
 	$('#form').css('visibility','hidden');
@@ -105,8 +106,8 @@ $('#total').click(function() {
 	$('#tblList2').css('visibility','hidden');
 	$('#tblList3').css('visibility','hidden');
 	$('#tblList4').css('visibility','hidden');
-})*/
-$('#y1').click(function() {
+})
+$('#year').change(function() {
    ListbyYear();
 	$('#tblList').css('visibility','hidden');
 	$('#form').css('visibility','hidden');
@@ -119,137 +120,8 @@ $('#y1').click(function() {
 	$('#tblList4').css('visibility','hidden');
 	$('#tblList2').css('visibility','visible');
 })
-$('#y2').click(function() {
-   ListbyYear();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-		$('#tblList1').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','hidden');
-	$('#tblList2').css('visibility','visible');
-})
-$('#y3').click(function() {
-   ListbyYear();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-		$('#tblList1').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','hidden');
-	$('#tblList2').css('visibility','visible');
-})
-$('#y4').click(function() {
-   ListbyYear();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-		$('#tblList1').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','hidden');
-	$('#tblList2').css('visibility','visible');
-})
-$('#y5').click(function() {
-   ListbyYear();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-		$('#tblList1').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','hidden');
-	$('#tblList2').css('visibility','visible');
-})
-$('#d1').click(function() {
-   ListbyDay();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-		$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList4').css('visibility','hidden');
-	$('#tblList3').css('visibility','visible');
-})
-$('#d2').click(function() {
-  ListbyDay();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-		$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList4').css('visibility','hidden');
-	$('#tblList3').css('visibility','visible');
-})
-$('#d3').click(function() {
-    ListbyDay();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-		$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList4').css('visibility','hidden');
-	$('#tblList3').css('visibility','visible');
-})
-$('#d4').click(function() {
-    ListbyDay();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-	$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList4').css('visibility','hidden');
-	$('#tblList3').css('visibility','visible');
-})
-$('#d5').click(function() {
-  ListbyDay();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-	$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList4').css('visibility','hidden');
-	$('#tblList3').css('visibility','visible');
-})
-$('#d6').click(function() {
-    ListbyDay();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-		$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList4').css('visibility','hidden');
-	$('#tblList3').css('visibility','visible');
-})
-$('#d7').click(function() {
+
+$('#day1').change(function() {
    ListbyDay();
 	$('#tblList').css('visibility','hidden');
 	$('#form').css('visibility','hidden');
@@ -262,7 +134,8 @@ $('#d7').click(function() {
 	$('#tblList4').css('visibility','hidden');
 	$('#tblList3').css('visibility','visible');
 })
-$('#m1').click(function() {
+
+$('#month').change(function() {
    ListbyMonth();
 	$('#tblList').css('visibility','hidden');
 	$('#form').css('visibility','hidden');
@@ -275,149 +148,7 @@ $('#m1').click(function() {
 	$('#tblList3').css('visibility','hidden');
 	$('#tblList4').css('visibility','visible');
 })
-$('#m2').click(function() {
-    ListbyMonth();;
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-	$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','visible');
-})
-$('#m3').click(function() {
-    ListbyMonth();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-	$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','visible');
-})
-$('#m4').click(function() {
-    ListbyMonth();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-	$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','visible');
-})
-$('#m5').click(function() {
-   ListbyMonth();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','visible');
-})
-$('#m6').click(function() {
-     ListbyMonth();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-	$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','visible');
-})
-$('#m7').click(function() {
-  ListbyMonth();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-	$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','visible');
-})
-$('#m8').click(function() {
-    ListbyMonth();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-	$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','visible');
-})
-$('#m9').click(function() {
-     ListbyMonth();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','visible');
-})
-$('#m10').click(function() {
-    ListbyMonth();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-	$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','visible');
-})
-$('#m11').click(function() {
-    ListbyMonth();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-	$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','visible');
-})
-$('#m12').click(function() {
-     ListbyMonth();
-	$('#tblList').css('visibility','hidden');
-	$('#form').css('visibility','hidden');
-	$('#title').css('visibility','hidden');
-	$('#bAdd').css('visibility','hidden');
-	$('#bUpdate').css('visibility','hidden');
-	$('#total').css('visibility','hidden');
-	$('#tblList1').css('visibility','hidden');
-	$('#tblList2').css('visibility','hidden');
-	$('#tblList3').css('visibility','hidden');
-	$('#tblList4').css('visibility','visible');
-})
+
 $('#fil1').click(function() {
    List();
 	$('#tblList').css('visibility','visible');

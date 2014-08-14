@@ -57,7 +57,7 @@ for(var i in tb20){
 				"	<span></span>" +
 				
 			
-				"<span>"+"<input type='image' onclick='Delete1(this)'  src='icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
+				"<span>"+"<input type='image' onclick='Delete1(this)'  src='Icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
 				"</li>"+
 
 				"</ul>";

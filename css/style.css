@@ -126,7 +126,7 @@ font-family:awesome;
 	background-color: #22b573;
 	width: 49.9%;
 	height: 6%;
-	margin-top:360px;
+	margin-top:380px;
 	text-align: center;
 	text-top:center;
 	color: #ffffff;
@@ -187,7 +187,7 @@ display:inline-block;
 	color: #ffffff;
 	float:right;
 visibility:hidden;
-margin-top:360px;
+margin-top:380px;
 }
 
 #bUpdate3 {
@@ -1099,14 +1099,6 @@ input[name="controls"] {display: none;}
 	0% {top: 0;}
 	100% {top: -240px;} 
 	
-}
-
-#fil1{
-	position: absolute;
-	left: 0%;
-	top: 100px;
-	width: 100%;
-	height: 1.8rem;
 }
 
 

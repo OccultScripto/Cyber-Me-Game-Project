@@ -68,7 +68,10 @@ $('#rec1').css('visibility','hidden')
 		$('#accordion30').css('visibility','hidden')
 	
 })
-$('#body').click(function() {
+$('#body1').change(function() {
+var select = $("#body1 option:selected").val();
+switch(select){
+case "1":
     $('#form2').css('visibility','visible');
 	$('#qu').css('visibility','hidden');
 	$('#work1').css('visibility','visible');
@@ -82,25 +85,9 @@ $('#body').click(function() {
 	$('#accordion23').css('visibility','hidden');
 	$('#rec1').css('visibility','hidden')
 		$('#accordion30').css('visibility','hidden')
-	
-})
-$('#without').click(function() {
-    $('#form2').css('visibility','visible');
-	$('#qu').css('visibility','hidden');
-	$('#work1').css('visibility','visible');
-	$('#day').css('visibility','hidden');
-	$('#day1').css('visibility','visible');
-$('#rec1').css('visibility','hidden')
-		$('#accordion30').css('visibility','hidden')
-	$('#rec').css('visibility','hidden')
-	$('#accordion20').css('visibility','hidden')
-	$('#accordion21').css('visibility','hidden')
-	$('#accordion22').css('visibility','hidden')
-	$('#accordion23').css('visibility','hidden');
-	
-})
-$('#fat').click(function() {
-    $('#form2').css('visibility','visible');
+		break;
+case "2":
+ $('#form2').css('visibility','visible');
 	$('#qu').css('visibility','hidden');
 	$('#work1').css('visibility','visible');
 	$('#day').css('visibility','hidden');
@@ -117,8 +104,26 @@ $('#fat').click(function() {
 	$('#accordion13').css('visibility','hidden')
 	$('#accordion14').css('visibility','hidden')
 	$('#rec').css('visibility','hidden');
+	break;
+case "3":
+	 $('#form2').css('visibility','visible');
+	 $('#day2').css('visibility','hidden');
+	$('#qu').css('visibility','hidden');
+	$('#work1').css('visibility','visible');
+	$('#day1').css('visibility','visible');
+	$('#day').css('visibility','visible');
+$('#rec1').css('visibility','hidden')
+		$('#accordion30').css('visibility','hidden')
+	$('#rec').css('visibility','hidden')
+	$('#accordion20').css('visibility','hidden')
+	$('#accordion21').css('visibility','hidden')
+	$('#accordion22').css('visibility','hidden')
+	$('#accordion23').css('visibility','hidden');
+	break;
+	default:alert("dasads");}
 	
 })
+
 $('#option1').click(function(){
 	$('#rec').css('visibility','hidden')
 	$('#accordion30').css('visibility','visible');
@@ -280,7 +285,10 @@ $('#optionsRadios7').click(function(){
 	$('#accordion14').css('visibility','hidden')
 	$('#rec').css('visibility','visible');})
 		
-$('#back').click(function() {
+$('#exercise').change(function() {
+var select = $("#exercise option:selected").val();
+switch(select){
+ case "1":
     $('#form1').css('visibility','visible');
 	$('#qu').css('visibility','hidden');
 	$('#title').css('visibility','visible');
@@ -303,9 +311,9 @@ $('#back').click(function() {
 	$('#accordion8').css('visibility','hidden');
 	$('#title8').css('visibility','hidden');
 	$('#accordion7').css('visibility','hidden');
-	})
-$('#biceps').click(function() {
-    $('#form1').css('visibility','visible');
+	break;
+case "2":
+	 $('#form1').css('visibility','visible');
 	$('#qu').css('visibility','hidden');
 	$('#title').css('visibility','visible');
 	$('#accordion1').css('visibility','visible');
@@ -326,9 +334,9 @@ $('#biceps').click(function() {
 	$('#accordion8').css('visibility','hidden');
 	$('#title8').css('visibility','hidden');
 	$('#accordion7').css('visibility','hidden');
-	})
-$('#triceps').click(function() {
-    $('#form1').css('visibility','visible');
+	break;
+	case "3":
+	 $('#form1').css('visibility','visible');
 	$('#qu').css('visibility','hidden');
 	$('#title').css('visibility','visible');
 	$('#accordion1').css('visibility','hidden');
@@ -349,9 +357,9 @@ $('#triceps').click(function() {
 	$('#accordion8').css('visibility','hidden');
 	$('#title8').css('visibility','hidden');
 	$('#accordion7').css('visibility','hidden');
-	})
-$('#chest').click(function() {
-    $('#form1').css('visibility','visible');
+	break;
+	case "4":
+	$('#form1').css('visibility','visible');
 	$('#qu').css('visibility','hidden');
 	$('#title').css('visibility','visible');
 	$('#accordion1').css('visibility','hidden');
@@ -372,10 +380,9 @@ $('#chest').click(function() {
 	$('#accordion8').css('visibility','hidden');
 	$('#title8').css('visibility','hidden');
 	$('#accordion7').css('visibility','hidden');
-	
-	})
-$('#shoulders').click(function() {
-    $('#form1').css('visibility','visible');
+	break;
+	case "5":
+	 $('#form1').css('visibility','visible');
 	$('#qu').css('visibility','hidden');
 	$('#title').css('visibility','visible');
 	$('#accordion1').css('visibility','hidden');
@@ -396,9 +403,9 @@ $('#shoulders').click(function() {
 	$('#accordion8').css('visibility','hidden');
 	$('#title8').css('visibility','hidden');
 	$('#accordion7').css('visibility','hidden');
-	})
-$('#abs').click(function() {
-    $('#form1').css('visibility','visible');
+	break;
+	case "6":
+	 $('#form1').css('visibility','visible');
 	$('#qu').css('visibility','hidden');
 	$('#title').css('visibility','visible');
 	$('#accordion1').css('visibility','hidden');
@@ -419,9 +426,9 @@ $('#abs').click(function() {
 	$('#accordion8').css('visibility','hidden');
 	$('#title8').css('visibility','hidden');
 	$('#accordion7').css('visibility','hidden');
-	})
-$('#legs').click(function() {
-    $('#form1').css('visibility','visible');
+	break;
+	case "7":
+	 $('#form1').css('visibility','visible');
 	$('#qu').css('visibility','hidden');
 	$('#title').css('visibility','visible');
 	$('#accordion1').css('visibility','hidden');
@@ -442,9 +449,9 @@ $('#legs').click(function() {
 	$('#accordion8').css('visibility','hidden');
 	$('#title8').css('visibility','hidden');
 	$('#accordion7').css('visibility','hidden');
-	})
-$('#cardio').click(function() {
-      $('#form1').css('visibility','visible');
+	break;
+	case "8":
+	$('#form1').css('visibility','visible');
 	$('#qu').css('visibility','hidden');
 	$('#title').css('visibility','visible');
 	$('#accordion1').css('visibility','hidden');
@@ -465,9 +472,9 @@ $('#cardio').click(function() {
 	$('#accordion8').css('visibility','hidden');
 	$('#title8').css('visibility','visible');
 	$('#accordion7').css('visibility','visible');
-	})
-$('#forearms').click(function() {
-    $('#form1').css('visibility','visible');
+	break;
+	case "9":
+	 $('#form1').css('visibility','visible');
 	$('#qu').css('visibility','hidden');
 	$('#title').css('visibility','visible');
 	$('#accordion1').css('visibility','hidden');
@@ -484,11 +491,23 @@ $('#forearms').click(function() {
 	$('#accordion5').css('visibility','hidden');
 	$('#title7').css('visibility','hidden');
 	$('#accordion6').css('visibility','hidden');
-	$('#title8').css('visibility','hidden');
-	$('#accordion7').css('visibility','hidden');
 	$('#title9').css('visibility','visible');
 	$('#accordion8').css('visibility','visible');
+	$('#title8').css('visibility','hidden');
+	$('#accordion7').css('visibility','hidden');
+	break;
+	default:alert("Adsa");
+	break;
+	}
 	})
+
+
+
+
+
+
+
+
 $('#edit').click(function() {
     $('#form').css('visibility','visible');
 	$('#tblList').css('visibility','hidden');

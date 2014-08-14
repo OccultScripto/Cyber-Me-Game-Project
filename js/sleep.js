@@ -94,8 +94,8 @@ for(var i in tb1){
 				"	<span></span>" +
 				"	<span></span>" +
 				
-				"<span id='edit'>"+"<input type='image' onclick='edit(this)' src='icons/edit.png' width='8px' height='15px' "+i+" /></span>" +
-				"<span>"+"<input type='image' onclick='Delete(this)'  src='icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
+				"<span id='edit'>"+"<input type='image' onclick='edit(this)' src='Icons/edit.png' width='8px' height='15px' "+i+" /></span>" +
+				"<span>"+"<input type='image' onclick='Delete(this)'  src='Icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
 				"</li>"+
 
 				"</ul>";
