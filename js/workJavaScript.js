@@ -1,10 +1,25 @@
 // Load the content of the database at first start.
-document.addEventListener("DOMContentLoaded", function(event) {    
+document.addEventListener("DOMContentLoaded", function(event) {
+	  database.currentStore = database.stores.work;
   	initializeDB(dataBase);
+		document.getElementById("addButton").addEventListener("click", newHabbit);
+		document.getElementById("formName").addEventListener("click", function(){clearContent(this)});
+		document.getElementById("formTime").addEventListener("click", function(){clearContent(this)});
+		document.getElementById("selectType").addEventListener("click", showSelectType);
+		document.getElementById("submitField").addEventListener("click", sendInfo);
+		$("li[role=option]").each(function(index){
+			$(this).on("click", function(){
+				selectedType($(this)[0]);
+			});
+		});
+		
  });
 
 // Declare a global variable who stores in Local Storage the actual score.
 var option = ""; //A for add E for eddit;
+
+// Variable that verify if the added habbit was completed in properly time.
+ var verificareBoolean = false;
 
 // Global variable in work section to save the score earned in local storage.
 var score = 0;
@@ -64,46 +79,70 @@ function Add() {
 	object.name = name;
 	object.type = habbitType;
 	object.picture = imgPicture;
-
+	object.bool = verificareBoolean;
 	var dateNow = new Date();
 	var currentTime = dateNow.getTime();
-	console.log("Current Time:", currentTime);
+	console.log("Current Time:", dateNow);
 
-	var dateFinish = dateNow;
+	
+	dateFinish = dateNow ;
 	dateFinish.setHours(dateFinish.getHours() + parseInt(time, 10));
-	var dataFinal = Date.parse(dateFinish);
-	console.log("Final Time:", dataFinal);
-	//object.currentTime =currentTime;
-	object.finishTime = dataFinal;
+	console.log("Final Time:", dateFinish);
+	object.finishTime = dateFinish;
 	//alert("The data was saved.");
 	database.insertItem(object);
 } 
 
+// Update the bool value form the item. If bool equals true the the item is checked as verified.
+function updateTimeBool(item){
+	item.bool = true;
+	database.updateItem(parseInt(item.id,10), item);
+}
+
 function verificareData(objects){
+	
 	for (var i = 0;i < objects.length; i++) {
-		if (objects[i].finishTime)
+		var dateNow = new Date();
+		var currentTime = dateNow.getTime();
+		console.log("Obiectele:", objects[i]);
+		console.log("Obiect Db:", objects[i].value.finishTime, "Obiect data:", dateNow);
+		var s1 = objects[i].value.finishTime.toString();
+		var s2 = dateNow.toString();
+		var dataObiect = s1.substring(0, s1.length - 19);
+		var dataCurenta = s2.substring(0, s2.length - 19);
+		console.log("dataObiect", dataObiect);
+		console.log("dataCurenta", dataCurenta);
+		console.log("BOOL before compare:", objects[i].value.bool, objects[i].value.name);
+		if ((dataObiect == dataCurenta) && (objects[i].value.bool==false)){
+			//alert("AAA");
+			showModalFinishHabbit(objects[i].key);
+			console.log("Match date!");
+			console.log("Object in date verify key:", objects[i].key);
+			database.getItemById(objects[i].key,updateTimeBool);
+			console.log("BOOL",objects[i].value.bool,objects[i].value.name);
+		}
 	}
 	
 }
 
 function verifyHabbitExpirationTime(){
-	var dateNow = new Date();
-	var currentTime = dateNow.getTime();
+	
 	database.getAllItems(verificareData);	
 };
 window.setInterval(function(){
   /// call your function here
   verifyHabbitExpirationTime();
-}, 5000);
+}, 600000);
+//10 min
 
 
 // Function that make a call to the hideTable function after the Add button was clicked.
 // HideTable function will display the input fields and then after the submit button will
 // be clicked a new habbit will be added with the data from the input fields.
-function newHabbit() {
+function newHabbit(){
 	option = "A";
 	document.getElementById("formName").value = "Name";
-	document.getElementById("formTime").value = "Time";
+	document.getElementById("formTime").value = "Time(h)";
 	hideTable();
 }
 
@@ -160,6 +199,54 @@ function hideSelectType() {
 }
 
 
+function updateFinishTrue(item){
+	//item.picture = arr[1].src;
+	var newItem = {};
+	newItem.value.picture = arr[1].src;
+	//alert(item.id);
+	//alert("B"+item.picture);
+	//console.log("Picture after selected done habbit:",item.picture);
+	database.updateItem(parseInt(item.id,10), newItem);
+	//alert("A"+item.picture);
+	setTimeout(function(){
+				dataBase();	
+			},500);
+	hideModalFinishHabbit();
+}
+function updatefinishFalse(item){
+	pictureChoice = arr[2].src
+	item.picture = pictureChoice;
+	alert(item.id);
+	alert("B"+item.picture);
+	database.updateItem(parseInt(item.id,10), item);
+	alert("A"+item.picture);
+	setTimeout(function(){
+				dataBase();
+			},500);
+	hideModalFinishHabbit();
+}
+
+function showModalFinishHabbit(key){
+	document.getElementById("topMenuBar").style.display= "none"; 
+	document.getElementById("secondMenuContainer").style.display= "none"; 
+	document.getElementById("tableWrapper").style.display= "none";
+	document.getElementById("habbitFinish").style.display ="inline-block";
+
+	document.getElementById("confirmFinish").addEventListener("click",function() {
+		database.getItemById(parseInt(key,10),updateFinishTrue);
+	});
+	document.getElementById("cancelFinish").addEventListener("click",function(){
+		database.getItemById(parseInt(key,10),updatefinishFalse);
+	});
+}
+// Function that hides the modal pop-up for delete confirmation.
+function hideModalFinishHabbit() {
+	document.getElementById("topMenuBar").style.display= "inline"; 
+	document.getElementById("secondMenuContainer").style.display= "inline"; 
+	document.getElementById("tableWrapper").style.display= "inline";
+	document.getElementById("habbitFinish").style.display ="none";
+}
+
 // Function that tells which button is selected.
 // hide the table and show the input fields.
 function sendInfo() {
@@ -178,6 +265,7 @@ function sendInfo() {
 
 // Function that clear the content of the input fields when the are clicked.
 function clearContent(element) {
+	console.log(element);
 	if (element.value === "") {
 		if (element.id === "formName") {
 			element.value= "Name";
@@ -194,7 +282,6 @@ function clearContent(element) {
 
 // Function that show the objects data stored in database.
 function dataBase() {
-
 	function callback(objects) {		
 
 		var rows = "";
@@ -203,19 +290,34 @@ function dataBase() {
     		var item = objects[i];
 			console.log("Item nr. " + i + " is: ", item);
 			rows += "<ul id='tableRow'>" +
-	  		" 	<li id='tableCheck'>" + "<input id='checked' dbkey="+item.key+" data-name="+item.value.name+" type='checkbox' onclick='check(this)'" + item.value.check+"></li>" +
+	  		" 	<li id='tableCheck'>" + "<input role='checked' id='checked' dbkey="+item.key+" data-name="+item.value.name+" type='checkbox'" + item.value.check+"></li>" +
 			"	<li id='tableItem'>"+item.value.name+"</li>" + 
 			"	<li id='tableType'>"+"<img src="+item.value.type+"></li>"+
 			"	<li id='tablePic'>"+"<img src="+item.value.picture+">"+"</li>" + 
-			"	<li id='tableEdit'>"+"<input id='edit' data-isEdit='true' type='image' dbkey="+item.key+" onclick='clickRowIndex(this)'src='Icons/edit.png'"+item.value.edit+" ></li>" +
-			"	<li id='tableRemove'>"+"<input id='delete' data-isDelete='true' type='image' dbkey="+ item.key+" onclick='clickRowIndex(this)' src='Icons/delete.png'"+item.value.remove+"></li>" +
+			"	<li id='tableEdit'>"+"<input role='edit' id='edit' data-isEdit='true' type='image' dbkey="+item.key+" src='Icons/edit.png'"+item.value.edit+" ></li>" +
+			"	<li id='tableRemove'>"+"<input role='delete' id='delete' data-isDelete='true' type='image' dbkey="+ item.key+" src='Icons/delete.png'"+item.value.remove+"></li>" +
 			"</ul>";
 
 			document.getElementById("tbList").innerHTML = rows;
+			$("input[role=edit]").each(function(index){
+				$(this).on("click", function(){
+					clickRowIndex($(this)[0]);
+				});
+			});
+			$("input[role=delete]").each(function(index){
+				$(this).on("click", function(){
+					clickRowIndex($(this)[0]);
+				});
+			});
+			$("input[role=checked]").each(function(index){
+				$(this).on("click", function(){
+					check($(this)[0]);
+				});
+			});
 		}
 	}
 	database.getAllItems(callback);	
-	return true;
+	//return true;
 };
 
 //  Function that shows the fileds for editing the data selected.
@@ -265,9 +367,6 @@ function Delete(indexObj){
 		console.log("Delete item with id: ", indexObj);
 		database.deleteItem(parseInt(indexObj, 10), dataBase);
 	});
-	document.getElementById("cancelDelete").addEventListener("click",function(){
-		//do notting
-	});
 };
 
 // Function that alert which row is selected by the click.
@@ -297,18 +396,30 @@ function updateStatusUI(item){
 function check(elem){
 	elem.checked = "true";
 	var name = elem.getAttribute("data-name");
-	alert("Congratulations you finished habbit: " + name);
+	alert("Congratulations you finished task: " + name);
 	score = score + 5;
 	localStorage.setItem(score, score);
 	
 	var index=elem.getAttribute("dbkey");
 	var newKey = parseInt(index, 10);
-
+	//stopCheck(elem.key);
 	database.getItemById(newKey,updateStatusUI);
 	setTimeout(function(){
 				dataBase();	
-			},500);
+			},100);
+	setTimeout(function(){
+		location.reload();}
+	,100);
+	
 };
+
+
+function stopCheck(item){
+
+	database.getItemById(parseInt(item,10),updateTimeBool);
+	//console.log("verificare variabila bool :" , item.id);
+	alert("s-a oprit");
+}
 
 // function that counts the remain time until the habbit should be done.
 function takeTime() {
@@ -317,23 +428,30 @@ function takeTime() {
 
 // Get the atribute selected from the list of the habbit types.
 function selectedType(elem){
-	console.log("selectedtype:",elem);
+	
 	var elementSelected = elem.getAttribute("data-name");
 	
 	// Reset a selected option from the habbit types is another is selected.
-	function resetOptions(){
+	function resetOptions(item){
+
 		var listOfOptions = ["Arts","Bills","Fitness","Games","Health","Movies","Range","Run","Social","Speed","Others"];
 		for (var i = 0; i < listOfOptions.length; i++) {
-			console.log("Elem",listOfOptions[i]);
-			//listOfOptions[i].setAttribute("aria-selected",false);
+			
+			if (elem.getAttribute("data-name") == listOfOptions[i]){
+				elem.setAttribute("aria-selected",false);
+				
+				
+			} 
+			
 		};
 	}
 
 	switch(elementSelected){
 		case "Arts":
 			habbitPictureChoice = toh[10].src;
-			resetOptions();
+			
 			elem.setAttribute("aria-selected",true);
+			setTimeout(function(){resetOptions(elementSelected);},500);
 			setTimeout(function(){
 				hideSelectType();	
 			},500);
@@ -341,80 +459,80 @@ function selectedType(elem){
 		break;
 		case "Bills":
 			habbitPictureChoice = toh[1].src;
-			resetOptions();
 			elem.setAttribute("aria-selected",true);
+			setTimeout(function(){resetOptions(elementSelected);},500);
 			setTimeout(function(){
 				hideSelectType();	
 			},500);
 		break;
 		case "Fitness":
 			habbitPictureChoice = toh[2].src;
-			resetOptions();
 			elem.setAttribute("aria-selected",true);
+			setTimeout(function(){resetOptions(elementSelected);},500);
 			setTimeout(function(){
 				hideSelectType();	
 			},500);
 		break;
 		case "Games":
 			habbitPictureChoice = toh[9].src;
-			resetOptions();
 			elem.setAttribute("aria-selected",true);
+			setTimeout(function(){resetOptions(elementSelected);},500);
 			setTimeout(function(){
 				hideSelectType();	
 			},500);
 		break;
 		case "Health":
 			habbitPictureChoice = toh[3].src;
-			resetOptions();
 			elem.setAttribute("aria-selected",true);
+			setTimeout(function(){resetOptions(elementSelected);},500);
 			setTimeout(function(){
 				hideSelectType();	
 			},500);
 		break;
 		case "Movies":
 			habbitPictureChoice = toh[8].src;
-			resetOptions();
 			elem.setAttribute("aria-selected",true);
+			setTimeout(function(){resetOptions(elementSelected);},500);
 			setTimeout(function(){
 				hideSelectType();	
 			},500);
 		break;
 		case "Range":
 			habbitPictureChoice = toh[5].src;
-			resetOptions();
 			elem.setAttribute("aria-selected",true);
+			setTimeout(function(){resetOptions(elementSelected);},500);
 			setTimeout(function(){
 				hideSelectType();	
 			},500);
 		break;
 		case "Run":
 			habbitPictureChoice = toh[7].src;
-			resetOptions();
 			elem.setAttribute("aria-selected",true);
+			setTimeout(function(){resetOptions(elementSelected);},500);
 			setTimeout(function(){
 				hideSelectType();	
 			},500);
 		break;
 		case "Social":
 			habbitPictureChoice = toh[6].src;
-			resetOptions();
 			elem.setAttribute("aria-selected",true);
+			setTimeout(function(){resetOptions(elementSelected);},500);
 			setTimeout(function(){
 				hideSelectType();	
 			},500);
 		break;
 		case "Speed":
 			habbitPictureChoice = toh[4].src;
-			resetOptions();
 			elem.setAttribute("aria-selected",true);
+			setTimeout(function(){resetOptions(elementSelected);},500);
 			setTimeout(function(){
 				hideSelectType();	
 			},500);
 		break;
 		default :
 			habbitPictureChoice = toh[0].src;
-			resetOptions();
 			elem.setAttribute("aria-selected",true);
+			setTimeout(function(){resetOptions(elementSelected);},500);
 			setTimeout(function(){
 				hideSelectType();	
 			},500);

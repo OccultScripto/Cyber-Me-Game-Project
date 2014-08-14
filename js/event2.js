@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	
+	database.currentStore = database.stores.events;
 	database.initializeDB(getAllFromDB);
 	
 	$('#datepicker').datepicker({ dateFormat: "yy-mm-dd"}).datepicker("setDate", "0");
@@ -15,8 +16,8 @@ $(document).ready(function(){
     });
     
 
-	$(".msg").live('click', function(){
-		jQuery('#Status').html('');
+	$(".msg").on('click', function(){
+		$('#Status').html('');
 		$('#Status').append('<p>' + $(this).text()+'</div>');
    		$("#Status").show("slow").delay(4000).fadeOut(1000);
    		// utils.status.show($(this).text(),500);
@@ -26,7 +27,12 @@ $(document).ready(function(){
 		database.getAllItems(updateUI);
 	};
 	function updateUI(objects){
-		$('#showEvent').html('');
+		//$('#EventList').html("");
+		$('#Date').html("");
+		$('#Loc').html("");
+		$('#Mes').html("");
+		$('#H1').html("");
+		$('#H2').html("");
 		for(var i=0; i<objects.length; i++){
 			var item = objects[i];
 			$('#Date').append('<div id="DateAppend">' + item.value.date+'</div>');

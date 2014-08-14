@@ -2,12 +2,13 @@
 <html>
 <title>Food</title>
 <head>     
-		<script type="text/javascript" src='js/indexedDBFood.js'></script>
+		<script type="text/javascript" src='js/indexedDB.js'></script>
      	 <script src="js/jquery-2.1.1.min.js"></script>
      	 <script src="js/jquery-ui.min.js"></script>
      	 <link rel='stylesheet' type='text/css' href='css/jquery-ui.min.css'/>  
 	 	<script type="text/javascript" src='js/java.js'></script>
-	 	<link rel='stylesheet' type='text/css' href='css/listsB.css'/>  
+	 	<link rel='stylesheet' type='text/css' href='css/lists.css'/>  
+	 	<link rel='stylesheet' type='text/css' href='css/general.css'/>  
      	<link rel='stylesheet' type='text/css' href='css/foodstylesheet.css'/>    
 		<link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
 
@@ -21,39 +22,38 @@
 				<div id="caracterIcon">
 				 	<img src="Icons/Logo.png">
 				</div>
-
+				
 				<div id="userName">
-					<h1>Username</h1>
+					<h1 id="user">Username</h1>
 				</div>	
 			</div>
-
+		
 			<div id="pageSelect">
 				<!--Life-->
 				<div id="life">
-					<a href ="life.html">
+					<a href ="work.html">
 						<i class="fa fa-heart fa-2x"></i>
 					</a>
 				</div>
 			 	<!--Health-->
 				<div id="health" > 
-					<a href ="health.html">
+					<a href ="food.html">
 						<i class="fa fa-leaf fa-2x"></i>
 					</a>
 				</div>
 			 	<!--Range-->
 				<div id="range" > 
-					<a href ="range.html">
+					<a href ="indexRange.html">
 						<i class="fa fa-arrows fa-2x"></i>
 					</a>
 				</div>
 			 	<!--Bills-->
 				<div id="bills" > 
-					<a href ="bills.html">
+					<a href ="Bills_start.html">
 						<i class="fa fa-money fa-2x"></i>
 					</a>
 				</div>
 			</div>
-
 			<div id="scoreWrapper">
 				<div id="score">
 					<h1 id="scoreDisplay"><input id='scoreval' readonly />
@@ -71,11 +71,11 @@
 	<div class='menut' class="contain">
 	
 			<ul  class='tab-links' >
-		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_start.html'><i class="fa fa-home fa-2x"></i></a></li>
-		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/indexBills.html'><i class="fa fa-money fa-2x"></i></a></li>
-		<li  ><a href='foodindex.html'><i class="fa fa-cutlery fa-2x"></i> </a></li>
-		<li  ><a href='http://127.0.0.1:8020/NewProj/MergeUs/ClothesIndex.html'><i class="fa fa-male fa-2x"></i></a></li>
-		<li ><a href='http://127.0.0.1:8020/NewProj/MergeUs/Bills_others.html'><i class="fa fa-shopping-cart fa-2x"></i></a></li>
+			<li><a href="Bills_others.html"><i class="fa fa-shopping-cart fa-2x"></i></a></li>
+			<li><a href="Bills_remake.html"><i class="fa fa-money fa-2x"></i></a></li>
+			<li><a href="foodindex.html"><i class="fa fa-cutlery fa-2x"></i> </a></li>
+			<li><a href="clothes_remake.html"><i class="fa fa-male fa-2x"></i></a></li>
+			<li><a href="Bills_start.html"><i class="fa fa-cog fa-2x"></i></a></li>
 	</ul>
 </div>
 </div>

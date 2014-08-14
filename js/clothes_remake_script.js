@@ -1,10 +1,4 @@
-
-window.onload=(function(){
-   
-
-
-	
-})();
+var filter = null;
 
 function init(){
 	
@@ -13,38 +7,21 @@ function init(){
 	var el=document.getElementById('field');//.deleteRow(localStorage.getItem('rows')-1);
 	var x=localStorage.getItem('rows');
 	//el.remove(el.x);
-	for(var i=1;i<x;i++){
+	for(var i=x;i>2;i--){
 		el.removeChild(el.childNodes[i]);	
 	}
 	
-	localStorage.setItem('rows',1);
+	
 	
 };
 
-function add()
-{
+function DB(){
+	database.getAllItems(callback);
 
-var newtotal=document.getElementById('price').value;
-localStorage.setItem('today',newtotal);
-var retrievedObject = localStorage.getItem('today');
-//alert('price'+retrievedObject);
-Points(retrievedObject);
 };
-
-function sumtotal(){
-	var s=localStorage.getItem('today');
-	alert('whaat??'+s);
-	st=0;
-	st=+st + +s;
-	var thisweadd=localStorage.getItem('clothestotal');
-	sum=+thisweadd + +st;
-    localStorage.setItem('clothestotal',sum);
-	//document.getElementById('total').value=localStorage.getItem('clothestotal');
-	Points(s);
-	
-
+function nr(){
+	database.getAllItems(nrTypes);
 }
-
 function Points(value){
 
 x=value;
@@ -86,9 +63,9 @@ else if (x>100 && x<=200){
 
 function TotalScore(){
 	//localStorage.setItem('score',0);
-	sum= +localStorage.getItem('scorec') + +localStorage.getItem('pointsc');
-	localStorage.setItem('scorec',sum);
-	v=localStorage.getItem('scorec');
+	sum= +localStorage.getItem('score') + +localStorage.getItem('pointsc');
+	localStorage.setItem('score',sum);
+	v=localStorage.getItem('score');
 	//confirm("Ok: "+v+" ?");	
 	document.getElementById('scoreDisplay').value=v;
 	
@@ -96,24 +73,61 @@ function TotalScore(){
 
 
 
+
+function TotalPrice(objects){
+	var total=0;
+	var score=0;
+	for(var i=0; i<objects.length; i++){
+    		var item = objects[i];
+			total=+total+ +item.value.price;
+		}
+    	localStorage.setItem('TotalClothes',total);
+}
+
+
 function more_fields(){
-	 
-	var nr_rows=localStorage.getItem('rows');
-	nr_rows=+nr_rows+ +1;
-	localStorage.setItem('rows',nr_rows);
-	alert(localStorage.getItem('rows'));
+if (document.getElementById('field3')==null)	{
+	var node1=document.getElementById('allFields');
+	var input1 = document.createElement('input');
+		input1.setAttribute("id","field3");
+		input1.setAttribute("type","text");
+		input1.setAttribute("class","InputField");
+
+
+	var input2= document.createElement('input');
+		input2.setAttribute("id","name");
+		input2.setAttribute("type","text");
+		input2.setAttribute("placeholder","Name");
+		input2.setAttribute("class","InputField");
+
+
+	var input3= document.createElement('input');
+		input3.setAttribute("id","price");
+		input3.setAttribute("type","text");
+		input3.setAttribute("placeholder","Price");
+		input3.setAttribute("class","InputField");
+	
+	
+//var br1=document.createElement('p');
+//var br2=document.createElement('p');
+
+	node1.appendChild(input1);
+	node1.appendChild(input2);
+	node1.appendChild(input3);
+	
 	var node=document.getElementById('field');
 /*	var node1=document.getElementById('field1');
 	var node2=document.getElementById('field2');
 	var node3=document.getElementById('field3');*/
-	var node1=document.getElementById('allFields');
-	var p1=node1.cloneNode(true);
+	node.appendChild(node1);
 	//var p2=node2.cloneNode(false);
 	//var p3=node3.cloneNode(false);
 	
 	//node.appendChild(p3);
-	node.appendChild(p1);
+	//node.appendChild(p1);
 	//node.appendChild(p2);
+	
+}
 	
 	
 
@@ -123,7 +137,6 @@ function more_fields(){
 function remove_fields(){
 	var el=document.getElementById('field');//.deleteRow(localStorage.getItem('rows')-1);
 	var x=localStorage.getItem('rows')-1;
-	alert(localStorage.getItem('rows'));
 	//el.remove(el.x);
 	el.removeChild(el.childNodes[x]);
 	var rows=localStorage.getItem('rows');
@@ -143,9 +156,8 @@ function remove_fields(){
 	
 }
 
-function nrTtypes(){
   	
-function call(objects){
+function nrTypes(objects){
 /*document.getElementById('form').style.display='none';
 document.getElementById('form').style.visibility='hidden';*/
 	var rows="";
@@ -176,9 +188,8 @@ var office=0;
 
 
 };
-database.getAllItems(call);
 
-}
+
 function reset(){
 	localStorage.setItem('Formalt',0);
 	localStorage.setItem('Officet',0);
@@ -188,10 +199,6 @@ function reset(){
 
 }
 
-
-function tableCreate(val){
-document.getElementById('form').style.visibility='hidden';
-document.getElementById('DatabaseList').style.visibility='visible';
 function callback(objects){
 /*document.getElementById('form').style.display='none';
 document.getElementById('form').style.visibility='hidden';*/
@@ -199,9 +206,9 @@ document.getElementById('form').style.visibility='hidden';*/
 
     	for(var i=0; i<objects.length; i++){
     		var item = objects[i];
-    		console.log(item.value.type,val);
+    		console.log(item.value.type,filter);
     
-    			if (item.value.type==val){
+    			if (item.value.type==filter){
     			    	rows+="<li id='listRow'>"+	
 	  			"<div  id='nameD' class='databaseList1'>"+item.value.name+"</div>"+
 	  			"<div  id='priceD' class='databaseList1'>"+item.value.price+"</div>"+
@@ -233,23 +240,26 @@ document.getElementById('form').style.visibility='hidden';*/
   	}
   	]
   };
-  	var ctx = document.getElementById("myChart").getContext("2d");
+var ctx = document.getElementById("myChart").getContext("2d");
 var myNewChart = new Chart(ctx).PolarArea(data);   
 new Chart(ctx).PolarArea(data, data.labels);
 var myBarChart = new Chart(ctx).Bar(data, data.datasets);
- /* 
-  var chart="";
-   chart+="<canvas id='myChart' width='400' height='400'></canvas>";
-   document.getElementById("column2").innerHTML ="<div>"+chart +"</div>";	
-		*/
-    };
 
+};
+
+
+
+
+function tableCreate(val){
+filter = val;
+document.getElementById('form').style.visibility='hidden';
+document.getElementById('DatabaseList').style.visibility='visible';
+database.getAllItems(callback);
 
 /*for (var i=1;i<objects.lenght;i++){
 
 }
 */
-database.getAllItems(callback);
 
 }
 
@@ -291,12 +301,15 @@ document.getElementById('DatabaseList').style.visibility='hidden';
   document.getElementById('column1').innerHTML="";
   document.getElementById('column2').innerHTML="";
   document.getElementById('DatabaseList').innerHMTL="";
-  init();
+  //init();
 
 };
 
 $(document).ready(function(){
 //reset();
+	database.currentStore = database.stores.clothes;
+	document.getElementById('scoreDisplay').value=localStorage.getItem('score');
+
 	   window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
     var dbVersion=1.0;
     window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
@@ -305,11 +318,14 @@ $(document).ready(function(){
 	if (!window.indexedDB) {
     window.alert("Your browser doesn't support a stable version of IndexedDB. Such and such feature will not be available.");
 }
+	database.initializeDB(DB);
+
  document.getElementById('scoreFormal').value=localStorage.getItem('Formalt');
   document.getElementById('scoreOffice').value=localStorage.getItem('Officet');
    document.getElementById('scoreCasual').value=localStorage.getItem('Casualt');
    document.getElementById('scoreDisplay').value=localStorage.getItem('scorec');
 var add=document.getElementById('submit');
+add.disabled=true;
 $(add).click(function(){
 
 var object={};
@@ -321,9 +337,10 @@ object.type=type;
 object.name=name;
 object.price=price;
 
-
+Points(price);
+TotalScore();
 database.insertItem(object);
-nrTtypes();
+nr();
 
 	
 });
@@ -367,16 +384,25 @@ $(rem).click(function(){
 	 
 	d.addEventListener("click",function(){
 		tableCreate('Formal');
+			database.initializeDB(nr);
+
+		//$("#myChart").css("visibility", "visible");
 	});
 	
 	var shirt=document.getElementById('shirt');
 	shirt.addEventListener('click',function(){
 		tableCreate('Office');
+			database.initializeDB(nr);
+
+		//$("#myChart").css("visibility", "visible");
 		});
 	
 	var tshirt=document.getElementById('tshirt');
 	tshirt.addEventListener('click',function(){
 		tableCreate('Casual');
+			database.initializeDB(nr);
+
+		//$("#myChart").css("visibility", "visible");
 		});
 	//document.getElementById('score_val').readonly=true;
 	//document.getElementById('score_val').value=localStorage.getItem('score');
@@ -401,7 +427,14 @@ $(rem).click(function(){
 				$('#plus2').removeClass('green');
 				$('#plus3').removeClass('green');
 				document.getElementById('field3').value="Formal";
-				
+				add.disabled=false;
+				document.getElementById('scoreFormal').value=localStorage.getItem('Formalt');
+ 				 document.getElementById('scoreOffice').value=localStorage.getItem('Officet');
+  				 document.getElementById('scoreCasual').value=localStorage.getItem('Casualt');
+
+			var nr_rows=localStorage.getItem('rows');
+	nr_rows=+nr_rows+ +1;
+	localStorage.setItem('rows',nr_rows);	
 		
 		}
 	});
@@ -410,7 +443,14 @@ $(rem).click(function(){
    		$('#plus1').removeClass('green');
    		$('#plus3').removeClass('green');
    				document.getElementById('field3').value="Office";
-   	
+   				add.disabled=false;
+   				document.getElementById('scoreFormal').value=localStorage.getItem('Formalt');
+ 				 document.getElementById('scoreOffice').value=localStorage.getItem('Officet');
+  				 document.getElementById('scoreCasual').value=localStorage.getItem('Casualt');
+
+   	var nr_rows=localStorage.getItem('rows');
+	nr_rows=+nr_rows+ +1;
+	localStorage.setItem('rows',nr_rows);
    	}
    });
     $('#plus3').click(function(){
@@ -418,6 +458,14 @@ $(rem).click(function(){
    		$('#plus1').removeClass('green');
    		$('#plus2').removeClass('green');
    				document.getElementById('field3').value="Casual";
+   				add.disabled=false;
+   				document.getElementById('scoreFormal').value=localStorage.getItem('Formalt');
+  				document.getElementById('scoreOffice').value=localStorage.getItem('Officet');
+  			 document.getElementById('scoreCasual').value=localStorage.getItem('Casualt');
+
+   	var nr_rows=localStorage.getItem('rows');
+	nr_rows=+nr_rows+ +1;
+	localStorage.setItem('rows',nr_rows);
    	}
    });
  

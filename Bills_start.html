@@ -4,14 +4,13 @@
 
 <head>
 	<link type="text/css" rel="stylesheet" href="css/Bills_start.css"/>
-	<link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
+	<link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/work/work.css"/>
+	<link type="text/css" rel="stylesheet" href="css/general.css"/>
 	
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
-  	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 	
-  	<script type="text/javascript" src="js/Bills_start.js"></script>	
-  	<script type="text/javascript" src="js/jQuery.js"></script>
-  	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-  	<script type="stylesheet" src="css/jquery-ui.min.css"></script>
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script> 	
+  <script type="text/javascript" src="js/Bills_start.js"></script>	
   	
 <title>
    Cyber Me/Bills/Start
@@ -19,34 +18,71 @@
 </head>
 
 <body>
-	<div class="topMenu" id="topMenuBorder">
-			<div id="caracterIcon">
-				<img src="icon/logo_20140718.png">
+		<!-- DIV for the first menu of the page. (Icon, Name and score) -->
+		<div id="topMenuBar">
+			<div id="logoWrapper">
+				<div id="caracterIcon">
+				 	<img src="Icons/Logo.png">
+				</div>
+				
+				<div id="userName">
+					<h1 id="user">Username</h1>
+				</div>	
 			</div>
-			<div id="userName">
-				<h2>Username</h2>
+		
+			<div id="pageSelect">
+				<!--Life-->
+				<div id="life">
+					<a href ="work.html">
+						<i class="fa fa-heart fa-2x"></i>
+					</a>
+				</div>
+			 	<!--Health-->
+				<div id="health" > 
+					<a href ="food.html">
+						<i class="fa fa-leaf fa-2x"></i>
+					</a>
+				</div>
+			 	<!--Range-->
+				<div id="range" > 
+					<a href ="indexRange.html">
+						<i class="fa fa-arrows fa-2x"></i>
+					</a>
+				</div>
+			 	<!--Bills-->
+				<div id="bills" > 
+					<a href ="Bills_start.html">
+						<i class="fa fa-money fa-2x"></i>
+					</a>
+				</div>
 			</div>
+			
 			<div id="scoreWrapper">
-				<div id="score">	
+				<div id="score">
+					<h1 id="scoreDisplay">
+					</h1>
 				</div>
+					
 				<div id="scoreIcon">
-					<i class="fa fa-trophy fa-2x"></i>
-					</div>
+					<i class="fa fa-trophy fa-2x"></i> 
 				</div>
+			</div>
 		</div>
 		
-	<div id="navbar">
-		<ul>
-			<li><a href="Bills_start.htlm"><i class="fa fa-cog fa-2x"></i> </a></li>
-			<li><a href="bills.html"><i class="fa fa-money fa-2x"></i></a></li>
-			<li><a href="food.html"><i class="fa fa-cutlery fa-2x"></i></a></li>
-			<li><a href="clothes.html"><i class="fa fa-male fa-2x"></i></a></li>
+		
+	<div class='menut'  class="contain">
+	
+			<ul  class='tab-links' >
 			<li><a href="Bills_others.html"><i class="fa fa-shopping-cart fa-2x"></i></a></li>
-		</ul>
-	</div>
+			<li><a href="Bills_remake.html"><i class="fa fa-money fa-2x"></i></a></li>
+			<li><a href="foodindex.html"><i class="fa fa-cutlery fa-2x"></i> </a></li>
+			<li><a href="clothes_remake.html"><i class="fa fa-male fa-2x"></i></a></li>
+			<li><a href="Bills_start.html"><i class="fa fa-cog fa-2x"></i></a></li>
+	</ul>
+</div>
 	
 	 <div>
-		<img src="icon/Applications robot.jpg", class="image"/>
+		<img src="Icons/logo_20140718.png" class="image"/>
 	</div>
 	
 	<div id="data">
@@ -67,10 +103,10 @@
             		</div> 
         </div>
         
-        <div class="footer">
+        
         	<button type="button" value="Save" id="Save">SUBMIT</button> 
         	
-        </div>
+        
 
 	</div>	
 </body>

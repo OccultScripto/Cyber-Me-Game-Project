@@ -1,0 +1,230 @@
+
+
+/*Second Menu*/
+#secondMenuContainer {
+	background-color: #22b573;
+	width:100%;
+	height:3rem;
+	display:inline;
+}
+
+#secondButtonLeft {
+	height: 3rem;
+	width: 49.5%;
+	background-color: #22b573;
+	color: #FFFFFF;
+	display: inline;
+	float:left;
+	text-align:center;
+	vertical-align:middle;
+	-moz-user-select: none;
+	line-height: 0.6rem;
+}
+
+#secondButtonLeft:active {
+	background-color:#006579;
+}
+
+#secondButtonRight {
+	height: 3rem;
+	width: 49.5%;
+	background-color: #22b573;
+	color: #FFFFFF;
+	display: inline;
+	float:right;
+	text-align: center;
+	vertical-align:middle;
+	-moz-user-select: none;
+	line-height: 0.6rem;
+}
+
+#secondButtonLeft > h2 {
+	vertical-align:middle;
+}
+#secondButtonRight > h2 {
+	vertical-align:middle;
+}
+
+/*Forms*/
+#changeWrapper {
+	width: 100%;
+	height: 21rem;
+	text-align: center;
+	position:relative;
+	display:none;
+	visibility: hidden;
+}
+
+#changeWrapper form {
+	text-align: center;
+	margin-top: 6rem;
+	position: relative;
+	top:4rem;
+}
+
+#changeWrapper input {
+	width: 20rem;
+	text-align: center;
+	background-color: #fffbd6;
+	border: none;
+	border-bottom: solid 1px #1f262c;
+	color: #1f262c;
+	font-size: 2rem;
+	padding-bottom: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+#selectType {
+	background-color: #1f262c;	
+	border: none;
+	font-size: 1.5rem;
+	color: #FFFFFF;
+	width: 12rem;
+	height: 3rem;
+	
+}
+#selectType:active {
+	background-color: #006579;
+}
+
+#submitField {
+	background-color: #af543e ;
+	color: #FFFFFF;
+	font-size: 2rem;
+	width:12rem;
+	height: 4rem;	
+	margin-top: 16.5rem;
+	padding: 0.5rem;
+	border:none;
+}
+
+#submitField :active {
+	background-color: #af543e;
+}
+
+
+
+/*Add Button from the bottom of the page*/
+#addButton { 
+	width: 100%;
+	display:inline-block;
+	height:3.8rem;
+	bottom: 0rem;
+	left:0rem;
+	position: fixed;
+	text-align: center;
+	background-color: #af543e; 
+}
+
+#addButton:active {
+	color: #af544f;
+}
+
+#habbitTypeModal{
+	display:none;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	
+}
+#action-menu {
+	background-color: #000000;
+}
+
+#modalDeleteConfirm {
+	display: none;
+	width:100%
+	height: 100%;
+}
+
+/*List*/
+
+#tbList {
+	width: 100%;
+	height: 30rem;
+	overflow-y:scroll;
+	display:inline;
+}
+#tbList >ul {
+	padding:0;
+	line-height: 2rem;
+}
+
+#tableRow {
+	width: 100%rem;
+	height:2rem;
+	padding:0;
+}
+
+#tableCheck {
+	width: 2rem;
+	height: 2rem;
+}
+#chacked{
+	width: 2rem;
+	height: 2rem;
+}
+#tableItem {
+	color: #1f262c;
+	font-size: 1.1rem;
+	width: 21rem;
+	
+}
+
+#tableType	{
+	width: 2rem;
+	height: 2rem;
+	margin-right: 0.5rem;
+}
+
+#tableType img {
+	width: 2rem;
+	height: 2rem;
+}
+#tablePic {
+	width: 2rem;
+	height: 2rem;
+	margin-right: 0.5rem;
+}
+
+#tablePic img {
+	width: 2rem;
+	height: 2rem;
+}
+
+#tableEdit	{
+	width: 2rem;
+	height: 2rem;
+}
+
+#tableEdit input {
+	width: 1rem;
+	height: 1rem;
+}
+
+#tableRemove {
+	width: 2rem;
+	height: 2rem;
+}
+
+#tableRemove input {
+	width: 1rem;
+	height: 1rem;
+}
+
+tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+#tableWrapper ul li {
+	vertical-align: top;
+	float: left;
+	display:inline;
+	font-size: 1.4rem;
+}
+/*flot test*/
+#fRight {
+	float: right;
+}
+#habbitFinish{
+	display: none;
+}

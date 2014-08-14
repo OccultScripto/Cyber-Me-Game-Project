@@ -7,6 +7,7 @@ var info = new Array();
 var pos = 0;
 
 $(document).ready(function(){
+	database.currentStore = database.stores.work;
     $('#bAdd').click(function(){
         var comeback = JSON.parse(localStorage.getItem('friendlist'));
         console.log(JSON.stringify(comeback));
@@ -23,24 +24,35 @@ $(document).ready(function(){
             friendlist[pos] = friend;
             localStorage.setItem( 'friendlist', JSON.stringify(friendlist) );
             pos = pos + 1;
+						displayFriends();
         }
     });
 	$('#bDisplay').click(function(){
-        var result = JSON.parse(localStorage.getItem('friendlist'));
-        $('#n').html('' + '<img style ="width: 15%;margin-left: 15.3rem;position: fixed;bottom: 0px;" src="Icons/logo_20140718.png">');
-        var flist=$('<ol></ol>');
-        flist.attr('id','flist');  
-        for(var i=0; i<result.length; i++){
-            var p=$('<li></li>');
-            p.text(result[i]);
-            p.on("click",function(){
-            	removeFriend($(this));
-            });
-            flist.append(p);
-        }
-        $('#n').append(flist);
-    });
+		displayFriends();
+  });
+  $('#bEvents').click(function(){
+  	$('#n').html('');
+  }); 
+	displayFriends();
+});
     
+	function displayFriends(){
+		$('#n').html("");
+    var result = JSON.parse(localStorage.getItem('friendlist'));
+    //$('#n').html('' + '<img style ="width: 15%;margin-left: 15.3rem;position: fixed;bottom: 0px;" src="Icons/logo_20140718.png">');
+    var flist=$('<ol></ol>');
+    flist.attr('id','flist');  
+    for(var i=0; i<result.length; i++){
+        var p=$('<li></li>');
+        p.text(result[i]);
+        p.on("click",function(){
+        	removeFriend($(this));
+        });
+        flist.append(p);
+    }
+    $('#n').append(flist);
+	}	
+		
    function removeFriend(el){
         
         if(confirm('Are you sure you want to delete '+ el.html() +' from your friend list?'))
@@ -60,8 +72,3 @@ $(document).ready(function(){
         };
                 
        }
-     
-    $('#bEvents').click(function(){
-    	$('#n').html('');
-    }); 
-});

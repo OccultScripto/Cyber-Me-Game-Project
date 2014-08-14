@@ -1,0 +1,14 @@
+{
+  "name": "Cyber-Me",
+  "description": "Cyber-Me Application for Firefox Os",
+  "version": "1.0",
+  "launch_path": "/index.html",
+	"orientation": "portrait-primary",
+  "developer": {
+    "name": "cyber-me",
+    "url": "http://ebs.com"
+  },
+  "icons": {
+    "128": "Icons/logo.png"
+  }
+}

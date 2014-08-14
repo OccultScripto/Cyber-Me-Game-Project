@@ -42,8 +42,8 @@ function showValues()
 {	
 	//localStorage.clear();
 	//Set total points to UI
-	var totalPoints = localStorage.getItem('points');
-	document.getElementById('pointss').innerHTML=totalPoints;
+	var totalPoints = localStorage.getItem('points') || 0;
+	document.getElementById('scoreDisplay').innerHTML=totalPoints;
 	
 	//Set Total sum to UI
 	var totalSum = parseInt(localStorage.getItem("totalSum"), 10);

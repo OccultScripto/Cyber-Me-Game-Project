@@ -7,75 +7,78 @@
 	<link type="text/css" rel="stylesheet" href="css/Bills_others.css"/>
 	<link type="text/css" rel="stylesheet" href="css/Bills_othersAction_menu.css"/>
 	<link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
-
-	<!--link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"--> 
-  	<!--link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"-->
-
-	<script type="text/javascript" src="js/Bills_othersIndexDB.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
-  	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 
-  	<script type="text/javascript" src="js/Bills_others.js"></script>	
-  	<script type="text/javascript" src="js/Bills_othersFunctions.js"></script>
-  	<script type="text/javascript" src="js/jQuery.js"></script>
-  	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-  	<script type="stylesheet" src="css/jquery-ui.min.css"></script>
+	
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script> 
+	<script type="text/javascript" src="js/indexedDB.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/general.css"/>
+  <script type="text/javascript" src="js/Bills_others.js"></script>	
+  <script type="text/javascript" src="js/Bills_othersFunctions.js"></script>
  	
 </head>
 
 <body>
-		<div class="topMenu" id="topMenuBorder">
-			<div id="caracterIcon">
-				<img src="icon/logo_20140718.png">
-			</div>
-
-			<div id="userName">
-				<h2>Username</h2>
-			</div>
-			<div id="pageSelect">
-			<!--Life-->
-			<div id="life">
-					<a href ="life.html">
-						<i class="fa fa-heart fa-3x"></i>
-						</a>
-			</div>
-			<!--Health-->
-			<div id="health" >
-					<a href ="health.html">
-						<i class="fa fa-leaf fa-3x"></i>
-						</a>
-			</div>
-			<!--Range-->
-			<div id="range" >
-					<a href ="range.html">
-						<i class="fa fa-arrows fa-3x"></i>
-					</a>
-			</div>
-			<!--Bills-->
-			<div id="bills" >
-					<a href ="bills.html">
-						<i class="fa fa-money fa-3x"></i>
-					</a>
-			</div>
-			</div>
-
-			<div id="scoreWrapper">
-					<span id='pointss'></span>
-
-						<div id="scoreIcon">
-							<i class="fa fa-trophy fa-2x"></i>
-						</div>
+		<div id="topMenuBar">
+			<div id="logoWrapper">
+				<div id="caracterIcon">
+				 	<img src="Icons/Logo.png">
 				</div>
+				
+				<div id="userName">
+					<h1 id="user">Username</h1>
+				</div>	
+			</div>
+		
+			<div id="pageSelect">
+				<!--Life-->
+				<div id="life">
+					<a href ="work.html">
+						<i class="fa fa-heart fa-2x"></i>
+					</a>
+				</div>
+			 	<!--Health-->
+				<div id="health" > 
+					<a href ="food.html">
+						<i class="fa fa-leaf fa-2x"></i>
+					</a>
+				</div>
+			 	<!--Range-->
+				<div id="range" > 
+					<a href ="indexRange.html">
+						<i class="fa fa-arrows fa-2x"></i>
+					</a>
+				</div>
+			 	<!--Bills-->
+				<div id="bills" > 
+					<a href ="Bills_start.html">
+						<i class="fa fa-money fa-2x"></i>
+					</a>
+				</div>
+			</div>
+			
+			<div id="scoreWrapper">
+				<div id="score">
+					<h1 id="scoreDisplay">
+					</h1>
+				</div>
+					
+				<div id="scoreIcon">
+					<i class="fa fa-trophy fa-2x"></i> 
+				</div>
+			</div>
 		</div>
 		
-	<div id="navbar">
-		<ul>
+		
+	<div class='menut'  class="contain">
+	
+			<ul  class='tab-links' >
 			<li><a href="Bills_others.html"><i class="fa fa-shopping-cart fa-2x"></i></a></li>
-			<li><a href="bills.html"><i class="fa fa-money fa-2x"></i></a></li>
-			<li><a href="food.html"><i class="fa fa-cutlery fa-2x"></i> </a></li>
-			<li><a href="clothes.html"><i class="fa fa-male fa-2x"></i></a></li>
+			<li><a href="Bills_remake.html"><i class="fa fa-money fa-2x"></i></a></li>
+			<li><a href="foodindex.html"><i class="fa fa-cutlery fa-2x"></i> </a></li>
+			<li><a href="clothes_remake.html"><i class="fa fa-male fa-2x"></i></a></li>
 			<li><a href="Bills_start.html"><i class="fa fa-cog fa-2x"></i></a></li>
-		</ul>
-	</div>
+	</ul>
+</div>
 		
 	<div id="secondbar" >
 		<ol>

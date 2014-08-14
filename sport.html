@@ -1,7 +1,7 @@
 <HTML>
 <HEAD>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="js/jquerymin.js"></script>
 <meta charset="UTF-8">
 			
 			<meta name="keywords" content="HTML">
@@ -11,24 +11,23 @@
 			<script  src="js/sport.js"></script>
 			<script  src="js/score.js"></script>
 			<link href="css/bootstrap.min.css" rel="stylesheet">
-   <script src="scripts/jquery.min.js"></script>
+   <!--script src="scripts/jquery.min.js"></script-->
    <script src="js/bootstrap.min.js"></script>
-			<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-			<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+			<link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <TITLE>Sport</TITLE>
 	 
 	 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
  
-   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"> </script>
+   
 
         <link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script type="text/javascript" src="js/modernizr.custom.29473.js"></script>
+		<!--script type="text/javascript" src="js/modernizr.custom.29473.js"></script-->
 
 </HEAD>
 <BODY onload=" score();">
 <div class="topMenu" id="topMenuBorder">
 				<div id="caracterIcon">
-				 	<img src="Icons/logo.png">
+				 	<img src="Icons/Logo.png">
 				</div>
 
 				<div id="userName">
@@ -37,25 +36,25 @@
 <div id="pageSelect">
 				<!--Life-->
 				<div id="life">
-					<a href ="life.html">
+					<a href ="work.html">
 						<i class="fa fa-heart fa-3x"></i>
 					</a>
 				</div>
 			 	<!--Health-->
 				<div id="health" > 
-					<a href ="health.html">
+					<a href ="food.html">
 						<i class="fa fa-leaf fa-3x"></i>
 					</a>
 				</div>
 			 	<!--Range-->
 				<div id="range" > 
-					<a href ="range.html">
+					<a href ="indexRange.html">
 						<i class="fa fa-arrows fa-3x"></i>
 					</a>
 				</div>
 			 	<!--Bills-->
 				<div id="bills" > 
-					<a href ="bills.html">
+					<a href ="Bills_start.html">
 						<i class="fa fa-money fa-3x"></i>
 					</a>
 				</div>
@@ -223,17 +222,17 @@
 <form role="form" id="form1" style="position:absolute;top:180px;left:15%;width:70%;height:10%;">
    <div class="form-group" style="overflow:scroll;">
       <label for="name">Select from here...</label>
-      <select class="form-control" height="200px" >
-	   <option>...</option>
-         <option id="back">Back</option>
-         <option id="biceps">Biceps</option>
-         <option id="triceps">Triceps</option>
-         <option id="chest">Chest</option>
-         <option id="shoulders">Shoulders</option>
-		 <option id="abs"> Abs</option>
-         <option id="legs">Legs</option>
-         <option id="cardio">Cardio</option>
-         <option id="forearms">Forearms</option>
+      <select class="form-control" id="exercise" height="200px" >
+		<option>...</option>
+         <option value="1">Back</option>
+         <option  value="2">Biceps</option>
+         <option  value="3">Triceps</option>
+         <option value="4">Chest</option>
+         <option  value="5">Shoulders</option>
+		 <option  value="6"> Abs</option>
+         <option  value="7">Legs</option>
+         <option  value="8">Cardio</option>
+         <option  value="9">Forearms</option>
          
       </select>
    </div>
@@ -362,7 +361,7 @@
 <h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
 <h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
 <h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
-<h2><small>Close-Grip Dumbbell Press</small></h2>
+<h2><small>Close-Grip  Press</small></h2>
 <div><img src="Icons/tr3.png" width="150px" height="50px" style="position:absolute;left:15%;">
 <h5 style="position:absolute;top:290px;left:5%;">Sets:<small>4</small></h5>
 <h5 style="position:absolute;top:310px;left:5%;">Reps:<small>8-12</small></h5>
@@ -591,7 +590,7 @@
 <h5 style="position:absolute;top:330px;left:5%;">Sets:<small>4</small></h5>
 <h5 style="position:absolute;top:350px;left:5%;">Reps:<small>8-12</small></h5>
 <h5 style="position:absolute;top:370px;left:5%;">Tips:<small>min to max weight</small></h5></div>
-<h2><small>Windmill Jackknife Crunch</small></h2>
+<h2><small>Windmill Jackknife </small></h2>
 <div><img src="Icons/ca7.jpg" width="150px" height="50px" style="position:absolute;left:15%;">
 <h5 style="position:absolute;top:350px;left:5%;">Sets:<small>4</small></h5>
 <h5 style="position:absolute;top:370px;left:5%;">Reps:<small>8-12</small></h5>
@@ -639,11 +638,11 @@
 <form role="form" id="form2" style="position:absolute;top:180px;left:15%;width:70%;height:10%;">
    <div class="form-group" style="overflow:scroll;">
       <label for="name">Select from here...</label>
-      <select class="form-control" height="200px" >
+      <select class="form-control" id="body1" height="200px" >
 	   <option>...</option>
-         <option id="body">BodyBuilding</option>
-         <option id="fat">Fat Burning</option>
-         <option id="without">Without Weights</option>
+         <option value="1">BodyBuilding</option>
+         <option value="2">Fat Burning</option>
+         <option value="3">Without Weights</option>
       </select>
    </div>
 </form>
@@ -821,7 +820,7 @@
 <h5 style="position:absolute;top:270px;left:5%;">Sets:<small>4</small></h5>
 <h5 style="position:absolute;top:290px;left:5%;">Reps:<small>8-12</small></h5>
 <h5 style="position:absolute;top:310px;left:5%;">Tips:<small>min to max weight</small></h5></div>
-<h2><small>Close-Grip Dumbbell Press</small></h2>
+<h2><small>Close-Grip Press</small></h2>
 <div><img src="Icons/tr3.png" width="150px" height="50px" style="position:absolute;left:15%;">
 <h5 style="position:absolute;top:290px;left:5%;">Sets:<small>4</small></h5>
 <h5 style="position:absolute;top:310px;left:5%;">Reps:<small>8-12</small></h5>

@@ -1,74 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<title>Event Planner 2</title>	
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<link type="text/css" rel="stylesheet" href="css/event2.css"/>
-		<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'/>
-	    <!--link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"--> 
-	    <!--link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"-->
-	        <link rel="stylesheet" href="css/action_menu_old.css">
-	  	<link rel="stylesheet" href="Icons/action_icons.css">
-	  	<link rel="stylesheet" href="css/status.css">
-    		<script src="js/social.js" type="text/javascript"></script>
-	  	<script src="js/jquerySocial.js"></script>
-	  	
-	    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-	    <script type="text/javascript" src="js/event2.js"></script>
-	    <script type="text/javascript" src="js/indexedDB.js"></script>
+		<title>Event Planner 2</title>
+			
+		<link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/social/event2.css"/>
+		<link rel='stylesheet' type='text/css' href='css/jquery-ui.css'/>
+   	<link rel="stylesheet" href="css/action_menu_old.css">
+  	<link rel="stylesheet" href="Icons/action_icons.css">
+  	<link rel="stylesheet" href="css/status.css">
+		<link rel="stylesheet" type="text/css" href="css/work/work.css">
+		<link rel="stylesheet" type="text/css" href="css/general.css">
+		<link type="text/css" rel="stylesheet" href="css/social/social.css"/>
+			
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+		<script src="js/social.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/event2.js"></script>
+    <script type="text/javascript" src="js/indexedDB.js"></script>
 
 </head>   
 <body>
-	  <!-- Top Menu -->
-	    <div class="topMenu" id="topMenuBorder">
-      		<div id="caracterIcon">
-				<img src="Icons/<script src="js/social.js" type="text/javascript"></script>logo_20140718.png">
-			</div>
-			<div id="userName">
-				<h2>Username</h2>
-			</div>
-			<div id="scoreWrapper">
-				<div id="score">
-					<h2>1234</h2>
-				</div>
-				<div id="scoreIcon">
-					<i class="fa fa-trophy fa-2x"></i>
-				</div>
-			</div>
-	    </div>
-	    
-	 <!-- Middle Menu -->
-	   <div id="middleMenuContainer">
-	   		<div id="middleButtonLeft">
-				<a href="workMain.html">
+	 <!--Top menuuu-->
+		<div id="topMenuBar">
+		<div id="logoWrapper">
+		<div id="caracterIcon">
+		<img src="Icons/logo_20140718.png">
+		</div>
+		
+		<div id="userName">
+		<h1>Username</h1>
+		</div>	
+		</div>
+		
+		<div id="pageSelect">
+		<!--Life-->
+		<div id="life">
+		<a href ="work.html">
+		<i class="fa fa-heart fa-2x"></i>
+		</a>
+		</div>
+		<!--Health-->
+		<div id="health" >
+		<a href ="food.html">
+		<i class="fa fa-leaf fa-2x"></i>
+		</a>
+		</div>
+		<!--Range-->
+		<div id="range" >
+		<a href ="indexRange.html">
+		<i class="fa fa-arrows fa-2x"></i>
+		</a>
+		</div>
+		<!--Bills-->
+		<div id="bills" >
+		<a href ="Bills_start.html">
+		<i class="fa fa-money fa-2x"></i>
+		</a>
+		</div>
+		</div>
+		
+		<div id="scoreWrapper">
+		<div id="score">
+		<h1 id="scoreDisplay">
+		</h1>
+		</div>
+		
+		<div id="scoreIcon">
+		<i class="fa fa-trophy fa-2x"></i>
+		</div>
+		</div>
+		</div>
+
+		
+		<!-- DIV for the menu of the bottom of the page. -->
+<div id="secondMenuContainer">
+			<div id="secondButtonLeft">
+				<a href="work.html">
 					<h2>Work</h2>
 				</a>
 			</div>
+				
+			<div id="secondButtonRight">
 				<a href="social.html">
-		        	<div id="middleButtonRight">
-						<h2>Social</h2>
-					</div>
+					<h2>Social</h2>
 				</a>
-	   </div>
-	  
-	 <!-- Bottom Menu -->
-	 <div id= "bottomMenuContainer">
-	   <div style="width:24%; display: inline-block" >
-	         <img class="MenuImages" id="bAdd" src="Icons/1406651994_user-add.png">
-	   </div>
-	   <div style="width:24%; display: inline-block" >
-	  		 <img class="MenuImages" id="bDisplay" src="Icons/1406652270_group.png">
-	   </div>
-	   <div style="width:24%; display: inline-block" >
-	         <a href="event2.html">
-	         <img class="MenuImages" id="bEvents"; src="Icons/event.png"></a>
-	   </div>
-	   <div style="width:24%; display: inline-block" >
-	         <a href="checkin.html">
-	         <img class="MenuImages" id="bCheckin" src="Icons/location.png"></a>
-	   </div>
-	</div>
-	
+			</div>
+		</div>
+
+		
+
+		</div>
+		
+		<div id="container">
+		
+		<img id="bAdd" style="margin:0;max-height: 1.8rem; margin-left:2.4rem" src="Icons/1406651994_user-add.png">
+		<img id="bDisplay" style="margin:0;max-height: 1.8rem;max-width: 1.8rem; margin-left:2.2rem" src="Icons/1406652270_group.png">
+		
+		<a href="event2.html">
+		<img id="bEvents" style="margin:0;max-height: 1.8rem;max-width: 1.8rem; margin-left:3.7rem" src="Icons/event.png"></a>
+		
+		<a href="checkin.html">
+		<img id="bCheckin" style="margin:0;max-height: 1.8rem;max-width: 1.8rem; margin-left:2.2rem"src="Icons/location.png"></a>
+		</div>
 	<!-- Content -->
 	
 	<div class="content">

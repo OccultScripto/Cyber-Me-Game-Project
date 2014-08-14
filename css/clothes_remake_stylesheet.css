@@ -23,14 +23,15 @@ margin-right: 5rem;
 	
 }
  .tab-links li {
-  float: left;
-list-style: none outside none;
-height: 1rem;
-margin-left: 0rem;
-margin-right: 0rem;
-padding: 0rem 0rem 1rem 1rem;
-display: inline;
-margin-bottom: -1rem;
+      text-align: center;
+    float: left;
+    list-style: none outside none;
+    height: 1rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    padding: 0rem 0rem 1rem 1rem;
+    display: inline;
+    margin-bottom: -1rem;
   }
  
         .tab-links a {
@@ -146,183 +147,12 @@ input[type=text]{
 #btotal{
 	display: inline;
 }
-.topMenu {
-	background-color: #999999;
-}
 
-/*Top Menu*/
-#topMenuBar {
-width: 100%;
-height: 2.5rem;
-background-color: #1f262c;
-text-align: center;
-}
-div {
-display: block;
-}
-
-
-
-#caracterIcon {
-width: 2.5rem;
-height: 2.5rem;
-display: inline;
-margin-left: 0.2rem;
-margin-right: 0.5rem;
-background-color: #1f262c;
-}
-
-#caracterIcon > img {
-width: 2.5rem;
-height: 2.5rem;
-display: inherit;
-vertical-align: middle;
-background-color: #1f262c;
-}
-
-#userName {
-width: 15rem;
-height: 2.5rem;
-display: inline;	
-margin-right:0.2rem;
-background-color: #1f262c;
-}
-
-#userName > h1 {
-font-size: 0.9rem;
-display: inherit;
-color: #ffffff;
--moz-user-select: none;
-}
-
-#score {
-width: 5rem;
-height: 7rem;
-display: inline;
-}
-
-#score > h1 {
-font-size:1rem;
-display: inherit;
-color: #ffffff;
--moz-user-select: none;
-}
-
-#scoreIcon {
-width: 2.5rem;
-height: 5rem;
-display: inline;
-background-color: #1f262c;
-}
-
-#scoreIcon > i {
-width: 2rem;
-height: 5rem;
-color: #ffffff;
-display:inherit;
-}
 
 #pageSelect {
-display:inline;
-width: auto;
-height:7rem;
-padding: 0.1rem;
-text-align: center;
-line-height:3rem;
-}
-
-#life {
-width:2.5rem;
-height:2.5rem;
-display: inherit;
-}
-
-#life > i {
-width:2rem;
-height:2rem;
-background-color: #1f262c;
-display: inline;
-}
-
-#life:active {
-color: #af543e;
-}
-
-#health {
-width:2rem;
-height:2rem;
-display: inherit;
-}
-
-#health > i{
-width:2rem;
-height:2rem;
-background-color: #1f262c;
-display: inline;
-}
-
-#health:active {
-color: #af543e;
-}
-
-#range {
-width:2rem;
-height:2rem;
-display: inherit;
-}
-
-#range > i{
-width:2rem;
-height:2rem;
-background-color: #1f262c;
-display: inline;
-}
-
-#range:active {
-color: #af543e;
-}
-
-#bills {
-width:2rem;
-height:2rem;
-display: inherit;
-}
-
-#bills > i {
-width:2rem;
-height:2rem;
-background-color: #1f262c;
-display: inline;
-}
-
-#bills:active {
-color: #af543e;
-}
-
-#scoreWrapper {
-float:right;
-display:inline;
-width:auto;
-position:relative;
-top: 0.5rem;
-margin-left:0.1rem;
-
-}
-
-#logoWrapper {
-display:inline;
-float:left;
-}
-
-a:visited {
-color: #FFFFFF;
-text-decoration: none;
-}
-
-a:link {
-color:#FFFFFF;
-text-decoration: none;
-}
+    display: inline-block;
+    height: 2rem;
+  }
 
 input[id=score_val]{
 	background-color:#1f262c;
@@ -331,12 +161,11 @@ input[id=score_val]{
 	
 }
 .menut{
-	background-color:#22b573;
-	margin:2rem solid black;
-	height:3rem;
-	width: 100%;
-	display:inline-block;
-	
+background-color: #22B573;
+height: 3rem;
+width: 100%;
+text-align: center;
+display: inline-block;
 	
 	
 
@@ -405,10 +234,7 @@ h3{
 .fa-2x {
     font-size: 2rem;
 }
-ul{
-	
-	margin-left:2rem;
-}
+
 li{
 	display: inline-block;
 }
@@ -470,8 +296,15 @@ margin-right: 3rem;
 	font-size:1rem;
 }
 #listRow{
-	display:block;
-}
+    display: block;
+    text-align: left;
+    color: #FFF;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-family: "Helvetica";
+    font-size: 1rem;
+    line-height: 2rem;
+    }
 .col-md-2{
 	display:inline-block;
 }
@@ -487,16 +320,22 @@ width: 3rem;
 
 #DatabaseList{
 	
-	background-color:#F97C17; 
+	background-color:#FFA500;; 
 	visibility: hidden;
+	text-align: center;
 }
 #nameD{
-	width:50%;
-	text-align:center;
+	    margin-left: 1rem;
+    width: calc(50% - 1rem - 1px);
+    border-right: 1px solid #FFF;
 }
 #priceD{
-	width:50%;
-	text-align: center;
+	text-align: right;
+margin-right: 1rem;
+width: calc(50% - 1rem);
+}
+#priceD::after{
+	content:' $';
 }
 #myChart{
 	margin-top:0rem;
@@ -520,4 +359,3 @@ border-radius: 16%;
 	background-color:#EA4B12;
 	padding:0.5rem;
 }
-

@@ -1,18 +1,12 @@
 var selected_index = 0;
 var edit_index = null;
 var tb = localStorage.getItem("tb");
-tb = JSON.parse(tb);
-if(tb == null) 
+if(tb == null) {
 	tb = [];
-	var arr = [];
+}else{
+	tb = JSON.parse(tb);
+}
 
-arr[0]= new Image();
-arr[0].src = "<i class='fa fa-pencil'></i>";
-
-arr[1]= new Image();
-arr[1].src = "Icons/image2.png";
-pictureChoice = arr[0].src;
-pictureChoice1 = arr[1].src;
 function Add() {
 	var client = JSON.stringify({
 		Name: document.getElementById("name").value,
@@ -21,7 +15,7 @@ function Add() {
 		Carbohydrate : document.getElementById("name3").value,
 		Fat : document.getElementById("name4").value,
 		time:new Date(),
-		img:pictureChoice
+		
 		
 	});
 	
@@ -34,7 +28,7 @@ return true;
 
 function Delete(button) {
 if (confirm("Do you sure you want to delete this item?") == true) {
-        var listId =  button.parentNode.parentNode.parentNode.getAttribute("id");
+    var listId =  button.parentNode.parentNode.parentNode.getAttribute("id");
 	var indexId = listId.match(/\d+\.?\d*/g);
 	console.log("delete items: ", indexId);
 
@@ -120,13 +114,6 @@ function calculate() {
 
 function List() {		
 
-
-
-
-	
-		
-		
-
 	var rows = "";
 
 	for(var i in tb){
@@ -139,9 +126,9 @@ function List() {
 				"	<span>"+cli.Protein+"</span>" + 
 				"	<span>"+cli.Fat+"</span>" +
 			
-				"<span id='edit1'>"+"<input type='image' onclick='edit(this)' src='icons/edit.png' width='8px' height='15px' "+i+" /></span>" +
-				"<span>"+"<input type='image' onclick='Delete(this)'  src='icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
-				"<span>"+"<input type='image' onclick='addOld(this)'  src='icons/plus1.gif'  width='8px' height='15px'"+i+" /></span>" +
+				"<span id='edit1'>"+"<input type='image' onclick='edit(this)' src='Icons/edit.png' width='8px' height='15px' "+i+" /></span>" +
+				"<span>"+"<input type='image' onclick='Delete(this)'  src='Icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
+				"<span>"+"<input type='image' onclick='addOld(this)'  src='Icons/plus1.gif'  width='8px' height='15px'"+i+" /></span>" +
 				"</li>"+
 
 				"</ul>";
@@ -205,9 +192,9 @@ function ListbyDate(){
 				"	<span>"+cli.Fat+"</span>" +
 				
 			
-				"<span >"+"<input type='image' onclick='edit(this)' id='edit1' src='icons/edit.png' width='8px' height='15px' "+i+" /></span>" +
-				"<span>"+"<input type='image' onclick='Delete(this)'  src='icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
-				"<span>"+"<input type='image' onclick='addOld(this)'  src='icons/plus1.gif'  width='8px' height='15px'"+i+" /></span>" +
+				"<span >"+"<input type='image' onclick='edit(this)' id='edit1' src='Icons/edit.png' width='8px' height='15px' "+i+" /></span>" +
+				"<span>"+"<input type='image' onclick='Delete(this)'  src='Icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
+				"<span>"+"<input type='image' onclick='addOld(this)'  src='Icons/plus1.gif'  width='8px' height='15px'"+i+" /></span>" +
 				"</li>"+
 
 				"</ul>";
@@ -250,9 +237,9 @@ function ListbyYear(){
 				"	<span>"+cli.Fat+"</span>" +
 				
 			
-				"<span >"+"<input type='image' onclick='edit(this)' id='edit1' src='icons/edit.png' width='8px' height='15px' "+i+" /></span>" +
-				"<span>"+"<input type='image' onclick='Delete(this)'  src='icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
-				"<span>"+"<input type='image' onclick='addOld(this)'  src='icons/plus1.gif'  width='8px' height='15px'"+i+" /></span>" +
+				"<span >"+"<input type='image' onclick='edit(this)' id='edit1' src='Icons/edit.png' width='8px' height='15px' "+i+" /></span>" +
+				"<span>"+"<input type='image' onclick='Delete(this)'  src='Icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
+				"<span>"+"<input type='image' onclick='addOld(this)'  src='Icons/plus1.gif'  width='8px' height='15px'"+i+" /></span>" +
 				"</li>"+
 
 				"</ul>";
@@ -295,9 +282,9 @@ function ListbyDay(){
 				"	<span>"+cli.Fat+"</span>" +
 				
 			
-				"<span >"+"<input type='image' onclick='edit(this)' id='edit1' src='icons/edit.png' width='8px' height='15px' "+i+" /></span>" +
-				"<span>"+"<input type='image' onclick='Delete(this)'  src='icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
-				"<span>"+"<input type='image' onclick='addOld(this)'  src='icons/plus1.gif'  width='8px' height='15px'"+i+" /></span>" +
+				"<span >"+"<input type='image' onclick='edit(this)' id='edit1' src='Icons/edit.png' width='8px' height='15px' "+i+" /></span>" +
+				"<span>"+"<input type='image' onclick='Delete(this)'  src='Icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
+				"<span>"+"<input type='image' onclick='addOld(this)'  src='Icons/plus1.gif'  width='8px' height='15px'"+i+" /></span>" +
 				"</li>"+
 
 				"</ul>";
@@ -340,9 +327,9 @@ function ListbyMonth(){
 				"	<span>"+cli.Fat+"</span>" +
 				
 			
-				"<span >"+"<input type='image' onclick='edit(this)' id='edit1' src='icons/edit.png' width='8px' height='15px' "+i+" /></span>" +
-				"<span>"+"<input type='image' onclick='Delete(this)'  src='icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
-				"<span>"+"<input type='image' onclick='addOld(this)'  src='icons/plus1.gif'  width='8px' height='15px'"+i+" /></span>" +
+				"<span >"+"<input type='image' onclick='edit(this)' id='edit1' src='Icons/edit.png' width='8px' height='15px' "+i+" /></span>" +
+				"<span>"+"<input type='image' onclick='Delete(this)'  src='Icons/delete.png'  width='8px' height='15px'"+i+" /></span>" +
+				"<span>"+"<input type='image' onclick='addOld(this)'  src='Icons/plus1.gif'  width='8px' height='15px'"+i+" /></span>" +
 				"</li>"+
 
 				"</ul>";
@@ -373,6 +360,9 @@ function ListbyMonth(){
     $('#form').css('visibility','visible');
 	$('#tblList').css('visibility','hidden');
 	$('#tblList1').css('visibility','hidden');
+	$('#tblList2').css('visibility','hidden');
+	$('#tblList3').css('visibility','hidden');
+	$('#tblList4').css('visibility','hidden');
 	$('#edit').css('visibility','hidden');
 	$('#bAdd3').css('visibility','visible');
 	$('#bUpdate3').css('visibility','visible');

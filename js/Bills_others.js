@@ -4,6 +4,7 @@
  */
 $(document).ready(function(){
 	
+	database.currentStore = database.stores.others;
 	//Get all records from indexedDB and display them on UI
 	database.initializeDB(listare);
 	
