@@ -58,8 +58,8 @@ a:hover{background-color: #C04000;}
 #secondbar{
 	display:inline-block;
 	text-align: center;
-	width:20rem;
-	height:2rem;
+	width:100%;
+	height:3rem;
 	background: #F88158;
 	
 }
